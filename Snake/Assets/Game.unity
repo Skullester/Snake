@@ -16725,7 +16725,7 @@ MonoBehaviour:
   _bodiesObj: {fileID: 939112103}
   _timer: {fileID: 2082605513}
   SpeedOfMoving: 5
-  SpeedOfRotate: 260
+  SpeedOfRotate: 290
   _panelImg: {fileID: 129240767}
   AudioSourceSnake: {fileID: 0}
   audioClip: {fileID: 8300000, guid: a7590a1cbdb19ad46a526bdecfdd0c39, type: 3}
