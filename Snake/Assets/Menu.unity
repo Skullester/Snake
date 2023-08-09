@@ -2033,85 +2033,6 @@ MonoBehaviour:
   _gameOver: {fileID: 0}
   _audioSourceSnake: {fileID: 0}
   _audioSourceGameOver: {fileID: 0}
---- !u!1 &727182216 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2211564899198745197, guid: caf9732433f4dc044845763962493607,
-    type: 3}
-  m_PrefabInstance: {fileID: 1662496709}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &727182220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 727182216}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d60016fe75ba90438d05173e94f26e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animatorSpriteCounter: {fileID: 0}
-  Multiplier: {fileID: 0}
-  victoryImgCounter: {fileID: 0}
-  imgTask: {fileID: 0}
-  unlockImg: {fileID: 412345949}
-  themeNameTextInShop: {fileID: 1642543212}
-  btnPlaymode: {fileID: 202130337}
-  blockBtnObj: {fileID: 434457878}
-  priceText: {fileID: 1001362385}
-  unlockText: {fileID: 732518967}
-  shopBtn: {fileID: 842104685}
-  panelForAD: {fileID: 0}
-  panelForADInTasks: {fileID: 0}
-  menuBtn: {fileID: 0}
-  continueImg: {fileID: 0}
-  startGameBtnImg: {fileID: 2483196148441452535}
-  imgBackToMenuFromVictory: {fileID: 0}
-  gameOverAudioSource: {fileID: 0}
-  victoryAudioSource: {fileID: 0}
-  themeItemsEmpty:
-  - {fileID: 2018426833}
-  - {fileID: 820659299}
-  - {fileID: 254836534}
-  renderersSnake:
-  - {fileID: 1899084629}
-  - {fileID: 1796613659}
-  - {fileID: 1475257218}
-  - {fileID: 1399197469}
-  - {fileID: 2066099064}
-  renderersObjects:
-  - {fileID: 734885260}
-  - {fileID: 1167881772}
-  - {fileID: 139509131}
-  - {fileID: 8369343}
-  - {fileID: 1457691182}
-  victoryImg: {fileID: 0}
-  gameOverImg: {fileID: 0}
-  counterImg: {fileID: 0}
-  requiresText: {fileID: 0}
-  _btnRestartGame: {fileID: 0}
-  Items:
-  - {fileID: 786472325}
-  - {fileID: 1635425797}
-  - {fileID: 972244958}
-  - {fileID: 1316415806}
-  - {fileID: 4075739451458692096}
-  - {fileID: 8463103879220745516}
-  imgLogo: {fileID: 7357246081420066602}
-  animLogoSnake: {fileID: 5435388908324337378}
-  animLogoGameOver: {fileID: 0}
-  btnChangeMapImg: {fileID: 1924732453419184159}
-  btnItem: {fileID: 1585306369}
-  btnDifficult: {fileID: 3263709102327968003}
-  mapNameText: {fileID: 7028261562271880702}
-  panelImg: {fileID: 5393899720346044490}
-  startGameImg: {fileID: 0}
-  IsItemsEnabled: 1
-  audioSource: {fileID: 966174203}
-  textHint: {fileID: 682397385}
-  IsThemeBought: 0
-  themeChanger: {fileID: 3098136257895859273}
 --- !u!1 &732518965
 GameObject:
   m_ObjectHideFlags: 0
@@ -4044,7 +3965,6 @@ GameObject:
   - component: {fileID: 1090363235}
   - component: {fileID: 1090363234}
   - component: {fileID: 1090363233}
-  - component: {fileID: 1090363236}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -4102,79 +4022,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1090363236
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1090363232}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d60016fe75ba90438d05173e94f26e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animatorSpriteCounter: {fileID: 0}
-  Multiplier: {fileID: 0}
-  victoryImgCounter: {fileID: 0}
-  imgTask: {fileID: 0}
-  unlockImg: {fileID: 412345949}
-  themeNameTextInShop: {fileID: 1642543212}
-  btnPlaymode: {fileID: 202130337}
-  blockBtnObj: {fileID: 434457878}
-  priceText: {fileID: 1001362385}
-  unlockText: {fileID: 732518967}
-  shopBtn: {fileID: 842104685}
-  panelForAD: {fileID: 0}
-  panelForADInTasks: {fileID: 0}
-  menuBtn: {fileID: 0}
-  continueImg: {fileID: 0}
-  startGameBtnImg: {fileID: 2483196148441452535}
-  imgBackToMenuFromVictory: {fileID: 0}
-  gameOverAudioSource: {fileID: 0}
-  victoryAudioSource: {fileID: 0}
-  themeItemsEmpty:
-  - {fileID: 2018426833}
-  - {fileID: 820659299}
-  - {fileID: 254836534}
-  renderersSnake:
-  - {fileID: 1899084629}
-  - {fileID: 1796613659}
-  - {fileID: 1475257218}
-  - {fileID: 1399197469}
-  - {fileID: 2066099064}
-  renderersObjects:
-  - {fileID: 734885260}
-  - {fileID: 1167881772}
-  - {fileID: 139509131}
-  - {fileID: 8369343}
-  - {fileID: 1457691182}
-  victoryImg: {fileID: 0}
-  gameOverImg: {fileID: 0}
-  counterImg: {fileID: 0}
-  requiresText: {fileID: 0}
-  _btnRestartGame: {fileID: 0}
-  Items:
-  - {fileID: 786472325}
-  - {fileID: 1635425797}
-  - {fileID: 972244958}
-  - {fileID: 1316415806}
-  - {fileID: 4075739451458692096}
-  - {fileID: 8463103879220745516}
-  imgLogo: {fileID: 7357246081420066602}
-  animLogoSnake: {fileID: 5435388908324337378}
-  animLogoGameOver: {fileID: 0}
-  btnChangeMapImg: {fileID: 1924732453419184159}
-  btnItem: {fileID: 1585306369}
-  btnDifficult: {fileID: 3263709102327968003}
-  mapNameText: {fileID: 7028261562271880702}
-  panelImg: {fileID: 5393899720346044490}
-  startGameImg: {fileID: 0}
-  IsItemsEnabled: 1
-  audioSource: {fileID: 966174203}
-  textHint: {fileID: 682397385}
-  IsThemeBought: 0
-  themeChanger: {fileID: 3098136257895859273}
 --- !u!1 &1125605541
 GameObject:
   m_ObjectHideFlags: 0
@@ -6944,11 +6791,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2211564899198745197, guid: caf9732433f4dc044845763962493607,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 727182220}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: caf9732433f4dc044845763962493607, type: 3}
 --- !u!1 &1708263694
 GameObject:
@@ -8080,85 +7923,6 @@ MeshRenderer:
     type: 3}
   m_PrefabInstance: {fileID: 1495352571}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2120862191 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4130115989820264655, guid: 609c947ef5d8c524896e83b6462159b6,
-    type: 3}
-  m_PrefabInstance: {fileID: 2725051301313904110}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2120862192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2120862191}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d60016fe75ba90438d05173e94f26e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animatorSpriteCounter: {fileID: 0}
-  Multiplier: {fileID: 0}
-  victoryImgCounter: {fileID: 0}
-  imgTask: {fileID: 0}
-  unlockImg: {fileID: 412345949}
-  themeNameTextInShop: {fileID: 1642543212}
-  btnPlaymode: {fileID: 202130337}
-  blockBtnObj: {fileID: 434457878}
-  priceText: {fileID: 1001362385}
-  unlockText: {fileID: 732518967}
-  shopBtn: {fileID: 842104685}
-  panelForAD: {fileID: 0}
-  panelForADInTasks: {fileID: 0}
-  menuBtn: {fileID: 0}
-  continueImg: {fileID: 0}
-  startGameBtnImg: {fileID: 2483196148441452535}
-  imgBackToMenuFromVictory: {fileID: 0}
-  gameOverAudioSource: {fileID: 0}
-  victoryAudioSource: {fileID: 0}
-  themeItemsEmpty:
-  - {fileID: 2018426833}
-  - {fileID: 820659299}
-  - {fileID: 254836534}
-  renderersSnake:
-  - {fileID: 1899084629}
-  - {fileID: 1796613659}
-  - {fileID: 1475257218}
-  - {fileID: 1399197469}
-  - {fileID: 2066099064}
-  renderersObjects:
-  - {fileID: 734885260}
-  - {fileID: 1167881772}
-  - {fileID: 139509131}
-  - {fileID: 8369343}
-  - {fileID: 1457691182}
-  victoryImg: {fileID: 0}
-  gameOverImg: {fileID: 0}
-  counterImg: {fileID: 0}
-  requiresText: {fileID: 0}
-  _btnRestartGame: {fileID: 0}
-  Items:
-  - {fileID: 786472325}
-  - {fileID: 1635425797}
-  - {fileID: 972244958}
-  - {fileID: 1316415806}
-  - {fileID: 4075739451458692096}
-  - {fileID: 8463103879220745516}
-  imgLogo: {fileID: 7357246081420066602}
-  animLogoSnake: {fileID: 5435388908324337378}
-  animLogoGameOver: {fileID: 0}
-  btnChangeMapImg: {fileID: 1924732453419184159}
-  btnItem: {fileID: 1585306369}
-  btnDifficult: {fileID: 3263709102327968003}
-  mapNameText: {fileID: 7028261562271880702}
-  panelImg: {fileID: 5393899720346044490}
-  startGameImg: {fileID: 0}
-  IsItemsEnabled: 1
-  audioSource: {fileID: 966174203}
-  textHint: {fileID: 682397385}
-  IsThemeBought: 0
-  themeChanger: {fileID: 3098136257895859273}
 --- !u!114 &69529582943210421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9392,11 +9156,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4130115989820264655, guid: 609c947ef5d8c524896e83b6462159b6,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2120862192}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 609c947ef5d8c524896e83b6462159b6, type: 3}
 --- !u!224 &2764745210325095720
 RectTransform:
@@ -9599,9 +9359,9 @@ MonoBehaviour:
   - {fileID: 5823598765788518421}
   - {fileID: 832575520}
   - {fileID: 170090831}
-  - {fileID: 1090363236}
-  - {fileID: 2120862192}
-  - {fileID: 727182220}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   isItemBought: 000000000000
 --- !u!222 &3255278735383054333
 CanvasRenderer:
@@ -10794,6 +10554,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hearts
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375958633976897315, guid: 720694f3fe9f9ae4f92af3638fa17049,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8180091259084129216, guid: 720694f3fe9f9ae4f92af3638fa17049,
         type: 3}

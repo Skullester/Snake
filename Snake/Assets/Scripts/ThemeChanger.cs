@@ -178,24 +178,19 @@ public class ThemeChanger : MonoBehaviour
 
     void Awake()
     {
+        isThemeSet = false;
         _themeSounds[0] = soundClassic;
         _themeSounds[1] = soundLava;
         _themeSounds[2] = soundIce;
-        _themeSounds[3] = soundAristocrat;
-        _themeSounds[4] = soundRomantic;
-        _themeSounds[5] = soundGold;
+
         materials[0] = classic;
         materials[1] = lava;
         materials[2] = ice;
-        materials[3] = aristocration;
-        materials[4] = romantic;
-        materials[5] = gold;
+
         colors[0] = new Color(0.04f, 1f, 0.22f, 0.4f);
         colors[1] = new Color(0.905f, 0.064f, 0.111f, 0.392f);
         colors[2] = new Color(0f, 1f, 1f, 0.592f);
-        colors[3] = new Color(0.905f, 0.05f, 0.482f, 0.7f);
-        colors[4] = new Color(0.86f, 0.24f, 0.35f, 0.64f);
-        colors[5] = new Color(1f, 0.39f, 0.06f, 0.572f);
+
         for (int i = 0; i < ThemeCount; i++)
         {
             themes[i].Initiliaze(
@@ -319,7 +314,6 @@ public class ThemeChanger : MonoBehaviour
                 themes[i].Initiliaze(isPaidSkin: true, isItemBought[i]);
             }
         }
-        isThemeSet = false;
     }
 
     void Start()

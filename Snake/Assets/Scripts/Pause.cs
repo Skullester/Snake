@@ -134,8 +134,8 @@ public class Pause : MonoBehaviour
         bool isObjectsInitiliazed = themeChanger.isItemBought[0];
         if (Language.CurrentLanguage != null)
             YandexGame.SwitchLanguage(Language.CurrentLanguage);
-        if (!isObjectsInitiliazed)
-            themeChanger.LoadInfoAboutPayments();
+        //if (!isObjectsInitiliazed)
+        //    themeChanger.LoadInfoAboutPayments();
         themeChanger.RewardForGame();
         CameraChanger.CounterCameras = YandexGame.savesData.CounterCameras;
         cameraChanger.CameraManager();
