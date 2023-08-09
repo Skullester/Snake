@@ -5,7 +5,7 @@ using System.Collections;
 public class LoadScreen : MonoBehaviour
 {
     private Slider slider;
-    private float offset = 0.25f;
+    private float offset = 0.35f;
 
     [SerializeField]
     private GameObject loadScreenObj;
@@ -31,7 +31,7 @@ public class LoadScreen : MonoBehaviour
         }
         yield return new WaitForSeconds(0.6f);
         loadScreenObj.GetComponent<Animator>().SetTrigger("StartGame");
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.5f);
         isGameStarted = true;
         loadScreenObj.SetActive(false);
     }
