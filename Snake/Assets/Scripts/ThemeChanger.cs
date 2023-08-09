@@ -32,7 +32,7 @@ public class ThemeChanger : MonoBehaviour
 
     [SerializeField, Header("Звуки меню")]
     private AudioClip[] menuSounds;
-    public static int ThemeCount = 6;
+    public static int ThemeCount = 3;
 
     [SerializeField]
     private Material[][] materials = new Material[ThemeCount][];
