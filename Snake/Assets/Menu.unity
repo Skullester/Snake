@@ -1207,6 +1207,18 @@ MonoBehaviour:
   textHint: {fileID: 682397385}
   IsThemeBought: 0
   themeChanger: {fileID: 3098136257895859273}
+  btnPlaymode3D: {fileID: 1302505482}
+  unlockIm3D: {fileID: 0}
+  blockBtnObj3D: {fileID: 0}
+  blockBtn3D: {fileID: 0}
+  startGameBtnImg3D: {fileID: 0}
+  imgLogo3D: {fileID: 0}
+  btnDifficult3D: {fileID: 0}
+  shopBtn3D: {fileID: 0}
+  textHint3D: {fileID: 0}
+  panelImg3D: {fileID: 0}
+  btnChangeMapImg3D: {fileID: 0}
+  mapNameText3D: {fileID: 0}
 --- !u!108 &170090833 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 3258420621898879672, guid: 36e4fb7736642f34b83e993846a7264b,
@@ -6411,6 +6423,18 @@ MonoBehaviour:
   textHint: {fileID: 682397385}
   IsThemeBought: 0
   themeChanger: {fileID: 3098136257895859273}
+  btnPlaymode3D: {fileID: 1302505482}
+  unlockIm3D: {fileID: 0}
+  blockBtnObj3D: {fileID: 0}
+  blockBtn3D: {fileID: 0}
+  startGameBtnImg3D: {fileID: 0}
+  imgLogo3D: {fileID: 0}
+  btnDifficult3D: {fileID: 0}
+  shopBtn3D: {fileID: 0}
+  textHint3D: {fileID: 0}
+  panelImg3D: {fileID: 0}
+  btnChangeMapImg3D: {fileID: 0}
+  mapNameText3D: {fileID: 0}
 --- !u!1 &732518965
 GameObject:
   m_ObjectHideFlags: 0
@@ -7245,16 +7269,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 815857054}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.35138845, y: 0.35138845, z: 0.35138845}
+  m_LocalPosition: {x: 0, y: 0, z: -30}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 215275213}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.80583346, y: 0.39200002}
   m_AnchorMax: {x: 0.96827096, y: 0.680697}
-  m_AnchoredPosition: {x: -815, y: -431}
-  m_SizeDelta: {x: 1.3772888, y: 0.6946106}
+  m_AnchoredPosition: {x: -835.32, y: -588.73}
+  m_SizeDelta: {x: -246.34, y: -239.18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &815857056
 MonoBehaviour:
@@ -7424,6 +7448,18 @@ MonoBehaviour:
   textHint: {fileID: 682397385}
   IsThemeBought: 0
   themeChanger: {fileID: 3098136257895859273}
+  btnPlaymode3D: {fileID: 1302505482}
+  unlockIm3D: {fileID: 0}
+  blockBtnObj3D: {fileID: 0}
+  blockBtn3D: {fileID: 0}
+  startGameBtnImg3D: {fileID: 0}
+  imgLogo3D: {fileID: 0}
+  btnDifficult3D: {fileID: 0}
+  shopBtn3D: {fileID: 0}
+  textHint3D: {fileID: 0}
+  panelImg3D: {fileID: 0}
+  btnChangeMapImg3D: {fileID: 0}
+  mapNameText3D: {fileID: 0}
 --- !u!1 &838009533
 GameObject:
   m_ObjectHideFlags: 0
@@ -10412,6 +10448,18 @@ MonoBehaviour:
   textHint: {fileID: 682397385}
   IsThemeBought: 0
   themeChanger: {fileID: 3098136257895859273}
+  btnPlaymode3D: {fileID: 1302505482}
+  unlockIm3D: {fileID: 0}
+  blockBtnObj3D: {fileID: 0}
+  blockBtn3D: {fileID: 0}
+  startGameBtnImg3D: {fileID: 0}
+  imgLogo3D: {fileID: 0}
+  btnDifficult3D: {fileID: 0}
+  shopBtn3D: {fileID: 0}
+  textHint3D: {fileID: 0}
+  panelImg3D: {fileID: 0}
+  btnChangeMapImg3D: {fileID: 0}
+  mapNameText3D: {fileID: 0}
 --- !u!1 &1109153224
 GameObject:
   m_ObjectHideFlags: 0
@@ -12895,8 +12943,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1302505479}
   m_LocalRotation: {x: -0.021218227, y: 0.25250098, z: -0.1075144, w: -0.96137077}
-  m_LocalPosition: {x: 0, y: 0, z: -45.9}
-  m_LocalScale: {x: 0.17962663, y: 0.17962663, z: 0.17962663}
+  m_LocalPosition: {x: 0, y: 0, z: -45.7}
+  m_LocalScale: {x: 0.16533732, y: 0.16533732, z: 0.16533732}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1025416208}
@@ -12904,7 +12952,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 5.457, y: -388.889, z: 11.356}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -23.61, y: -424.51}
+  m_AnchoredPosition: {x: -20.1, y: -440.4}
   m_SizeDelta: {x: 334.83, y: 115.43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1302505481
@@ -22668,6 +22716,18 @@ MonoBehaviour:
   textHint: {fileID: 682397385}
   IsThemeBought: 0
   themeChanger: {fileID: 3098136257895859273}
+  btnPlaymode3D: {fileID: 1302505482}
+  unlockIm3D: {fileID: 0}
+  blockBtnObj3D: {fileID: 0}
+  blockBtn3D: {fileID: 0}
+  startGameBtnImg3D: {fileID: 0}
+  imgLogo3D: {fileID: 0}
+  btnDifficult3D: {fileID: 0}
+  shopBtn3D: {fileID: 0}
+  textHint3D: {fileID: 0}
+  panelImg3D: {fileID: 0}
+  btnChangeMapImg3D: {fileID: 0}
+  mapNameText3D: {fileID: 0}
 --- !u!114 &69529582943210421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25757,6 +25817,18 @@ MonoBehaviour:
   textHint: {fileID: 682397385}
   IsThemeBought: 0
   themeChanger: {fileID: 3098136257895859273}
+  btnPlaymode3D: {fileID: 1302505482}
+  unlockIm3D: {fileID: 0}
+  blockBtnObj3D: {fileID: 434457878}
+  blockBtn3D: {fileID: 2550489458340234016}
+  startGameBtnImg3D: {fileID: 2483196148441452535}
+  imgLogo3D: {fileID: 815857056}
+  btnDifficult3D: {fileID: 641067463}
+  shopBtn3D: {fileID: 842104685}
+  textHint3D: {fileID: 536631086}
+  panelImg3D: {fileID: 0}
+  btnChangeMapImg3D: {fileID: 1172238723}
+  mapNameText3D: {fileID: 378463968}
 --- !u!114 &5825360382040612575
 MonoBehaviour:
   m_ObjectHideFlags: 0
