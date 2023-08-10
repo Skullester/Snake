@@ -31,7 +31,7 @@ public class LoadScreen : MonoBehaviour
         }
         yield return new WaitForSeconds(0.6f);
         loadScreenObj.GetComponent<Animator>().SetTrigger("StartGame");
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
         isGameStarted = true;
         loadScreenObj.SetActive(false);
     }
