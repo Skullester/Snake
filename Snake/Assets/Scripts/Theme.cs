@@ -76,6 +76,8 @@ public class Theme : MonoBehaviour
     [SerializeField, Header("Пустышка")]
     private Transform[] themeItemsEmpty;
     private Material[] matSnake = new Material[5];
+
+    private Material[] mat3D = new Material[5];
     private Sprite spriteOfScreenOver;
     private Sprite logoStartGame;
     private Sprite spriteOfScreenWin;
@@ -160,9 +162,49 @@ public class Theme : MonoBehaviour
 
     [SerializeField]
     private ThemeChanger themeChanger;
+    private static bool is3D;
+
+    [Header("Ссылки на 3D:")]
+    [SerializeField]
+    private Image btnPlaymode3D;
+
+    [SerializeField]
+    private Image unlockIm3D;
+
+    [SerializeField]
+    private GameObject blockBtnObj3D;
+
+    [SerializeField]
+    private Button blockBtn3D;
+
+    [SerializeField]
+    private Image startGameBtnImg3D;
+
+    [SerializeField]
+    private Image imgLogo3D;
+
+    [SerializeField]
+    private Image btnDifficult3D;
+
+    [SerializeField]
+    private Image shopBtn3D;
+
+    [SerializeField]
+    private TMP_Text textHint3D;
+
+    [SerializeField]
+    private Image panelImg3D;
+
+    [SerializeField]
+    private Image btnChangeMapImg3D;
+
+    [SerializeField]
+    private TMP_Text mapNameText3D;
 
     void Awake()
     {
+        is3D = false;
+        ChangeReferences();
         isThemePassed = false;
         themeItems = themeChanger.ThemeItems;
     }
@@ -206,6 +248,11 @@ public class Theme : MonoBehaviour
         this.IsThemeBought = isThemeBought;
     }
 
+    public void Initiliaze(Material[] mat3D)
+    {
+        this.mat3D = mat3D;
+    }
+
     public void Initiliaze(string mapNameText, string[] shopTextStrs)
     {
         this.mapNameTextStr = mapNameText;
@@ -226,6 +273,12 @@ public class Theme : MonoBehaviour
             audioSource.Play();
             isThemePassed = false;
         }
+    }
+
+    public void Set3DOptions()
+    {
+        for (int i = 0; i < mat3D.Length; i++)
+            renderersObjects[i].sharedMaterial = mat3D[i];
     }
 
     public void LockButton()
@@ -267,6 +320,29 @@ public class Theme : MonoBehaviour
         startGameImg.sprite = logoStartGame;
     }
 
+    private void Set3DMenu()
+    {
+        is3D = !is3D;
+    }
+
+    private void ChangeReferences()
+    {
+        if (is3D)
+        {
+            btnPlaymode = btnPlaymode3D;
+            panelImg = panelImg3D;
+            btnChangeMapImg = btnChangeMapImg3D;
+            mapNameText = mapNameText3D;
+            blockBtnObj = blockBtnObj3D;
+            blockBtn = blockBtn3D;
+            startGameBtnImg = startGameBtnImg3D;
+            imgLogo = imgLogo3D;
+            btnDifficult = btnDifficult3D;
+            shopBtn = shopBtn3D;
+            textHint = textHint3D;
+        }
+    }
+
     private void ChangeFirstScene()
     {
         btnPlaymode.color = color;
@@ -299,14 +375,22 @@ public class Theme : MonoBehaviour
             renderersSnake[i].sharedMaterial = matSnake[i];
             renderersObjects[i].sharedMaterial = matSnake[i + 5];
         }
-        for (int i = 0; i < ThemeChanger.ThemeCount; i++)
-            Items[i].SetActive(i == index);
+        SetItems();
         SetMapName();
         mapNameText.color = new Color(color.r, color.g, color.b, 0.85f);
         if (Pause.IsSceneFirst)
             ChangeFirstScene();
         else
             ChangeSecondScene();
+    }
+
+    public void SetItems(bool condition = true)
+    {
+        for (int i = 0; i < ThemeChanger.ThemeCount; i++)
+        {
+            bool isThemeItem = i == index && condition;
+            Items[i].SetActive(isThemeItem);
+        }
     }
 
     public void SetMapName()

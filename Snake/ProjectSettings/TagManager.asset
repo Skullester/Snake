@@ -11,6 +11,7 @@ TagManager:
   - Bodies
   - Collected
   - Available
+  - ShopSnakes
   layers:
   - Default
   - TransparentFX
