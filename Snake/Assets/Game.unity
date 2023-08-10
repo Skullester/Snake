@@ -322,7 +322,6 @@ MonoBehaviour:
   shopBtn: {fileID: 0}
   panelForAD: {fileID: 1269055904}
   panelForADInTasks: {fileID: 272251643}
-  menuBtn: {fileID: 0}
   continueImg: {fileID: 114653316347321441}
   startGameBtnImg: {fileID: 0}
   imgBackToMenuFromVictory: {fileID: 925125081}
@@ -558,7 +557,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -2920,7 +2919,6 @@ MonoBehaviour:
   shopBtn: {fileID: 0}
   panelForAD: {fileID: 1269055904}
   panelForADInTasks: {fileID: 272251643}
-  menuBtn: {fileID: 0}
   continueImg: {fileID: 114653316347321441}
   startGameBtnImg: {fileID: 0}
   imgBackToMenuFromVictory: {fileID: 925125081}
@@ -5942,7 +5940,6 @@ MonoBehaviour:
   shopBtn: {fileID: 0}
   panelForAD: {fileID: 1269055904}
   panelForADInTasks: {fileID: 272251643}
-  menuBtn: {fileID: 0}
   continueImg: {fileID: 114653316347321441}
   startGameBtnImg: {fileID: 0}
   imgBackToMenuFromVictory: {fileID: 925125081}
@@ -7410,7 +7407,6 @@ MonoBehaviour:
   shopBtn: {fileID: 0}
   panelForAD: {fileID: 1269055904}
   panelForADInTasks: {fileID: 272251643}
-  menuBtn: {fileID: 0}
   continueImg: {fileID: 114653316347321441}
   startGameBtnImg: {fileID: 0}
   imgBackToMenuFromVictory: {fileID: 925125081}
@@ -9507,7 +9503,6 @@ MonoBehaviour:
   shopBtn: {fileID: 0}
   panelForAD: {fileID: 1269055904}
   panelForADInTasks: {fileID: 272251643}
-  menuBtn: {fileID: 0}
   continueImg: {fileID: 114653316347321441}
   startGameBtnImg: {fileID: 0}
   imgBackToMenuFromVictory: {fileID: 925125081}
@@ -12944,7 +12939,6 @@ MonoBehaviour:
   shopBtn: {fileID: 0}
   panelForAD: {fileID: 1269055904}
   panelForADInTasks: {fileID: 272251643}
-  menuBtn: {fileID: 0}
   continueImg: {fileID: 114653316347321441}
   startGameBtnImg: {fileID: 0}
   imgBackToMenuFromVictory: {fileID: 925125081}
