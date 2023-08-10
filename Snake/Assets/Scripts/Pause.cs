@@ -54,6 +54,7 @@ public class Pause : MonoBehaviour
     private bool isOn;
     public static bool IsSun = true;
     public static bool IsVictory;
+    public static bool isLanguageSet;
 
     [SerializeField, Header("Экран поражения")]
     private GameObject _gameOver;
@@ -177,7 +178,8 @@ public class Pause : MonoBehaviour
             );
             if (Counter.CounterInt > YandexGame.savesData.Record)
                 YandexGame.savesData.Record = Counter.CounterInt;
-            if (Counter.CounterInt > 300 && !YandexGame.savesData.IsRewardGiven)
+            if ( /* Counter.CounterInt > 300 &&  */
+                !YandexGame.savesData.IsRewardGiven)
                 YandexGame.savesData.IsReward = true;
         }
         YandexGame.SaveProgress();

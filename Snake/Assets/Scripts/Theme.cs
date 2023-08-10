@@ -53,9 +53,6 @@ public class Theme : MonoBehaviour
     [SerializeField, Header("Панелька для кнопки рекламы в Tasks")]
     private Image panelForADInTasks;
 
-    [SerializeField, Header("Кнопка \" меню\"")]
-    private Image menuBtn;
-
     [SerializeField, Header("Кнопка \"Продолжить\"")]
     private Image continueImg;
 
@@ -217,8 +214,6 @@ public class Theme : MonoBehaviour
 
     private void SetThemeMusic(int index)
     {
-        if (audioSource == null)
-            return;
         if (index < 3 && !isThemePassed)
         {
             audioSource.clip = ostAudioClip;
@@ -235,117 +230,90 @@ public class Theme : MonoBehaviour
 
     public void LockButton()
     {
-        if (priceText != null)
+        if (!Pause.IsSceneFirst)
+            return;
+        print(shopTextStrs + " - array");
+        for (int i = 0; i < shopTextStrs.Length; i++)
         {
-            if (IsThemeBought)
-                priceText.text = shopTextStrs[0] + " " + shopTextStrs[3];
-            else
-                priceText.text =
-                    shopTextStrs[0]
-                    + " "
-                    + price /*  + "\n или \n 99р" */
-                ;
-            unlockBtn.interactable = !IsThemeBought;
-            unlockText.text = IsThemeBought ? shopTextStrs[1] : shopTextStrs[2];
+            print(shopTextStrs[i] + i);
         }
+        print(unlockBtn + " - кнопка");
+
+        if (IsThemeBought)
+            priceText.text = shopTextStrs[0] + " " + shopTextStrs[3];
+        else
+            priceText.text = shopTextStrs[0] + " " + price;
+        unlockBtn.interactable = !IsThemeBought;
+        unlockText.text = IsThemeBought ? shopTextStrs[1] : shopTextStrs[2];
     }
 
-    public void ChangeTheme(bool isBackToMenu = false)
+    private void ChangeSecondScene()
     {
-        if (animatorSpriteCounter)
-            animatorSpriteCounter.SetInteger("Index", index);
-        if (Multiplier)
-            Multiplier.color = color;
-        if (animLogoSnake != null)
-            AnimateSnake(index);
-        if (btnPlaymode != null)
-            btnPlaymode.color = color;
-        if (unlockImg != null)
-            unlockImg.color = color;
-        SetThemeMusic(index);
-        if (blockBtnObj != null)
+        animatorSpriteCounter.SetInteger("Index", index);
+        Multiplier.color = color;
+        panelForAD.color = new Color(color.r, color.g, color.b, 0.25f);
+        panelForADInTasks.color = panelForAD.color;
+        requiresText.color = new Color(color.r, color.g, color.b, 0.85f);
+        _btnRestartGame.color = color;
+        counterImg.sprite = counterImgSprite;
+        victoryImgCounter.sprite = counterImg.sprite;
+        imgTask.sprite = counterImg.sprite;
+        if (index == 4)
         {
-            blockBtnObj.SetActive(!IsThemeBought);
-            blockBtn.interactable = IsThemeBought;
+            counterImg.color = new Color(0.91f, 0.56f, 0.56f);
+            victoryImgCounter.color = counterImg.color;
+            imgTask.color = counterImg.color;
         }
-        for (int i = 0; i < matSnake.Length - 5; i++)
-        {
-            renderersSnake[i].sharedMaterial = matSnake[i];
-            renderersObjects[i].sharedMaterial = matSnake[i + 5];
-        }
-        if (panelForAD != null)
-        {
-            panelForAD.color = new Color(color.r, color.g, color.b, 0.25f);
-            panelForADInTasks.color = panelForAD.color;
-        }
-        if (!Pause.IsSceneFirst && requiresText != null)
-        {
-            requiresText.color = new Color(color.r, color.g, color.b, 0.85f);
-            _btnRestartGame.color = color;
-            counterImg.sprite = counterImgSprite;
-            victoryImgCounter.sprite = counterImg.sprite;
-            imgTask.sprite = counterImg.sprite;
-            if (index == 4)
-            {
-                counterImg.color = new Color(0.91f, 0.56f, 0.56f);
-                victoryImgCounter.color = counterImg.color;
-                imgTask.color = counterImg.color;
-            }
-        }
-        if (imgBackToMenuFromVictory != null)
-            imgBackToMenuFromVictory.color = color;
-        if (continueImg != null)
-            continueImg.color = color;
-        if (startGameBtnImg != null)
-            startGameBtnImg.color = color;
-        if (menuBtn != null)
-            menuBtn.color = color;
-        ThemeChanger.CurrentThemeColor = color;
-        imgLogo.sprite = logoStartGame;
-        btnChangeMapImg.color = color;
-        if (btnDifficult != null)
-            btnDifficult.color = color;
-        if (themeSounds != null)
-            ThemeChanger.ThemeSound = themeSounds[0];
-        if (gameOverAudioSource != null)
-        {
-            gameOverAudioSource.clip = themeSounds[1];
-            victoryAudioSource.clip = themeSounds[2];
-        }
+        imgBackToMenuFromVictory.color = color;
+        continueImg.color = color;
+        ThemeChanger.ThemeSound = themeSounds[0];
+        gameOverAudioSource.clip = themeSounds[1];
+        victoryAudioSource.clip = themeSounds[2];
+        gameOverImg.sprite = spriteOfScreenOver;
+        victoryImg.sprite = spriteOfScreenWin;
+        startGameImg.sprite = logoStartGame;
+    }
 
-        if (gameOverImg != null)
-        {
-            gameOverImg.sprite = spriteOfScreenOver;
-            victoryImg.sprite = spriteOfScreenWin;
-            startGameImg.sprite = logoStartGame;
-        }
-        if (mapNameText != null)
-        {
-            SetMapName();
-            mapNameText.color = new Color(color.r, color.g, color.b, 0.85f);
-            if (themeNameTextInShop != null)
-            {
-                themeNameTextInShop.color = mapNameText.color;
-                if (shopTextStrs != null)
-                    LockButton();
-            }
-        }
-        if (shopBtn != null)
-            shopBtn.color = color;
-        panelImg.color = color;
-        for (int i = 0; i < ThemeChanger.ThemeCount; i++)
-        {
-            Items[i].SetActive(false);
-            if (i == index)
-                Items[i].SetActive(true);
-        }
-        if (btnItem == null)
-            return;
+    private void ChangeFirstScene()
+    {
+        btnPlaymode.color = color;
+        unlockImg.color = color;
+        SetThemeMusic(index);
+        blockBtnObj.SetActive(!IsThemeBought);
+        blockBtn.interactable = IsThemeBought;
+        startGameBtnImg.color = color;
+        imgLogo.sprite = logoStartGame;
+        btnDifficult.color = color;
+        shopBtn.color = color;
+        themeNameTextInShop.color = mapNameText.color;
+        if (Pause.isLanguageSet)
+            LockButton();
         btnItem.GetComponent<Image>().color = color;
         btnItem.SetActive(isPaidSkin);
         ChangeThemeItem(index);
         textHint.color = color;
         textHint.enabled = ThemeChanger.ThemeNumber == 5;
+    }
+
+    public void ChangeTheme(bool isBackToMenu = false)
+    {
+        ThemeChanger.CurrentThemeColor = color;
+        panelImg.color = color;
+        AnimateSnake(index);
+        btnChangeMapImg.color = color;
+        for (int i = 0; i < matSnake.Length - 5; i++)
+        {
+            renderersSnake[i].sharedMaterial = matSnake[i];
+            renderersObjects[i].sharedMaterial = matSnake[i + 5];
+        }
+        for (int i = 0; i < ThemeChanger.ThemeCount; i++)
+            Items[i].SetActive(i == index);
+        SetMapName();
+        mapNameText.color = new Color(color.r, color.g, color.b, 0.85f);
+        if (Pause.IsSceneFirst)
+            ChangeFirstScene();
+        else
+            ChangeSecondScene();
     }
 
     public void SetMapName()
@@ -379,28 +347,28 @@ public class Theme : MonoBehaviour
 
     private void Update()
     {
-        if (ThemeChanger.ThemeNumber != 3)
-            return;
-        if (isCourTransformPassed)
+        if (isCourTransformPassed && ThemeChanger.ThemeNumber == 3)
             StartCoroutine(CourTransform());
     }
 
     IEnumerator CourTransform()
     {
         isCourTransformPassed = false;
-        if (CameraChanger.CounterCameras == 0 && isCameraChanged)
+        while (true)
         {
-            isCameraChanged = false;
-            themeItems[3].transform.position = themeItemsEmpty[2].position;
+            if (CameraChanger.CounterCameras == 0 && isCameraChanged)
+            {
+                isCameraChanged = false;
+                themeItems[3].transform.position = themeItemsEmpty[2].position;
+            }
+            else if (CameraChanger.CounterCameras == 1 && !isCameraChanged)
+            {
+                isCameraChanged = true;
+                themeItems[3].transform.position = themeItemsEmpty[0].position;
+            }
+            else if (CameraChanger.CounterCameras > 1 && isCameraChanged)
+                themeItems[3].transform.position = themeItemsEmpty[1].position;
+            yield return null;
         }
-        else if (CameraChanger.CounterCameras == 1 && !isCameraChanged)
-        {
-            isCameraChanged = true;
-            themeItems[3].transform.position = themeItemsEmpty[0].position;
-        }
-        else if (CameraChanger.CounterCameras > 1 && isCameraChanged)
-            themeItems[3].transform.position = themeItemsEmpty[1].position;
-        yield return new WaitForSeconds(0.01f);
-        isCourTransformPassed = true;
     }
 }

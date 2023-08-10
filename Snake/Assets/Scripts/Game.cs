@@ -62,6 +62,7 @@ public class Game : MonoBehaviour
 
     void Start()
     {
+        Pause.isLanguageSet = false;
         colInstance = GetComponentInChildren<Col>();
         TimerTextForTasks.text = string.Empty;
         DistanceBetweenHead *= DistanceBetweenHead;

@@ -224,6 +224,12 @@ public class ThemeChanger : MonoBehaviour
         rewardObj.SetActive(true);
         int index = new();
         PlaySound(1);
+        bool isAllThemesBought = true;
+        for (int i = 0; i < themes.Length; i++)
+            if (!themes[i].IsThemeBought)
+                isAllThemesBought = false;
+        if (isAllThemesBought)
+            return;
         while (themes[index].IsThemeBought)
             index = UnityEngine.Random.Range(3, themes.Length);
         themes[index].IsThemeBought = true;
@@ -292,13 +298,14 @@ public class ThemeChanger : MonoBehaviour
             textsOfMapRu = textsOfMapTr;
             levelLanguageRu = levelLanguageTr;
         }
-
         for (int i = 0; i < ThemeCount; i++)
             themes[i].Initiliaze(textsOfMapRu[i], shopTextStrsRu);
         themes[ThemeNumber].SetMapName();
+        print(shopTextStrsEn);
         themes[ThemeNumber].LockButton();
         if (Pause.IsSceneFirst)
         {
+            Pause.isLanguageSet = true;
             ChooseLevel();
             Game.MultiplierForTasks = (float)UnityEngine.Random.Range(11, 12 + 1) / 10;
         }
