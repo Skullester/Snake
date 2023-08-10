@@ -37,18 +37,16 @@ public class Shop : MonoBehaviour
         themeInstance.Initiliaze(materialsFor3D);
         canvas = GetComponentOfObject<Canvas>("Canvas") as Canvas;
         snakeObj = GetObject("Snake");
-        shopSnakesObj.SetActive(false);
-        canvasShopObj.SetActive(false);
     }
 
     public void Set3DMenu(bool condition)
     {
         canvas.enabled = condition;
-        //snakeObj.SetActive(condition);
+        snakeObj.SetActive(condition);
         shopSnakesObj.SetActive(!condition);
         canvasShopObj.SetActive(!condition);
         themeInstance.Set3DOptions();
-        themeInstance.SetItems(!condition);
+        themeInstance.SetItems(condition);
     }
 
     void OnMouseEnter()
