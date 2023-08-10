@@ -232,7 +232,6 @@ public class Theme : MonoBehaviour
     {
         if (!Pause.IsSceneFirst)
             return;
-
         if (IsThemeBought)
             priceText.text = shopTextStrs[0] + " " + shopTextStrs[3];
         else

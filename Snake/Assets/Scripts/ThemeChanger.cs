@@ -332,9 +332,6 @@ public class ThemeChanger : MonoBehaviour
     {
         if (Pause.IsSceneFirst)
             btnPlayMode = GameObject.Find("PlaymodeBtn").GetComponent<Button>();
-        if (!LoadScreen.IsGameStarted)
-            for (int i = 0; i < themes.Length; i++)
-                themes[i].ChangeTheme();
         StartCoroutine(StartCour());
         if (PlayerPrefs.HasKey("0"))
         {
