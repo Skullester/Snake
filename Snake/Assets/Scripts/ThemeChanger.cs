@@ -13,6 +13,9 @@ public class ThemeChanger : MonoBehaviour
     private Button btnPlayMode;
 
     [SerializeField]
+    private Button btnPlayMode3D;
+
+    [SerializeField]
     private Animator animGratitude;
 
     [SerializeField]
@@ -23,6 +26,9 @@ public class ThemeChanger : MonoBehaviour
 
     [Header("Предметы")]
     public GameObject[] ThemeItems;
+
+    [Header("Предметы 3D")]
+    public GameObject[] ThemeItems3D;
 
     [SerializeField, Header("Солнце")]
     private Light _sun;
@@ -60,6 +66,12 @@ public class ThemeChanger : MonoBehaviour
 
     [SerializeField, Header("Текст режима")]
     private TMP_Text textPlaymode;
+
+    [SerializeField]
+    private TMP_Text textPlayMode3D;
+
+    [SerializeField]
+    private TMP_Text textDifficult3D;
 
     [SerializeField, Header("Спрайты экрана поражения")]
     private Sprite[] spritesOfScreensOver;
@@ -178,6 +190,12 @@ public class ThemeChanger : MonoBehaviour
 
     void Awake()
     {
+        if (Theme.is3D && UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex != 1)
+        {
+            ThemeItems = ThemeItems3D;
+            textPlaymode = textPlayMode3D;
+            textDifficult = textDifficult3D;
+        }
         _themeSounds[0] = soundClassic;
         _themeSounds[1] = soundLava;
         _themeSounds[2] = soundIce;
@@ -332,6 +350,10 @@ public class ThemeChanger : MonoBehaviour
     {
         if (Pause.IsSceneFirst)
             btnPlayMode = GameObject.Find("PlaymodeBtn").GetComponent<Button>();
+        if (Theme.is3D)
+        {
+            btnPlayMode = btnPlayMode3D;
+        }
         StartCoroutine(StartCour());
         if (PlayerPrefs.HasKey("0"))
         {

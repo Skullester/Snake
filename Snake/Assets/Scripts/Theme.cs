@@ -114,6 +114,9 @@ public class Theme : MonoBehaviour
     [SerializeField, Space(10), Header("Предметы")]
     private GameObject[] Items;
 
+    [SerializeField, Space(10), Header("Предметы")]
+    private GameObject[] Items3D;
+
     [SerializeField, Header("Лого")]
     private Image imgLogo;
 
@@ -162,7 +165,7 @@ public class Theme : MonoBehaviour
 
     [SerializeField]
     private ThemeChanger themeChanger;
-    private static bool is3D;
+    public static bool is3D;
 
     [Header("Ссылки на 3D:")]
     [SerializeField]
@@ -201,9 +204,12 @@ public class Theme : MonoBehaviour
     [SerializeField]
     private TMP_Text mapNameText3D;
 
+    [SerializeField, Header("Рендеры змейки")]
+    private Renderer[] renderersSnake3D;
+
     void Awake()
     {
-        /*   is3D = true; */
+        is3D = true;
         ChangeReferences();
         isThemePassed = false;
         themeItems = themeChanger.ThemeItems;
@@ -327,8 +333,9 @@ public class Theme : MonoBehaviour
 
     private void ChangeReferences()
     {
-        if (is3D)
+        if (is3D && UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex != 1)
         {
+            Items = Items3D;
             btnPlaymode = btnPlaymode3D;
             panelImg = panelImg3D;
             btnChangeMapImg = btnChangeMapImg3D;
@@ -340,6 +347,7 @@ public class Theme : MonoBehaviour
             btnDifficult = btnDifficult3D;
             shopBtn = shopBtn3D;
             textHint = textHint3D;
+            renderersSnake = renderersSnake3D;
         }
     }
 
@@ -424,7 +432,7 @@ public class Theme : MonoBehaviour
 
     private void Update()
     {
-        if (isCourTransformPassed && ThemeChanger.ThemeNumber == 3)
+        if (is3D && ThemeChanger.ThemeNumber == 3 && isCourTransformPassed)
             StartCoroutine(CourTransform());
     }
 

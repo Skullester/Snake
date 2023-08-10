@@ -44,11 +44,11 @@ public class Shop : MonoBehaviour
     public void Set3DMenu(bool condition)
     {
         canvas.enabled = condition;
-        snakeObj.SetActive(condition);
+        //snakeObj.SetActive(condition);
         shopSnakesObj.SetActive(!condition);
         canvasShopObj.SetActive(!condition);
         themeInstance.Set3DOptions();
-        themeInstance.SetItems(condition);
+        themeInstance.SetItems(!condition);
     }
 
     void OnMouseEnter()
