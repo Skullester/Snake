@@ -1193,13 +1193,6 @@ MonoBehaviour:
   - {fileID: 1316415806}
   - {fileID: 4075739451458692096}
   - {fileID: 8463103879220745516}
-  Items3D:
-  - {fileID: 1039714503}
-  - {fileID: 1878002106}
-  - {fileID: 60618590}
-  - {fileID: 1961442295}
-  - {fileID: 199961296}
-  - {fileID: 1864434816}
   imgLogo: {fileID: 7357246081420066602}
   animLogoSnake: {fileID: 5435388908324337378}
   animLogoGameOver: {fileID: 0}
@@ -1214,24 +1207,6 @@ MonoBehaviour:
   textHint: {fileID: 682397385}
   IsThemeBought: 0
   themeChanger: {fileID: 3098136257895859273}
-  btnPlaymode3D: {fileID: 1302505482}
-  unlockIm3D: {fileID: 0}
-  blockBtnObj3D: {fileID: 434457878}
-  blockBtn3D: {fileID: 2550489458340234016}
-  startGameBtnImg3D: {fileID: 2483196148441452535}
-  imgLogo3D: {fileID: 815857056}
-  btnDifficult3D: {fileID: 641067463}
-  shopBtn3D: {fileID: 842104685}
-  textHint3D: {fileID: 536631086}
-  panelImg3D: {fileID: 1767854292}
-  btnChangeMapImg3D: {fileID: 1172238723}
-  mapNameText3D: {fileID: 378463968}
-  renderersSnake3D:
-  - {fileID: 1682011965}
-  - {fileID: 1925165885}
-  - {fileID: 1942082712}
-  - {fileID: 967125702}
-  - {fileID: 611967577}
 --- !u!108 &170090833 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 3258420621898879672, guid: 36e4fb7736642f34b83e993846a7264b,
@@ -1824,7 +1799,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &215275213
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3646,12 +3621,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 378463966}
   m_CullTransparentMesh: 1
---- !u!1 &410193070 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 558431378104052623, guid: 93c1aa6719fcaaf45ae1b8f1c16eca0c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1366802679}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &412345946
 GameObject:
   m_ObjectHideFlags: 0
@@ -5285,18 +5254,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e745b0f27854c4649b7182ef5ad26fec, type: 3}
---- !u!1 &571665234 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3836386095172866899, guid: 37257567265f25c4dbd16ff98d7ff180,
-    type: 3}
-  m_PrefabInstance: {fileID: 795088210}
-  m_PrefabAsset: {fileID: 0}
---- !u!23 &611967577 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 476700816059139800, guid: b2e0d6589095ae14db8a8ff16d091090,
-    type: 3}
-  m_PrefabInstance: {fileID: 1925165874}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &631603077
 GameObject:
   m_ObjectHideFlags: 0
@@ -6516,13 +6473,6 @@ MonoBehaviour:
   - {fileID: 1316415806}
   - {fileID: 4075739451458692096}
   - {fileID: 8463103879220745516}
-  Items3D:
-  - {fileID: 1039714503}
-  - {fileID: 1878002106}
-  - {fileID: 60618590}
-  - {fileID: 1961442295}
-  - {fileID: 199961296}
-  - {fileID: 1864434816}
   imgLogo: {fileID: 7357246081420066602}
   animLogoSnake: {fileID: 5435388908324337378}
   animLogoGameOver: {fileID: 0}
@@ -6537,24 +6487,6 @@ MonoBehaviour:
   textHint: {fileID: 682397385}
   IsThemeBought: 0
   themeChanger: {fileID: 3098136257895859273}
-  btnPlaymode3D: {fileID: 1302505482}
-  unlockIm3D: {fileID: 0}
-  blockBtnObj3D: {fileID: 434457878}
-  blockBtn3D: {fileID: 2550489458340234016}
-  startGameBtnImg3D: {fileID: 2483196148441452535}
-  imgLogo3D: {fileID: 815857056}
-  btnDifficult3D: {fileID: 641067463}
-  shopBtn3D: {fileID: 842104685}
-  textHint3D: {fileID: 536631086}
-  panelImg3D: {fileID: 1767854292}
-  btnChangeMapImg3D: {fileID: 1172238723}
-  mapNameText3D: {fileID: 378463968}
-  renderersSnake3D:
-  - {fileID: 1682011965}
-  - {fileID: 1925165885}
-  - {fileID: 1942082712}
-  - {fileID: 967125702}
-  - {fileID: 611967577}
 --- !u!1 &732518965
 GameObject:
   m_ObjectHideFlags: 0
@@ -7554,13 +7486,6 @@ MonoBehaviour:
   - {fileID: 1316415806}
   - {fileID: 4075739451458692096}
   - {fileID: 8463103879220745516}
-  Items3D:
-  - {fileID: 1039714503}
-  - {fileID: 1878002106}
-  - {fileID: 60618590}
-  - {fileID: 1961442295}
-  - {fileID: 199961296}
-  - {fileID: 1864434816}
   imgLogo: {fileID: 7357246081420066602}
   animLogoSnake: {fileID: 5435388908324337378}
   animLogoGameOver: {fileID: 0}
@@ -7575,24 +7500,6 @@ MonoBehaviour:
   textHint: {fileID: 682397385}
   IsThemeBought: 0
   themeChanger: {fileID: 3098136257895859273}
-  btnPlaymode3D: {fileID: 1302505482}
-  unlockIm3D: {fileID: 0}
-  blockBtnObj3D: {fileID: 434457878}
-  blockBtn3D: {fileID: 2550489458340234016}
-  startGameBtnImg3D: {fileID: 2483196148441452535}
-  imgLogo3D: {fileID: 815857056}
-  btnDifficult3D: {fileID: 641067463}
-  shopBtn3D: {fileID: 842104685}
-  textHint3D: {fileID: 536631086}
-  panelImg3D: {fileID: 1767854292}
-  btnChangeMapImg3D: {fileID: 1172238723}
-  mapNameText3D: {fileID: 378463968}
-  renderersSnake3D:
-  - {fileID: 1682011965}
-  - {fileID: 1925165885}
-  - {fileID: 1942082712}
-  - {fileID: 967125702}
-  - {fileID: 611967577}
 --- !u!1 &834685573
 GameObject:
   m_ObjectHideFlags: 0
@@ -9215,12 +9122,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!23 &967125702 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 4954240920036398672, guid: b2e0d6589095ae14db8a8ff16d091090,
-    type: 3}
-  m_PrefabInstance: {fileID: 1925165874}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &972244958 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2423663360054307576, guid: 6296dd4fda7ee944eba47d8f447a397d,
@@ -9884,7 +9785,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1045718579
 Transform:
   m_ObjectHideFlags: 0
@@ -9925,7 +9826,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1051480349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10864,13 +10765,6 @@ MonoBehaviour:
   - {fileID: 1316415806}
   - {fileID: 4075739451458692096}
   - {fileID: 8463103879220745516}
-  Items3D:
-  - {fileID: 1039714503}
-  - {fileID: 1878002106}
-  - {fileID: 60618590}
-  - {fileID: 1961442295}
-  - {fileID: 199961296}
-  - {fileID: 1864434816}
   imgLogo: {fileID: 7357246081420066602}
   animLogoSnake: {fileID: 5435388908324337378}
   animLogoGameOver: {fileID: 0}
@@ -10885,24 +10779,6 @@ MonoBehaviour:
   textHint: {fileID: 682397385}
   IsThemeBought: 0
   themeChanger: {fileID: 3098136257895859273}
-  btnPlaymode3D: {fileID: 1302505482}
-  unlockIm3D: {fileID: 0}
-  blockBtnObj3D: {fileID: 434457878}
-  blockBtn3D: {fileID: 2550489458340234016}
-  startGameBtnImg3D: {fileID: 2483196148441452535}
-  imgLogo3D: {fileID: 815857056}
-  btnDifficult3D: {fileID: 641067463}
-  shopBtn3D: {fileID: 842104685}
-  textHint3D: {fileID: 536631086}
-  panelImg3D: {fileID: 1767854292}
-  btnChangeMapImg3D: {fileID: 1172238723}
-  mapNameText3D: {fileID: 378463968}
-  renderersSnake3D:
-  - {fileID: 1682011965}
-  - {fileID: 1925165885}
-  - {fileID: 1942082712}
-  - {fileID: 967125702}
-  - {fileID: 611967577}
 --- !u!1 &1109153224
 GameObject:
   m_ObjectHideFlags: 0
@@ -11637,12 +11513,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1146551051}
   m_CullTransparentMesh: 1
---- !u!1 &1147612186 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7444884888547023654, guid: 75ed579e12c87b04fb43ecc81b2feac4,
-    type: 3}
-  m_PrefabInstance: {fileID: 530857890}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1149160457
 GameObject:
   m_ObjectHideFlags: 0
@@ -12020,12 +11890,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!1 &1186791275 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2095369455824533341, guid: a04d2a26efc9da24fa7eb712f76b0e74,
-    type: 3}
-  m_PrefabInstance: {fileID: 1420128846}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1188233397
 GameObject:
   m_ObjectHideFlags: 0
@@ -12824,6 +12688,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4941465834884734300, guid: ae156c63bdaffac44a7718eb17ffd021,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 5374852763511562734, guid: ae156c63bdaffac44a7718eb17ffd021,
         type: 3}
@@ -15047,12 +14916,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1423147226}
   m_CullTransparentMesh: 1
---- !u!1 &1426112010 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 873457566537704790, guid: 272f1a89a9ff46d4990dd45ca669784c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1882929450}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1448815298
 GameObject:
   m_ObjectHideFlags: 0
@@ -15611,6 +15474,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1049712234655773376, guid: b2e0d6589095ae14db8a8ff16d091090,
         type: 3}
+      propertyPath: m_AllowMSAA
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1049712234655773376, guid: b2e0d6589095ae14db8a8ff16d091090,
+        type: 3}
       propertyPath: m_ClearFlags
       value: 1
       objectReference: {fileID: 0}
@@ -15658,6 +15526,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1136292495636141230, guid: b2e0d6589095ae14db8a8ff16d091090,
+        type: 3}
+      propertyPath: m_AllowMSAA
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1343315832380500644, guid: b2e0d6589095ae14db8a8ff16d091090,
         type: 3}
@@ -15812,7 +15685,7 @@ PrefabInstance:
     - target: {fileID: 4746176679752284295, guid: b2e0d6589095ae14db8a8ff16d091090,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4954240920036398672, guid: b2e0d6589095ae14db8a8ff16d091090,
         type: 3}
@@ -15969,6 +15842,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7686388739978765513, guid: b2e0d6589095ae14db8a8ff16d091090,
+        type: 3}
+      propertyPath: m_AllowMSAA
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7733926202094768433, guid: b2e0d6589095ae14db8a8ff16d091090,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -15978,6 +15856,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8830914352053260015, guid: b2e0d6589095ae14db8a8ff16d091090,
+        type: 3}
+      propertyPath: m_AllowMSAA
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4342743796758598717, guid: b2e0d6589095ae14db8a8ff16d091090, type: 3}
@@ -16232,6 +16115,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0.056
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729730056379309561, guid: 929bda9489364a04f8d8543b1d1340fa,
+        type: 3}
+      propertyPath: m_AllowMSAA
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7269285868130984095, guid: 929bda9489364a04f8d8543b1d1340fa,
         type: 3}
@@ -17828,12 +17716,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1678387714}
   m_CullTransparentMesh: 1
---- !u!23 &1682011965 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 7733926202094768433, guid: b2e0d6589095ae14db8a8ff16d091090,
-    type: 3}
-  m_PrefabInstance: {fileID: 1925165874}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1697934923
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18675,12 +18557,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1721586316}
   m_CullTransparentMesh: 1
---- !u!1 &1726872676 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 731494068965301952, guid: 5729893dd271a27499e4eb285f5d22a8,
-    type: 3}
-  m_PrefabInstance: {fileID: 1013904524}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1732453137
 GameObject:
   m_ObjectHideFlags: 0
@@ -19567,7 +19443,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1829595551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20129,12 +20005,6 @@ PrefabInstance:
 --- !u!4 &1864434815 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7249979397181995342, guid: 8aa41417c9fad4b409950ae1b784a222,
-    type: 3}
-  m_PrefabInstance: {fileID: 1864434814}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1864434816 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8306683256674716437, guid: 8aa41417c9fad4b409950ae1b784a222,
     type: 3}
   m_PrefabInstance: {fileID: 1864434814}
   m_PrefabAsset: {fileID: 0}
@@ -21438,7 +21308,7 @@ PrefabInstance:
     - target: {fileID: 4746176679752284295, guid: b2e0d6589095ae14db8a8ff16d091090,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4954240920036398672, guid: b2e0d6589095ae14db8a8ff16d091090,
         type: 3}
@@ -21884,12 +21754,6 @@ MonoBehaviour:
   _gameOver: {fileID: 0}
   _audioSourceSnake: {fileID: 0}
   _audioSourceGameOver: {fileID: 0}
---- !u!23 &1925165885 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 32825950893194012, guid: b2e0d6589095ae14db8a8ff16d091090,
-    type: 3}
-  m_PrefabInstance: {fileID: 1925165874}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1928312653
 GameObject:
   m_ObjectHideFlags: 0
@@ -21969,12 +21833,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1928312653}
   m_CullTransparentMesh: 1
---- !u!23 &1942082712 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 4240437823013303709, guid: b2e0d6589095ae14db8a8ff16d091090,
-    type: 3}
-  m_PrefabInstance: {fileID: 1925165874}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1942688269
 GameObject:
   m_ObjectHideFlags: 0
@@ -22269,12 +22127,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1945231565}
   m_CullTransparentMesh: 1
---- !u!1 &1961442295 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8306683256674716437, guid: 8aa41417c9fad4b409950ae1b784a222,
-    type: 3}
-  m_PrefabInstance: {fileID: 1697934923}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1976485603
 GameObject:
   m_ObjectHideFlags: 0
@@ -23464,13 +23316,6 @@ MonoBehaviour:
   - {fileID: 1316415806}
   - {fileID: 4075739451458692096}
   - {fileID: 8463103879220745516}
-  Items3D:
-  - {fileID: 1039714503}
-  - {fileID: 1878002106}
-  - {fileID: 60618590}
-  - {fileID: 1961442295}
-  - {fileID: 199961296}
-  - {fileID: 1864434816}
   imgLogo: {fileID: 7357246081420066602}
   animLogoSnake: {fileID: 5435388908324337378}
   animLogoGameOver: {fileID: 0}
@@ -23485,24 +23330,6 @@ MonoBehaviour:
   textHint: {fileID: 682397385}
   IsThemeBought: 0
   themeChanger: {fileID: 3098136257895859273}
-  btnPlaymode3D: {fileID: 1302505482}
-  unlockIm3D: {fileID: 0}
-  blockBtnObj3D: {fileID: 434457878}
-  blockBtn3D: {fileID: 2550489458340234016}
-  startGameBtnImg3D: {fileID: 2483196148441452535}
-  imgLogo3D: {fileID: 815857056}
-  btnDifficult3D: {fileID: 641067463}
-  shopBtn3D: {fileID: 842104685}
-  textHint3D: {fileID: 536631086}
-  panelImg3D: {fileID: 1767854292}
-  btnChangeMapImg3D: {fileID: 1172238723}
-  mapNameText3D: {fileID: 378463968}
-  renderersSnake3D:
-  - {fileID: 1682011965}
-  - {fileID: 1925165885}
-  - {fileID: 1942082712}
-  - {fileID: 967125702}
-  - {fileID: 611967577}
 --- !u!114 &69529582943210421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24927,10 +24754,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 927399774098789881, guid: 609c947ef5d8c524896e83b6462159b6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4130115989820264655, guid: 609c947ef5d8c524896e83b6462159b6,
         type: 3}
       propertyPath: m_Name
       value: Walls
+      objectReference: {fileID: 0}
+    - target: {fileID: 4130115989820264655, guid: 609c947ef5d8c524896e83b6462159b6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 5031516402171905489, guid: 609c947ef5d8c524896e83b6462159b6,
         type: 3}
@@ -24986,6 +24823,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6473853373688108886, guid: 609c947ef5d8c524896e83b6462159b6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7743986680021823785, guid: 609c947ef5d8c524896e83b6462159b6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7797190773104556728, guid: 609c947ef5d8c524896e83b6462159b6,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25074,7 +24926,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c05af0977c886a4289669b44a9d1d8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  btnPlayMode3D: {fileID: 1302505481}
   animGratitude: {fileID: 1338836989}
   audioSource: {fileID: 8581759073330734449}
   prices:
@@ -25091,13 +24942,6 @@ MonoBehaviour:
   - {fileID: 639200717}
   - {fileID: 2229042358159705830}
   - {fileID: 1021577956}
-  ThemeItems3D:
-  - {fileID: 1186791275}
-  - {fileID: 1147612186}
-  - {fileID: 1426112010}
-  - {fileID: 571665234}
-  - {fileID: 410193070}
-  - {fileID: 1726872676}
   _sun: {fileID: 170090833}
   osts:
   - {fileID: 8300000, guid: 71008f4ecb9ea14409a0aa6259a741f1, type: 3}
@@ -25178,8 +25022,6 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 15cc8a2b02c5d4149ac4a4770756ba03, type: 2}
   textDifficult: {fileID: 8056794059979997218}
   textPlaymode: {fileID: 278206738}
-  textPlayMode3D: {fileID: 1025416209}
-  textDifficult3D: {fileID: 1423147228}
   spritesOfScreensOver:
   - {fileID: 21300000, guid: b6923be1ad970024d87eda49522c7cee, type: 3}
   - {fileID: 21300000, guid: 482795cd7fe4fb1469ef8e652fe78d39, type: 3}
@@ -25300,7 +25142,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7426761489103685229}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 711443841}
@@ -26588,13 +26430,6 @@ MonoBehaviour:
   - {fileID: 1316415806}
   - {fileID: 4075739451458692096}
   - {fileID: 8463103879220745516}
-  Items3D:
-  - {fileID: 1039714503}
-  - {fileID: 1878002106}
-  - {fileID: 60618590}
-  - {fileID: 1961442295}
-  - {fileID: 199961296}
-  - {fileID: 1864434816}
   imgLogo: {fileID: 7357246081420066602}
   animLogoSnake: {fileID: 5435388908324337378}
   animLogoGameOver: {fileID: 0}
@@ -26609,24 +26444,6 @@ MonoBehaviour:
   textHint: {fileID: 682397385}
   IsThemeBought: 0
   themeChanger: {fileID: 3098136257895859273}
-  btnPlaymode3D: {fileID: 1302505482}
-  unlockIm3D: {fileID: 0}
-  blockBtnObj3D: {fileID: 434457878}
-  blockBtn3D: {fileID: 2550489458340234016}
-  startGameBtnImg3D: {fileID: 2483196148441452535}
-  imgLogo3D: {fileID: 815857056}
-  btnDifficult3D: {fileID: 641067463}
-  shopBtn3D: {fileID: 842104685}
-  textHint3D: {fileID: 536631086}
-  panelImg3D: {fileID: 1767854292}
-  btnChangeMapImg3D: {fileID: 1172238723}
-  mapNameText3D: {fileID: 378463968}
-  renderersSnake3D:
-  - {fileID: 1682011965}
-  - {fileID: 1925165885}
-  - {fileID: 1942082712}
-  - {fileID: 967125702}
-  - {fileID: 611967577}
 --- !u!114 &5825360382040612575
 MonoBehaviour:
   m_ObjectHideFlags: 0
