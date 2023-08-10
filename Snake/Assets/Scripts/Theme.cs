@@ -161,16 +161,16 @@ public class Theme : MonoBehaviour
     {
         isThemePassed = false;
         themeItems = themeChanger.ThemeItems;
+        if (!Pause.IsSceneFirst)
+            return;
+        blockBtn = blockBtnObj.transform.parent.GetComponent<Button>();
+        unlockBtn = unlockText.GetComponentInParent<Button>(true);
     }
 
     void Start()
     {
         foreach (var item in themeItems)
             item.SetActive(false);
-        if (!Pause.IsSceneFirst)
-            return;
-        blockBtn = blockBtnObj.transform.parent.GetComponent<Button>();
-        unlockBtn = unlockText.GetComponentInParent<Button>(true);
     }
 
     public void Initiliaze(
@@ -280,7 +280,7 @@ public class Theme : MonoBehaviour
         btnDifficult.color = color;
         shopBtn.color = color;
         themeNameTextInShop.color = mapNameText.color;
-        if (Pause.isLanguageSet)
+        if (Pause.IsLanguageSet)
             LockButton();
         btnItem.GetComponent<Image>().color = color;
         btnItem.SetActive(isPaidSkin);

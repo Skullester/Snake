@@ -304,7 +304,7 @@ public class ThemeChanger : MonoBehaviour
         themes[ThemeNumber].LockButton();
         if (Pause.IsSceneFirst)
         {
-            Pause.isLanguageSet = true;
+            Pause.IsLanguageSet = true;
             ChooseLevel();
             Game.MultiplierForTasks = (float)UnityEngine.Random.Range(11, 12 + 1) / 10;
         }
@@ -330,6 +330,9 @@ public class ThemeChanger : MonoBehaviour
 
     void Start()
     {
+        if (!LoadScreen.IsGameStarted)
+            for (int i = 0; i < themes.Length; i++)
+                themes[ThemeNumber].ChangeTheme();
         if (Pause.IsSceneFirst)
             btnPlayMode = GameObject.Find("PlaymodeBtn").GetComponent<Button>();
         StartCoroutine(StartCour());

@@ -54,7 +54,7 @@ public class Pause : MonoBehaviour
     private bool isOn;
     public static bool IsSun = true;
     public static bool IsVictory;
-    public static bool isLanguageSet;
+    public static bool IsLanguageSet;
 
     [SerializeField, Header("Экран поражения")]
     private GameObject _gameOver;

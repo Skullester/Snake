@@ -9,11 +9,11 @@ public class LoadScreen : MonoBehaviour
 
     [SerializeField]
     private GameObject loadScreenObj;
-    private static bool isGameStarted;
+    public static bool IsGameStarted;
 
     private void Awake()
     {
-        if (isGameStarted)
+        if (IsGameStarted)
         {
             loadScreenObj.SetActive(false);
             return;
@@ -32,7 +32,7 @@ public class LoadScreen : MonoBehaviour
         yield return new WaitForSeconds(0.6f);
         loadScreenObj.GetComponent<Animator>().SetTrigger("StartGame");
         yield return new WaitForSeconds(1f);
-        isGameStarted = true;
+        IsGameStarted = true;
         loadScreenObj.SetActive(false);
     }
 
