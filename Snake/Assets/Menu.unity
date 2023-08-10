@@ -1209,16 +1209,16 @@ MonoBehaviour:
   themeChanger: {fileID: 3098136257895859273}
   btnPlaymode3D: {fileID: 1302505482}
   unlockIm3D: {fileID: 0}
-  blockBtnObj3D: {fileID: 0}
-  blockBtn3D: {fileID: 0}
-  startGameBtnImg3D: {fileID: 0}
-  imgLogo3D: {fileID: 0}
-  btnDifficult3D: {fileID: 0}
-  shopBtn3D: {fileID: 0}
-  textHint3D: {fileID: 0}
-  panelImg3D: {fileID: 0}
-  btnChangeMapImg3D: {fileID: 0}
-  mapNameText3D: {fileID: 0}
+  blockBtnObj3D: {fileID: 434457878}
+  blockBtn3D: {fileID: 2550489458340234016}
+  startGameBtnImg3D: {fileID: 2483196148441452535}
+  imgLogo3D: {fileID: 815857056}
+  btnDifficult3D: {fileID: 641067463}
+  shopBtn3D: {fileID: 842104685}
+  textHint3D: {fileID: 536631086}
+  panelImg3D: {fileID: 1767854292}
+  btnChangeMapImg3D: {fileID: 1172238723}
+  mapNameText3D: {fileID: 378463968}
 --- !u!108 &170090833 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 3258420621898879672, guid: 36e4fb7736642f34b83e993846a7264b,
@@ -1811,7 +1811,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &215275213
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1933,7 +1933,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 11.003}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1170, y: -4}
+  m_AnchoredPosition: {x: 1171.2, y: -10.200012}
   m_SizeDelta: {x: 632.199, y: 62.881714}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &216654802
@@ -3322,7 +3322,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 11.003}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1167.6, y: 10.700012}
+  m_AnchoredPosition: {x: 1168.2, y: 7.399994}
   m_SizeDelta: {x: 632.199, y: 62.881714}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &349527669
@@ -5533,7 +5533,7 @@ RectTransform:
   m_GameObject: {fileID: 641067460}
   m_LocalRotation: {x: -0.000000012863891, y: 0.0000000074505797, z: 0.09587395, w: 0.99539346}
   m_LocalPosition: {x: 0, y: 0, z: -52.1}
-  m_LocalScale: {x: 0.3070247, y: 0.3070247, z: 0.3070247}
+  m_LocalScale: {x: 0.64082193, y: 0.64082193, z: 0.64082193}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1423147227}
@@ -5541,8 +5541,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 11.003}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1218.4, y: 8.4}
-  m_SizeDelta: {x: 405.62, y: 62.88}
+  m_AnchoredPosition: {x: 1195.49, y: -2.9100037}
+  m_SizeDelta: {x: 128.79, y: 26.46}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &641067462
 MonoBehaviour:
@@ -5613,7 +5613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.20784314}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6425,16 +6425,16 @@ MonoBehaviour:
   themeChanger: {fileID: 3098136257895859273}
   btnPlaymode3D: {fileID: 1302505482}
   unlockIm3D: {fileID: 0}
-  blockBtnObj3D: {fileID: 0}
-  blockBtn3D: {fileID: 0}
-  startGameBtnImg3D: {fileID: 0}
-  imgLogo3D: {fileID: 0}
-  btnDifficult3D: {fileID: 0}
-  shopBtn3D: {fileID: 0}
-  textHint3D: {fileID: 0}
-  panelImg3D: {fileID: 0}
-  btnChangeMapImg3D: {fileID: 0}
-  mapNameText3D: {fileID: 0}
+  blockBtnObj3D: {fileID: 434457878}
+  blockBtn3D: {fileID: 2550489458340234016}
+  startGameBtnImg3D: {fileID: 2483196148441452535}
+  imgLogo3D: {fileID: 815857056}
+  btnDifficult3D: {fileID: 641067463}
+  shopBtn3D: {fileID: 842104685}
+  textHint3D: {fileID: 536631086}
+  panelImg3D: {fileID: 1767854292}
+  btnChangeMapImg3D: {fileID: 1172238723}
+  mapNameText3D: {fileID: 378463968}
 --- !u!1 &732518965
 GameObject:
   m_ObjectHideFlags: 0
@@ -7450,16 +7450,16 @@ MonoBehaviour:
   themeChanger: {fileID: 3098136257895859273}
   btnPlaymode3D: {fileID: 1302505482}
   unlockIm3D: {fileID: 0}
-  blockBtnObj3D: {fileID: 0}
-  blockBtn3D: {fileID: 0}
-  startGameBtnImg3D: {fileID: 0}
-  imgLogo3D: {fileID: 0}
-  btnDifficult3D: {fileID: 0}
-  shopBtn3D: {fileID: 0}
-  textHint3D: {fileID: 0}
-  panelImg3D: {fileID: 0}
-  btnChangeMapImg3D: {fileID: 0}
-  mapNameText3D: {fileID: 0}
+  blockBtnObj3D: {fileID: 434457878}
+  blockBtn3D: {fileID: 2550489458340234016}
+  startGameBtnImg3D: {fileID: 2483196148441452535}
+  imgLogo3D: {fileID: 815857056}
+  btnDifficult3D: {fileID: 641067463}
+  shopBtn3D: {fileID: 842104685}
+  textHint3D: {fileID: 536631086}
+  panelImg3D: {fileID: 1767854292}
+  btnChangeMapImg3D: {fileID: 1172238723}
+  mapNameText3D: {fileID: 378463968}
 --- !u!1 &838009533
 GameObject:
   m_ObjectHideFlags: 0
@@ -10450,16 +10450,16 @@ MonoBehaviour:
   themeChanger: {fileID: 3098136257895859273}
   btnPlaymode3D: {fileID: 1302505482}
   unlockIm3D: {fileID: 0}
-  blockBtnObj3D: {fileID: 0}
-  blockBtn3D: {fileID: 0}
-  startGameBtnImg3D: {fileID: 0}
-  imgLogo3D: {fileID: 0}
-  btnDifficult3D: {fileID: 0}
-  shopBtn3D: {fileID: 0}
-  textHint3D: {fileID: 0}
-  panelImg3D: {fileID: 0}
-  btnChangeMapImg3D: {fileID: 0}
-  mapNameText3D: {fileID: 0}
+  blockBtnObj3D: {fileID: 434457878}
+  blockBtn3D: {fileID: 2550489458340234016}
+  startGameBtnImg3D: {fileID: 2483196148441452535}
+  imgLogo3D: {fileID: 815857056}
+  btnDifficult3D: {fileID: 641067463}
+  shopBtn3D: {fileID: 842104685}
+  textHint3D: {fileID: 536631086}
+  panelImg3D: {fileID: 1767854292}
+  btnChangeMapImg3D: {fileID: 1172238723}
+  mapNameText3D: {fileID: 378463968}
 --- !u!1 &1109153224
 GameObject:
   m_ObjectHideFlags: 0
@@ -11315,11 +11315,11 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 1172238723}
+  m_TargetGraphic: {fileID: 1924732453419184159}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3098136257895859273}
         m_TargetAssemblyTypeName: ThemeChanger, Assembly-CSharp
         m_MethodName: ChangeMap
         m_Mode: 3
@@ -14353,7 +14353,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1423147226}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 2.5645, y: 2.5645, z: 2.5645}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14361,8 +14361,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 308.8, y: -4.7}
-  m_SizeDelta: {x: -6.1827, y: 0.000038147}
+  m_AnchoredPosition: {x: 0.79999924, y: -0.8999996}
+  m_SizeDelta: {x: -82.76, y: -34.23}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1423147228
 MonoBehaviour:
@@ -14412,8 +14412,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15.3
-  m_fontSizeBase: 15.3
+  m_fontSize: 6.77
+  m_fontSizeBase: 6.77
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -22718,16 +22718,16 @@ MonoBehaviour:
   themeChanger: {fileID: 3098136257895859273}
   btnPlaymode3D: {fileID: 1302505482}
   unlockIm3D: {fileID: 0}
-  blockBtnObj3D: {fileID: 0}
-  blockBtn3D: {fileID: 0}
-  startGameBtnImg3D: {fileID: 0}
-  imgLogo3D: {fileID: 0}
-  btnDifficult3D: {fileID: 0}
-  shopBtn3D: {fileID: 0}
-  textHint3D: {fileID: 0}
-  panelImg3D: {fileID: 0}
-  btnChangeMapImg3D: {fileID: 0}
-  mapNameText3D: {fileID: 0}
+  blockBtnObj3D: {fileID: 434457878}
+  blockBtn3D: {fileID: 2550489458340234016}
+  startGameBtnImg3D: {fileID: 2483196148441452535}
+  imgLogo3D: {fileID: 815857056}
+  btnDifficult3D: {fileID: 641067463}
+  shopBtn3D: {fileID: 842104685}
+  textHint3D: {fileID: 536631086}
+  panelImg3D: {fileID: 1767854292}
+  btnChangeMapImg3D: {fileID: 1172238723}
+  mapNameText3D: {fileID: 378463968}
 --- !u!114 &69529582943210421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23725,7 +23725,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.03079979, g: 0.990566, b: 0, a: 1}
+  m_Color: {r: 0.03079979, g: 0.990566, b: 0, a: 0.4117647}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -24515,7 +24515,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7426761489103685229}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 711443841}
@@ -25826,7 +25826,7 @@ MonoBehaviour:
   btnDifficult3D: {fileID: 641067463}
   shopBtn3D: {fileID: 842104685}
   textHint3D: {fileID: 536631086}
-  panelImg3D: {fileID: 0}
+  panelImg3D: {fileID: 1767854292}
   btnChangeMapImg3D: {fileID: 1172238723}
   mapNameText3D: {fileID: 378463968}
 --- !u!114 &5825360382040612575

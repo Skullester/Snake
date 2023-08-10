@@ -203,7 +203,7 @@ public class Theme : MonoBehaviour
 
     void Awake()
     {
-        is3D = false;
+        /*   is3D = true; */
         ChangeReferences();
         isThemePassed = false;
         themeItems = themeChanger.ThemeItems;
