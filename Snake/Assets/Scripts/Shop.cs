@@ -6,15 +6,15 @@ using System;
 
 public class Shop : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject[] purchaseObjects;
     private Theme themeInstance;
-    private Canvas canvas;
+    private Canvas canvasOld;
     private GameObject snakeObj;
 
-    [SerializeField]
-    private GameObject shopSnakesObj;
+    private static GameObject shopSnakesObj;
 
-    [SerializeField]
-    private GameObject canvasShopObj;
+    private static GameObject canvasShopObj;
     private Renderer[] renderers;
     private List<Material> listDefaults = new List<Material>();
 
@@ -23,6 +23,8 @@ public class Shop : MonoBehaviour
 
     [SerializeField]
     private Material[] materialsFor3D;
+
+    void Awake() { }
 
     void Start()
     {
@@ -35,18 +37,26 @@ public class Shop : MonoBehaviour
         }
         themeInstance = GetComponent<Theme>();
         themeInstance.Initiliaze(materialsFor3D);
-        canvas = GetComponentOfObject<Canvas>("Canvas") as Canvas;
+        canvasOld = GetComponentOfObject<Canvas>("Canvas") as Canvas;
         snakeObj = GetObject("Snake");
+        shopSnakesObj = GetObject("ShopSnakes");
+        canvasShopObj = GetObject("CanvasShop");
     }
 
     public void Set3DMenu(bool condition)
     {
-        canvas.enabled = condition;
+        canvasOld.enabled = condition;
         snakeObj.SetActive(condition);
-        shopSnakesObj.SetActive(!condition);
-        canvasShopObj.SetActive(!condition);
+        ActivateObjects(!condition);
         themeInstance.Set3DOptions();
         themeInstance.SetItems(condition);
+    }
+
+    private void PurchaseItem(bool condition)
+    {
+        ActivateObjects(condition);
+        foreach (var item in purchaseObjects)
+            item.SetActive(true);
     }
 
     void OnMouseEnter()
@@ -57,12 +67,27 @@ public class Shop : MonoBehaviour
     void OnMouseOver()
     {
         if (Input.GetButtonDown("Fire1"))
+        {
+            PurchaseItem(false);
             SetMaterial(listDefaults);
+        }
     }
 
     void OnMouseExit()
     {
         SetMaterial(listDefaults);
+    }
+
+    private void ActivateObjects(bool condition)
+    {
+        ActivateChildren(shopSnakesObj, condition);
+        ActivateChildren(canvasShopObj, condition);
+    }
+
+    private void ActivateChildren(GameObject obj, bool condition)
+    {
+        for (int i = 0; i < obj.transform.childCount; i++)
+            obj.transform.GetChild(i).gameObject.SetActive(condition);
     }
 
     private void SetMaterial(Material material)

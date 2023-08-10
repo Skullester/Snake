@@ -16,11 +16,7 @@ public class CameraChanger : MonoBehaviour
     public void CameraManager()
     {
         for (int i = 0; i < countOfCameras; i++)
-        {
-            _cams[i].SetActive(false);
-            if (i == CounterCameras)
-                _cams[i].SetActive(true);
-        }
+            _cams[i].SetActive(i == CounterCameras);
     }
 
     public void ChangeCamera()
