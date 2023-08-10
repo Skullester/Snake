@@ -97,6 +97,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Glass
       objectReference: {fileID: 0}
+    - target: {fileID: 5484632523756944109, guid: 8c2473f40e7cc8e4e93abedc2562d1a4,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.06726265
+      objectReference: {fileID: 0}
+    - target: {fileID: 5484632523756944109, guid: 8c2473f40e7cc8e4e93abedc2562d1a4,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.066021405
+      objectReference: {fileID: 0}
+    - target: {fileID: 5484632523756944109, guid: 8c2473f40e7cc8e4e93abedc2562d1a4,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0.03680852
+      objectReference: {fileID: 0}
+    - target: {fileID: 5484632523756944109, guid: 8c2473f40e7cc8e4e93abedc2562d1a4,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -0.0027977359
+      objectReference: {fileID: 0}
     - target: {fileID: 5912688958430506548, guid: 8c2473f40e7cc8e4e93abedc2562d1a4,
         type: 3}
       propertyPath: m_RootOrder

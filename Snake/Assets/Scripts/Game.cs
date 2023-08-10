@@ -62,6 +62,7 @@ public class Game : MonoBehaviour
 
     void Start()
     {
+        textHintObj.GetComponent<TMP_Text>().color = ThemeChanger.CurrentThemeColor;
         Pause.IsLanguageSet = false;
         colInstance = GetComponentInChildren<Col>();
         TimerTextForTasks.text = string.Empty;
@@ -215,7 +216,6 @@ public class Game : MonoBehaviour
         yield return new WaitForSeconds(1f);
         _timer.text = "1";
         yield return new WaitForSeconds(1f);
-        textHintObj.SetActive(false);
         _timer.text = string.Empty;
         isGameStarted = true;
         Col.isGameOver = false;

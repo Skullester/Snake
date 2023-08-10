@@ -87,6 +87,9 @@ public class Pause : MonoBehaviour
     private TMP_Text _requiresText;
     public static float RequireApples = 3;
 
+    [SerializeField]
+    private Image gameOverBackToMenuBtn;
+
     [SerializeField, Header("Volume")]
     private Volume _vol;
     public static DepthOfField Dof;
@@ -192,6 +195,7 @@ public class Pause : MonoBehaviour
             LoadSettings();
         if (IsSceneFirst)
             return;
+        gameOverBackToMenuBtn.color = ThemeChanger.CurrentThemeColor;
         Cursor.lockState = CursorLockMode.Locked;
         if (_vol.profile.TryGet<DepthOfField>(out var tmp))
             Dof = tmp;
@@ -300,7 +304,10 @@ public class Pause : MonoBehaviour
     public void BackToMenuVictory()
     {
         Save();
-        victoryBackToMenuAnim.SetTrigger("Victory");
+        if (RestartGameAnim.gameObject.activeSelf)
+            RestartGameAnim.SetTrigger("Restart");
+        else
+            victoryBackToMenuAnim.SetTrigger("Victory");
         StartCoroutine(BackToMenuCour());
     }
 
