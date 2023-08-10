@@ -220,12 +220,6 @@ public class Theme : MonoBehaviour
             audioSource.Play();
             isThemePassed = true;
         }
-        else if (index > 2)
-        {
-            audioSource.clip = ostAudioClip;
-            audioSource.Play();
-            isThemePassed = false;
-        }
     }
 
     public void LockButton()
