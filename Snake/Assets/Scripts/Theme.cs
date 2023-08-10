@@ -232,10 +232,7 @@ public class Theme : MonoBehaviour
     {
         if (!Pause.IsSceneFirst)
             return;
-        for (int i = 0; i < shopTextStrs.Length; i++)
-        {
-            print(shopTextStrs[i] + i);
-        }
+
         if (IsThemeBought)
             priceText.text = shopTextStrs[0] + " " + shopTextStrs[3];
         else
