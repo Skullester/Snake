@@ -306,8 +306,10 @@ MonoBehaviour:
   themeNameTextInShop: {fileID: 1642543212}
   btnPlaymode: {fileID: 202130337}
   blockBtnObj: {fileID: 434457878}
+  blockBtn: {fileID: 434457882}
   priceText: {fileID: 1001362385}
   unlockText: {fileID: 732518967}
+  unlockBtn: {fileID: 412345948}
   shopBtn: {fileID: 842104685}
   panelForAD: {fileID: 0}
   panelForADInTasks: {fileID: 0}
@@ -2058,8 +2060,10 @@ MonoBehaviour:
   themeNameTextInShop: {fileID: 1642543212}
   btnPlaymode: {fileID: 202130337}
   blockBtnObj: {fileID: 434457878}
+  blockBtn: {fileID: 434457882}
   priceText: {fileID: 1001362385}
   unlockText: {fileID: 732518967}
+  unlockBtn: {fileID: 412345948}
   shopBtn: {fileID: 842104685}
   panelForAD: {fileID: 0}
   panelForADInTasks: {fileID: 0}
@@ -2716,8 +2720,10 @@ MonoBehaviour:
   themeNameTextInShop: {fileID: 1642543212}
   btnPlaymode: {fileID: 202130337}
   blockBtnObj: {fileID: 434457878}
+  blockBtn: {fileID: 434457882}
   priceText: {fileID: 1001362385}
   unlockText: {fileID: 732518967}
+  unlockBtn: {fileID: 412345948}
   shopBtn: {fileID: 842104685}
   panelForAD: {fileID: 0}
   panelForADInTasks: {fileID: 0}
@@ -4119,8 +4125,10 @@ MonoBehaviour:
   themeNameTextInShop: {fileID: 1642543212}
   btnPlaymode: {fileID: 202130337}
   blockBtnObj: {fileID: 434457878}
+  blockBtn: {fileID: 434457882}
   priceText: {fileID: 1001362385}
   unlockText: {fileID: 732518967}
+  unlockBtn: {fileID: 412345948}
   shopBtn: {fileID: 842104685}
   panelForAD: {fileID: 0}
   panelForADInTasks: {fileID: 0}
@@ -8102,8 +8110,10 @@ MonoBehaviour:
   themeNameTextInShop: {fileID: 1642543212}
   btnPlaymode: {fileID: 202130337}
   blockBtnObj: {fileID: 434457878}
+  blockBtn: {fileID: 434457882}
   priceText: {fileID: 1001362385}
   unlockText: {fileID: 732518967}
+  unlockBtn: {fileID: 412345948}
   shopBtn: {fileID: 842104685}
   panelForAD: {fileID: 0}
   panelForADInTasks: {fileID: 0}
@@ -10634,8 +10644,10 @@ MonoBehaviour:
   themeNameTextInShop: {fileID: 1642543212}
   btnPlaymode: {fileID: 202130337}
   blockBtnObj: {fileID: 434457878}
+  blockBtn: {fileID: 434457882}
   priceText: {fileID: 1001362385}
   unlockText: {fileID: 732518967}
+  unlockBtn: {fileID: 412345948}
   shopBtn: {fileID: 842104685}
   panelForAD: {fileID: 0}
   panelForADInTasks: {fileID: 0}

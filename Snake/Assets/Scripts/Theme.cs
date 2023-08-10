@@ -30,6 +30,8 @@ public class Theme : MonoBehaviour
 
     [SerializeField, Header("Объект лока кнопки")]
     private GameObject blockBtnObj;
+
+    [SerializeField, Header("Кнопка блока")]
     private Button blockBtn;
     private int index;
     public static int IndexOfSceneBeforeShop;
@@ -40,6 +42,8 @@ public class Theme : MonoBehaviour
 
     [SerializeField, Header("Текст кнопки \"Разблокировать\"")]
     private TMP_Text unlockText;
+
+    [SerializeField, Header("Кнопка покупки")]
     private Button unlockBtn;
     private float price;
 
@@ -161,10 +165,6 @@ public class Theme : MonoBehaviour
     {
         isThemePassed = false;
         themeItems = themeChanger.ThemeItems;
-        if (!Pause.IsSceneFirst)
-            return;
-        blockBtn = blockBtnObj.transform.parent.GetComponent<Button>();
-        unlockBtn = unlockText.GetComponentInParent<Button>(true);
     }
 
     void Start()
