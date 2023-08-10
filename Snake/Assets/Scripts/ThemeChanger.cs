@@ -301,7 +301,6 @@ public class ThemeChanger : MonoBehaviour
         for (int i = 0; i < ThemeCount; i++)
             themes[i].Initiliaze(textsOfMapRu[i], shopTextStrsRu);
         themes[ThemeNumber].SetMapName();
-        print(shopTextStrsEn);
         themes[ThemeNumber].LockButton();
         if (Pause.IsSceneFirst)
         {
