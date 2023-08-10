@@ -14,8 +14,11 @@ public class Hover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void OnPointerEnter(PointerEventData pointerEventData)
     {
-        instanceThemeChanger.PlaySound(2);
-        gameObject.transform.localScale = scale * 1.15f;
+        if (gameObject.CompareTag("Available"))
+        {
+            instanceThemeChanger.PlaySound(2);
+            gameObject.transform.localScale = scale * 1.15f;
+        }
     }
 
     public void OnPointerExit(PointerEventData pointerEventData)

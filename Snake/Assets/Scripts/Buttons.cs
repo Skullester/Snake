@@ -8,7 +8,7 @@ public class Buttons : MonoBehaviour
     private Pause objPause;
 
     [SerializeField]
-    private GameObject shopObj;
+    private Animator shopAnimator;
     private Theme themeInstance;
     private ThemeChanger themeChangerInstance;
 
@@ -33,13 +33,13 @@ public class Buttons : MonoBehaviour
     public void OpenShop()
     {
         Theme.IndexOfSceneBeforeShop = ThemeChanger.ThemeNumber;
-        shopObj.SetActive(true);
+        shopAnimator.SetBool("IsOpen", true);
         themeInstance.AnimateSnake(ThemeChanger.ThemeNumber);
     }
 
     public void BackToMenu()
     {
-        shopObj.SetActive(false);
+        shopAnimator.SetBool("IsOpen", false);
         themeChangerInstance.ChangeTheme(Theme.IndexOfSceneBeforeShop, true);
     }
 

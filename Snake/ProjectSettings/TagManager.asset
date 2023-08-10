@@ -10,6 +10,7 @@ TagManager:
   - ThemeItem
   - Bodies
   - Collected
+  - Available
   layers:
   - Default
   - TransparentFX
