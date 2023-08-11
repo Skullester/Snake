@@ -321,7 +321,7 @@ public class Pause : MonoBehaviour
     public void SoundMute()
     {
         isOn = !isOn;
-        if (menu.activeSelf && !IsSceneFirst)
+        if (SceneManager.GetActiveScene().buildIndex != 2 && menu.activeSelf && !IsSceneFirst)
             AudioListener.pause = true;
         else
             AudioListener.pause = isOn;

@@ -37,10 +37,10 @@ public class Buttons : MonoBehaviour
         themeInstance.AnimateSnake(ThemeChanger.ThemeNumber);
     }
 
-    public void SwitchTo3D()
+    public void SwitchTo3D(int index)
     {
         StartAnim("3D");
-        StartCoroutine(Delay(2, 1f));
+        StartCoroutine(Delay(index, 1f));
     }
 
     private void StartAnim(string name, bool boolState = false, bool isBool = false)

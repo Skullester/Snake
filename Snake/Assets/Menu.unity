@@ -1751,11 +1751,11 @@ MonoBehaviour:
       - m_Target: {fileID: 7823166061530744212}
         m_TargetAssemblyTypeName: Buttons, Assembly-CSharp
         m_MethodName: SwitchTo3D
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -11859,13 +11859,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03223b6f86e35d9478361ce0fc529361, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuSounds: []
+  canvasPurchase: {fileID: 0}
   hoverMaterial: {fileID: 0}
-  materialsFor3D:
-  - {fileID: 2100000, guid: 12a9071553a00f245870d4c7c8ddc19b, type: 2}
-  - {fileID: 2100000, guid: 2278b6366859e1744b9033387727a4e9, type: 2}
-  - {fileID: 2100000, guid: 2278b6366859e1744b9033387727a4e9, type: 2}
-  - {fileID: 2100000, guid: 2278b6366859e1744b9033387727a4e9, type: 2}
-  - {fileID: 2100000, guid: 2278b6366859e1744b9033387727a4e9, type: 2}
+  speedCam: 0
+  t: 0.5
 --- !u!82 &8581759073330734449
 AudioSource:
   m_ObjectHideFlags: 0

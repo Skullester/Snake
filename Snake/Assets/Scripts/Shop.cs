@@ -1,16 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using System;
 
 public class Shop : MonoBehaviour
 {
     [SerializeField]
-    private Canvas canvasPurchase;
+    private AudioClip[] menuSounds;
+    private static AudioSource audioSource;
 
     [SerializeField]
-    private GameObject snakePreview;
+    private Canvas canvasPurchase;
     private Renderer[] renderers;
     private List<Material> listDefaults = new List<Material>();
 
@@ -25,36 +24,37 @@ public class Shop : MonoBehaviour
     private float speedCam;
     private bool isCameraGoing;
 
-    [SerializeField]
-    private float t = 0.5f;
-    private Transform snake;
-
     private void Awake()
     {
+        audioSource = GetObject("Platform").GetComponent<AudioSource>();
         cam = Camera.main.GetComponent<Transform>();
         if (gameObject.CompareTag("ShopSnakes"))
         {
             camPreview = GetComponentInChildren<Camera>(true).transform;
-            print(camPreview.gameObject);
             renderers = GetComponentsInChildren<Renderer>();
             for (int i = 0; i < renderers.Length; i++)
                 listDefaults.Add(renderers[i].sharedMaterial);
         }
-
-        //snake = snakePreview.transform.Find("Snake3D");
         shopSnakes = GetObject("ShopSnakes");
-        startCanvas = GetObject("CanvasShop").GetComponent<Canvas>();
+        startCanvas = GetObject("Canvas").GetComponent<Canvas>();
+    }
+
+    public void PlaySound(int index)
+    {
+        audioSource.PlayOneShot(menuSounds[index]);
     }
 
     void OnMouseEnter()
     {
         if (!isCameraGoing)
+        {
+            PlaySound(0);
             SetMaterial(hoverMaterial);
+        }
     }
 
     public void ActivatePreview(bool condition)
     {
-        //  StartCoroutine(SmoothCamTrans(condition));
         SetCanvas(ref condition);
         isCameraGoing = true;
         StartCoroutine(SmoothCamTrans(true));
@@ -62,6 +62,8 @@ public class Shop : MonoBehaviour
 
     private void SetCanvas(ref bool condition)
     {
+        print(startCanvas);
+        print(condition);
         startCanvas.enabled = !condition;
         canvasPurchase.enabled = condition;
     }
@@ -86,20 +88,15 @@ public class Shop : MonoBehaviour
             camPreviewPos = tmp;
         }
         cam.position = camPos;
-        //Vector3 direction = camPreviewPos - camPos;
-        // Quaternion rotation = Quaternion.LookRotation(direction);
         while (cam.position != camPreview.position)
         {
-            print("a");
             yield return null;
-            // cam.rotation = Quaternion.Lerp(cam.rotation, rotation, t * Time.deltaTime);
             cam.position = Vector3.MoveTowards(
                 cam.position,
                 camPreviewPos,
                 speedCam * Time.deltaTime
             );
         }
-        //  shopSnakes.SetActive(!condition);
     }
 
     void OnMouseExit()
@@ -119,9 +116,6 @@ public class Shop : MonoBehaviour
             renderers[i].sharedMaterial = material[i];
     }
 
-    /// <summary>
-    ///  Find object by (name) and take its component with type (T)
-    /// </summary>
     private Component GetComponentOfObject<T>(string name)
     {
         return GameObject.Find(name).GetComponent(typeof(T));

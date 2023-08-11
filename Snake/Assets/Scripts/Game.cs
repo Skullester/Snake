@@ -7,6 +7,8 @@ using UnityEngine.Serialization;
 
 public class Game : MonoBehaviour
 {
+    public Transform[] spawnPoints;
+
     [Header("AudioSource таймера")]
     public AudioSource AudioSourceTaskTimer;
 
@@ -62,6 +64,7 @@ public class Game : MonoBehaviour
 
     void Start()
     {
+        print(gameObject);
         textHintObj.GetComponent<TMP_Text>().color = ThemeChanger.CurrentThemeColor;
         Pause.IsLanguageSet = false;
         colInstance = GetComponentInChildren<Col>();

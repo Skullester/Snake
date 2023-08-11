@@ -229,7 +229,7 @@ public class ThemeChanger : MonoBehaviour
 
     public void RewardForGame()
     {
-        if (!YandexGame.savesData.IsReward)
+        if (!YandexGame.savesData.IsReward || !Pause.IsSceneFirst)
             return;
         YandexGame.savesData.IsReward = false;
         YandexGame.savesData.IsRewardGiven = true;
