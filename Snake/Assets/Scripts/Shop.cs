@@ -1,9 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Shop : MonoBehaviour
 {
+    [SerializeField]
+    private Image[] spritesItems;
+
+    [SerializeField]
+    private Sprite spriteImg;
+    private static Transform empty;
+    private Button btnBack;
+
     [SerializeField]
     private AudioClip[] menuSounds;
     private static AudioSource audioSource;
@@ -16,7 +25,8 @@ public class Shop : MonoBehaviour
     [SerializeField]
     private Material hoverMaterial;
     private Canvas startCanvas;
-    private GameObject shopSnakes;
+
+    //private GameObject shopSnakes;
     private Transform camPreview;
     private static Transform cam;
 
@@ -35,8 +45,10 @@ public class Shop : MonoBehaviour
             for (int i = 0; i < renderers.Length; i++)
                 listDefaults.Add(renderers[i].sharedMaterial);
         }
-        shopSnakes = GetObject("ShopSnakes");
+        btnBack = GetObject("ButtonBack").GetComponent<Button>();
+        btnBack.onClick.AddListener(() => ActivatePreview(false));
         startCanvas = GetObject("Canvas").GetComponent<Canvas>();
+        empty = GetObject("EmptyObj").transform;
     }
 
     public void PlaySound(int index)
@@ -55,17 +67,11 @@ public class Shop : MonoBehaviour
 
     public void ActivatePreview(bool condition)
     {
-        SetCanvas(ref condition);
-        isCameraGoing = true;
-        StartCoroutine(SmoothCamTrans(true));
-    }
-
-    private void SetCanvas(ref bool condition)
-    {
-        print(startCanvas);
-        print(condition);
+        if (canvasPurchase.enabled)
+            canvasPurchase.enabled = false;
         startCanvas.enabled = !condition;
-        canvasPurchase.enabled = condition;
+        isCameraGoing = condition;
+        SmoothCamTrans(ref condition);
     }
 
     void OnMouseOver()
@@ -77,26 +83,22 @@ public class Shop : MonoBehaviour
         }
     }
 
-    IEnumerator SmoothCamTrans(bool condition)
+    private void SmoothCamTrans(ref bool condition)
     {
-        Vector3 camPos = cam.position;
-        Vector3 camPreviewPos = camPreview.position;
-        if (!condition)
-        {
-            Vector3 tmp = cam.position;
-            camPos = camPreviewPos;
-            camPreviewPos = tmp;
-        }
-        cam.position = camPos;
-        while (cam.position != camPreview.position)
+        if (condition)
+            StartCoroutine(CameraMoving(camPreview.position, condition));
+        else
+            StartCoroutine(CameraMoving(empty.position, condition));
+    }
+
+    private IEnumerator CameraMoving(Vector3 pos, bool condition)
+    {
+        while (cam.position != pos)
         {
             yield return null;
-            cam.position = Vector3.MoveTowards(
-                cam.position,
-                camPreviewPos,
-                speedCam * Time.deltaTime
-            );
+            cam.position = Vector3.MoveTowards(cam.position, pos, speedCam * Time.deltaTime);
         }
+        canvasPurchase.enabled = condition;
     }
 
     void OnMouseExit()

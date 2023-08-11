@@ -161,53 +161,8 @@ public class Theme : MonoBehaviour
     [SerializeField]
     private ThemeChanger themeChanger;
 
-    /*
-    public static bool is3D;
-
-    [Header("Ссылки на 3D:")]
-    [SerializeField]
-    private Image btnPlaymode3D;
-
-    [SerializeField]
-    private Image unlockIm3D;
-
-    [SerializeField]
-    private GameObject blockBtnObj3D;
-
-    [SerializeField]
-    private Button blockBtn3D;
-
-    [SerializeField]
-    private Image startGameBtnImg3D;
-
-    [SerializeField]
-    private Image imgLogo3D;
-
-    [SerializeField]
-    private Image btnDifficult3D;
-
-    [SerializeField]
-    private Image shopBtn3D;
-
-    [SerializeField]
-    private TMP_Text textHint3D;
-
-    [SerializeField]
-    private Image panelImg3D;
-
-    [SerializeField]
-    private Image btnChangeMapImg3D;
-
-    [SerializeField]
-    private TMP_Text mapNameText3D;
-
-    [SerializeField, Header("Рендеры змейки")]
-    private Renderer[] renderersSnake3D; */
-
     void Awake()
     {
-        /*        is3D = true;
-               ChangeReferences(); */
         isThemePassed = false;
         themeItems = themeChanger.ThemeItems;
     }
@@ -312,31 +267,6 @@ public class Theme : MonoBehaviour
         startGameImg.sprite = logoStartGame;
     }
 
-    /*  private void Set3DMenu()
-     {
-         is3D = !is3D;
-     }
- 
-     private void ChangeReferences()
-     {
-         if (is3D && UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex != 1)
-         {
-             Items = Items3D;
-             btnPlaymode = btnPlaymode3D;
-             panelImg = panelImg3D;
-             btnChangeMapImg = btnChangeMapImg3D;
-             mapNameText = mapNameText3D;
-             blockBtnObj = blockBtnObj3D;
-             blockBtn = blockBtn3D;
-             startGameBtnImg = startGameBtnImg3D;
-             imgLogo = imgLogo3D;
-             btnDifficult = btnDifficult3D;
-             shopBtn = shopBtn3D;
-             textHint = textHint3D;
-             renderersSnake = renderersSnake3D;
-         }
-     } */
-
     private void ChangeFirstScene()
     {
         btnPlaymode.color = color;
@@ -418,8 +348,7 @@ public class Theme : MonoBehaviour
 
     private void Update()
     {
-        if ( /* is3D &&  */
-            ThemeChanger.ThemeNumber == 3 && isCourTransformPassed)
+        if (ThemeChanger.ThemeNumber == 3 && isCourTransformPassed)
             StartCoroutine(CourTransform());
     }
 

@@ -4,13 +4,11 @@ public class SpawnApplse : MonoBehaviour
 {
     private Game gameInstance;
 
-    [SerializeField]
-    private GameObject[] items;
+    private static GameObject[] items;
 
     private GameObject _appleTheme;
 
-    [SerializeField]
-    private Transform[] _spawnpoints;
+    private static Transform[] _spawnpoints;
     private bool isDuplicate;
 
     void Awake()
@@ -20,7 +18,8 @@ public class SpawnApplse : MonoBehaviour
 
     void Start()
     {
-        _spawnpoints = gameInstance.spawnPoints;
+        _spawnpoints = gameInstance.SpawnPoints;
+        items = gameInstance.Items;
         _appleTheme = items[ThemeChanger.ThemeNumber];
     }
 
@@ -28,7 +27,6 @@ public class SpawnApplse : MonoBehaviour
     {
         int spawnPoint = Random.Range(0, _spawnpoints.Length);
         Vector3 spawnPosition = _spawnpoints[spawnPoint].position;
-        print(spawnPosition);
         for (int i = 0; i < transform.childCount; i++)
         {
             Transform childObj = transform.GetChild(i);
@@ -46,7 +44,12 @@ public class SpawnApplse : MonoBehaviour
     {
         if (transform.childCount < 4)
         {
-            GameObject obj = Instantiate(_appleTheme, Vector3.down, Quaternion.identity, transform);
+            GameObject obj = Instantiate(
+                _appleTheme,
+                CheckDublicate(),
+                Quaternion.identity,
+                transform
+            );
             SetObjectPosition(obj, 4, -1.65f);
             SetObjectPosition(obj, 1, 1f);
         }

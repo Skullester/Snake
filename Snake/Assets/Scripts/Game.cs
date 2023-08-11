@@ -7,7 +7,10 @@ using UnityEngine.Serialization;
 
 public class Game : MonoBehaviour
 {
-    public Transform[] spawnPoints;
+    public GameObject[] Items;
+
+    [FormerlySerializedAs("spawnPoints")]
+    public Transform[] SpawnPoints;
 
     [Header("AudioSource таймера")]
     public AudioSource AudioSourceTaskTimer;

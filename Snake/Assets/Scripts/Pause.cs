@@ -100,8 +100,11 @@ public class Pause : MonoBehaviour
 
     private void OnDisable() => YandexGame.GetDataEvent -= LoadSettings;
 
+    private bool b;
+
     private void Awake()
     {
+        IsLanguageSet = false;
         themeChanger = GetComponent<ThemeChanger>();
         IsVictory = false;
         IsSceneFirst = SceneManager.GetActiveScene().buildIndex == 0;
@@ -114,8 +117,20 @@ public class Pause : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetButtonDown("Jump"))
+            ScreenCapture.CaptureScreenshot("Screen.png");
         if (!IsSceneFirst && !Col.isGameOver && !IsVictory && Input.GetKeyDown(KeyCode.Tab))
+            /* a(); */
             SetPauseOptions(true, 0);
+    }
+
+    void a()
+    {
+        b = !b;
+        if (b)
+            Time.timeScale = 0f;
+        else
+            Time.timeScale = 1f;
     }
 
     public void PlayBlockSound()

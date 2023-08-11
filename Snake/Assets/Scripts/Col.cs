@@ -24,7 +24,7 @@ public class Col : MonoBehaviour
 
     void Start()
     {
-        isGameOver =false;
+        isGameOver = false;
         if (_vol != null && _vol.profile.TryGet<DepthOfField>(out var tmp))
             _dof = tmp;
     }

@@ -12,10 +12,6 @@ public class ThemeChanger : MonoBehaviour
     private GameObject rewardObj;
     private Button btnPlayMode;
 
-    /*
-        [SerializeField]
-        private Button btnPlayMode3D; */
-
     [SerializeField]
     private Animator animGratitude;
 
@@ -27,9 +23,6 @@ public class ThemeChanger : MonoBehaviour
 
     [Header("Предметы")]
     public GameObject[] ThemeItems;
-
-    /*    [Header("Предметы 3D")]
-       public GameObject[] ThemeItems3D; */
 
     [SerializeField, Header("Солнце")]
     private Light _sun;
@@ -68,12 +61,6 @@ public class ThemeChanger : MonoBehaviour
     [SerializeField, Header("Текст режима")]
     private TMP_Text textPlaymode;
 
-    /*     [SerializeField]
-        private TMP_Text textPlayMode3D;
-    
-        [SerializeField]
-        private TMP_Text textDifficult3D; */
-
     [SerializeField, Header("Спрайты экрана поражения")]
     private Sprite[] spritesOfScreensOver;
 
@@ -107,7 +94,7 @@ public class ThemeChanger : MonoBehaviour
 
     [SerializeField, Header("Экземпляры класса \"Themes\"")]
     private Theme[] themes;
-    private Color[] colors = new Color[ThemeCount];
+    public static Color[] Colors = new Color[ThemeCount];
     private string[] levelLanguageRu =
     {
         "Легко",
@@ -203,16 +190,16 @@ public class ThemeChanger : MonoBehaviour
         materials[3] = aristocration;
         materials[4] = romantic;
         materials[5] = gold;
-        colors[0] = new Color(0.04f, 1f, 0.22f, 0.4f);
-        colors[1] = new Color(0.905f, 0.064f, 0.111f, 0.392f);
-        colors[2] = new Color(0f, 1f, 1f, 0.592f);
-        colors[3] = new Color(0.905f, 0.05f, 0.482f, 0.7f);
-        colors[4] = new Color(0.86f, 0.24f, 0.35f, 0.64f);
-        colors[5] = new Color(1f, 0.39f, 0.06f, 0.572f);
+        Colors[0] = new Color(0.04f, 1f, 0.22f, 0.4f);
+        Colors[1] = new Color(0.905f, 0.064f, 0.111f, 0.392f);
+        Colors[2] = new Color(0f, 1f, 1f, 0.592f);
+        Colors[3] = new Color(0.905f, 0.05f, 0.482f, 0.7f);
+        Colors[4] = new Color(0.86f, 0.24f, 0.35f, 0.64f);
+        Colors[5] = new Color(1f, 0.39f, 0.06f, 0.572f);
         for (int i = 0; i < ThemeCount; i++)
         {
             themes[i].Initiliaze(
-                colors[i],
+                Colors[i],
                 counterSprites[i],
                 _themeSounds[i],
                 spritesOfScreensOver[i],
