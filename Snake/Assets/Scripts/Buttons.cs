@@ -21,7 +21,7 @@ public class Buttons : MonoBehaviour
     public void PlayGame()
     {
         objPause.Save();
-        StartCoroutine(Delay());
+        StartCoroutine(Delay(1, 0.1f));
     }
 
     /*
@@ -33,19 +33,33 @@ public class Buttons : MonoBehaviour
     public void OpenShop()
     {
         Theme.IndexOfSceneBeforeShop = ThemeChanger.ThemeNumber;
-        shopAnimator.SetBool("IsOpen", true);
+        StartAnim("IsOpen", true, true);
         themeInstance.AnimateSnake(ThemeChanger.ThemeNumber);
+    }
+
+    public void SwitchTo3D()
+    {
+        StartAnim("3D");
+        StartCoroutine(Delay(2, 1f));
+    }
+
+    private void StartAnim(string name, bool boolState = false, bool isBool = false)
+    {
+        if (isBool)
+            shopAnimator.SetBool(name, boolState);
+        else
+            shopAnimator.SetTrigger(name);
     }
 
     public void BackToMenu()
     {
-        shopAnimator.SetBool("IsOpen", false);
+        StartAnim("IsOpen", false, true);
         themeChangerInstance.ChangeTheme(Theme.IndexOfSceneBeforeShop, true);
     }
 
-    IEnumerator Delay()
+    IEnumerator Delay(int indexScene, float time)
     {
-        yield return new WaitForSeconds(0.1f);
-        SceneManager.LoadScene(1);
+        yield return new WaitForSeconds(time);
+        SceneManager.LoadScene(indexScene);
     }
 }

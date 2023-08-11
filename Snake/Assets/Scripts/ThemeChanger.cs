@@ -276,7 +276,7 @@ public class ThemeChanger : MonoBehaviour
 
     IEnumerator GratitudeCour()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         animGratitude.SetTrigger("Start");
         yield return new WaitForSeconds(.5f);
         PlaySound(1);

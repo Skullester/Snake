@@ -6,10 +6,15 @@ public class fps : MonoBehaviour
 {
     private TMPro.TMP_Text text;
 
+    [SerializeField]
+    private bool isFps;
+
     void Start()
     {
         text = GetComponent<TMPro.TMP_Text>();
-        StartCoroutine(Cour());
+        text.text = string.Empty;
+        if (isFps)
+            StartCoroutine(Cour());
     }
 
     IEnumerator Cour()
@@ -17,9 +22,7 @@ public class fps : MonoBehaviour
         while (true)
         {
             text.text = ((int)(1 / Time.deltaTime)).ToString() + " FPS";
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.75F);
         }
     }
-
-    void Update() { }
 }

@@ -76,8 +76,6 @@ public class Theme : MonoBehaviour
     [SerializeField, Header("Пустышка")]
     private Transform[] themeItemsEmpty;
     private Material[] matSnake = new Material[5];
-
-    private Material[] mat3D = new Material[5];
     private Sprite spriteOfScreenOver;
     private Sprite logoStartGame;
     private Sprite spriteOfScreenWin;
@@ -253,11 +251,6 @@ public class Theme : MonoBehaviour
         this.IsThemeBought = isThemeBought;
     }
 
-    public void Initiliaze(Material[] mat3D)
-    {
-        this.mat3D = mat3D;
-    }
-
     public void Initiliaze(string mapNameText, string[] shopTextStrs)
     {
         this.mapNameTextStr = mapNameText;
@@ -278,12 +271,6 @@ public class Theme : MonoBehaviour
             audioSource.Play();
             isThemePassed = false;
         }
-    }
-
-    public void Set3DOptions()
-    {
-        for (int i = 0; i < mat3D.Length; i++)
-            renderersObjects[i].sharedMaterial = mat3D[i];
     }
 
     public void LockButton()

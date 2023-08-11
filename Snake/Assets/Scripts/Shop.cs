@@ -7,56 +7,49 @@ using System;
 public class Shop : MonoBehaviour
 {
     [SerializeField]
-    private GameObject[] purchaseObjects;
-    private Theme themeInstance;
-    private Canvas canvasOld;
-    private GameObject snakeObj;
+    private Canvas canvasPurchase;
 
-    private static GameObject shopSnakesObj;
-
-    private static GameObject canvasShopObj;
+    [SerializeField]
+    private GameObject snakePreview;
     private Renderer[] renderers;
     private List<Material> listDefaults = new List<Material>();
 
     [SerializeField]
     private Material hoverMaterial;
+    private Canvas startCanvas;
+    private GameObject shopSnakes;
+    private Transform camPreview;
+    private Transform cam;
 
     [SerializeField]
-    private Material[] materialsFor3D;
+    private float speedCam;
+    private static bool isCameraGoing;
 
-    void Awake() { }
+    [SerializeField]
+    private float t = 0.5f;
+    private Transform snake;
 
-    void Start()
+    private void Awake()
     {
+        cam = Camera.main.GetComponent<Transform>();
         if (gameObject.CompareTag("ShopSnakes"))
         {
             renderers = GetComponentsInChildren<Renderer>();
             for (int i = 0; i < renderers.Length; i++)
                 listDefaults.Add(renderers[i].sharedMaterial);
-            return;
         }
-        themeInstance = GetComponent<Theme>();
-        themeInstance.Initiliaze(materialsFor3D);
-        canvasOld = GetComponentOfObject<Canvas>("Canvas") as Canvas;
-        snakeObj = GetObject("Snake");
-        shopSnakesObj = GetObject("ShopSnakes");
-        canvasShopObj = GetObject("CanvasShop");
+        camPreview = snakePreview.GetComponentInChildren<Camera>().transform;
+        snake = snakePreview.transform.Find("Snake3D");
+        shopSnakes = GetObject("ShopSnakes");
+        startCanvas = GetObject("CanvasShop").GetComponent<Canvas>();
     }
 
-    public void Set3DMenu(bool condition)
+    void Update()
     {
-        canvasOld.enabled = condition;
-        snakeObj.SetActive(condition);
-        ActivateObjects(!condition);
-        themeInstance.Set3DOptions();
-        themeInstance.SetItems(condition);
-    }
-
-    private void PurchaseItem(bool condition)
-    {
-        ActivateObjects(condition);
-        foreach (var item in purchaseObjects)
-            item.SetActive(true);
+        if (gameObject.CompareTag("ShopSnakes"))
+            return;
+        if (isCameraGoing)
+            StartCoroutine(SmoothCamTrans(true));
     }
 
     void OnMouseEnter()
@@ -64,30 +57,66 @@ public class Shop : MonoBehaviour
         SetMaterial(hoverMaterial);
     }
 
+    public void ActivatePreview(bool condition)
+    {
+        //  StartCoroutine(SmoothCamTrans(condition));
+        SetCanvas(ref condition);
+        SetObj(ref condition);
+    }
+
+    private void SetCanvas(ref bool condition)
+    {
+        startCanvas.enabled = !condition;
+        canvasPurchase.enabled = condition;
+    }
+
+    private void SetObj(ref bool condition)
+    {
+        isCameraGoing = true;
+        snake.position = transform.position;
+        snakePreview.SetActive(condition);
+        gameObject.SetActive(false);
+    }
+
     void OnMouseOver()
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            PurchaseItem(false);
+            ActivatePreview(true);
             SetMaterial(listDefaults);
         }
+    }
+
+    IEnumerator SmoothCamTrans(bool condition)
+    {
+        isCameraGoing = false;
+        Vector3 camPos = cam.position;
+        Vector3 camPreviewPos = camPreview.position;
+        if (!condition)
+        {
+            Vector3 tmp = cam.position;
+            camPos = camPreviewPos;
+            camPreviewPos = tmp;
+        }
+        cam.position = camPos;
+        //Vector3 direction = camPreviewPos - camPos;
+        // Quaternion rotation = Quaternion.LookRotation(direction);
+        while (cam.position != camPreview.position)
+        {
+            yield return null;
+            // cam.rotation = Quaternion.Lerp(cam.rotation, rotation, t * Time.deltaTime);
+            cam.position = Vector3.MoveTowards(
+                cam.position,
+                camPreviewPos,
+                speedCam * Time.deltaTime
+            );
+        }
+        shopSnakes.SetActive(!condition);
     }
 
     void OnMouseExit()
     {
         SetMaterial(listDefaults);
-    }
-
-    private void ActivateObjects(bool condition)
-    {
-        ActivateChildren(shopSnakesObj, condition);
-        ActivateChildren(canvasShopObj, condition);
-    }
-
-    private void ActivateChildren(GameObject obj, bool condition)
-    {
-        for (int i = 0; i < obj.transform.childCount; i++)
-            obj.transform.GetChild(i).gameObject.SetActive(condition);
     }
 
     private void SetMaterial(Material material)
