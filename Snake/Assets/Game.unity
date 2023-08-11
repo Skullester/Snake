@@ -3320,7 +3320,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 671f6498e8ecfe44fb450ebcdebedf58, type: 2}
   - {fileID: 2100000, guid: e7d0ed5eafa411345bda10081fde5eb2, type: 2}
   - {fileID: 2100000, guid: e7d0ed5eafa411345bda10081fde5eb2, type: 2}
-  - {fileID: 2100000, guid: 8a5a094a20f16fd439f48dfc73c92773, type: 2}
+  - {fileID: 2100000, guid: 9c6b9e42f73930e42b3141bcf36ad7cb, type: 2}
   - {fileID: 2100000, guid: e7d0ed5eafa411345bda10081fde5eb2, type: 2}
   - {fileID: 2100000, guid: e7d0ed5eafa411345bda10081fde5eb2, type: 2}
   - {fileID: 2100000, guid: e7d0ed5eafa411345bda10081fde5eb2, type: 2}
@@ -17650,7 +17650,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 12a9071553a00f245870d4c7c8ddc19b, type: 2}
+      objectReference: {fileID: 2100000, guid: 5ece0cd9b4ac0484d8f2ec75c650254d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

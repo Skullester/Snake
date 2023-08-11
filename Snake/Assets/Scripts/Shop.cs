@@ -5,11 +5,6 @@ using UnityEngine.UI;
 
 public class Shop : MonoBehaviour
 {
-    [SerializeField]
-    private Image[] spritesItems;
-
-    [SerializeField]
-    private Sprite spriteImg;
     private static Transform empty;
     private Button btnBack;
 
@@ -25,8 +20,6 @@ public class Shop : MonoBehaviour
     [SerializeField]
     private Material hoverMaterial;
     private Canvas startCanvas;
-
-    //private GameObject shopSnakes;
     private Transform camPreview;
     private static Transform cam;
 

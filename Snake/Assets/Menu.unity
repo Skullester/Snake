@@ -1976,12 +1976,12 @@ MonoBehaviour:
   logoImg: {fileID: 631603079}
   fillImg: {fileID: 987742479}
   spritesScreen:
-  - {fileID: 21300000, guid: 2e2c228a8b5bec147969df35e328e470, type: 3}
-  - {fileID: 21300000, guid: eccaaf007400aea4fbc08cc4464a9c68, type: 3}
-  - {fileID: 21300000, guid: 004715ca90ccdd244974e1a6667b20e3, type: 3}
-  - {fileID: 21300000, guid: 62a7a8fefa2511a468b6398ce8fe635e, type: 3}
-  - {fileID: 21300000, guid: 2e2c228a8b5bec147969df35e328e470, type: 3}
-  - {fileID: 21300000, guid: d7fa8526a0fe07d4e9c444a230a171b3, type: 3}
+  - {fileID: 21300000, guid: 7c43fa9a7d0eb3142913a51c6215c600, type: 3}
+  - {fileID: 21300000, guid: 93ef0532046af1d4289b2169868b99a5, type: 3}
+  - {fileID: 21300000, guid: 41e0af55f6fed5b4dab4cd9de7ac2de2, type: 3}
+  - {fileID: 21300000, guid: b57234c322727024a989ad68d9f44340, type: 3}
+  - {fileID: 21300000, guid: 8ba37e23c308dc1458d73b5b38ae3db5, type: 3}
+  - {fileID: 21300000, guid: 8ba37e23c308dc1458d73b5b38ae3db5, type: 3}
   spritesLogoSnake:
   - {fileID: 21300000, guid: eba6c3251daa9bc41b589be198f70943, type: 3}
   - {fileID: 21300000, guid: e0c7fdd7a323f1f46bc7bbee0806c3f6, type: 3}
@@ -2984,14 +2984,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5188679, g: 0.5188679, b: 0.5188679, a: 1}
+  m_Color: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2e2c228a8b5bec147969df35e328e470, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 93ef0532046af1d4289b2169868b99a5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4249,7 +4249,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 6e3851a974f1ff6468268e6099d4f6ec, type: 2}
+      objectReference: {fileID: 2100000, guid: 9c6b9e42f73930e42b3141bcf36ad7cb, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9148,7 +9148,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 671f6498e8ecfe44fb450ebcdebedf58, type: 2}
   - {fileID: 2100000, guid: e7d0ed5eafa411345bda10081fde5eb2, type: 2}
   - {fileID: 2100000, guid: e7d0ed5eafa411345bda10081fde5eb2, type: 2}
-  - {fileID: 2100000, guid: 8a5a094a20f16fd439f48dfc73c92773, type: 2}
+  - {fileID: 2100000, guid: 9c6b9e42f73930e42b3141bcf36ad7cb, type: 2}
   - {fileID: 2100000, guid: e7d0ed5eafa411345bda10081fde5eb2, type: 2}
   - {fileID: 2100000, guid: e7d0ed5eafa411345bda10081fde5eb2, type: 2}
   - {fileID: 2100000, guid: e7d0ed5eafa411345bda10081fde5eb2, type: 2}

@@ -32,6 +32,8 @@ public class Col : MonoBehaviour
     void OnCollisionEnter(Collision other)
     {
         GameObject obj = other.gameObject;
+        if (Pause.test)
+            return;
         if ((obj.CompareTag("Walls") || obj.CompareTag("Bodies")) && !isGameOver)
             SetGameOver();
     }

@@ -101,6 +101,7 @@ public class Pause : MonoBehaviour
     private void OnDisable() => YandexGame.GetDataEvent -= LoadSettings;
 
     private bool b;
+    public static bool test = true;
 
     private void Awake()
     {
@@ -120,8 +121,10 @@ public class Pause : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
             ScreenCapture.CaptureScreenshot("Screen.png");
         if (!IsSceneFirst && !Col.isGameOver && !IsVictory && Input.GetKeyDown(KeyCode.Tab))
-            /* a(); */
-            SetPauseOptions(true, 0);
+            if (test)
+                a();
+            else
+                SetPauseOptions(true, 0);
     }
 
     void a()
