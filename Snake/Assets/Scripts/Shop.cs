@@ -19,11 +19,11 @@ public class Shop : MonoBehaviour
     private Canvas startCanvas;
     private GameObject shopSnakes;
     private Transform camPreview;
-    private Transform cam;
+    private static Transform cam;
 
     [SerializeField]
     private float speedCam;
-    private static bool isCameraGoing;
+    private bool isCameraGoing;
 
     [SerializeField]
     private float t = 0.5f;
@@ -34,34 +34,30 @@ public class Shop : MonoBehaviour
         cam = Camera.main.GetComponent<Transform>();
         if (gameObject.CompareTag("ShopSnakes"))
         {
+            camPreview = GetComponentInChildren<Camera>(true).transform;
+            print(camPreview.gameObject);
             renderers = GetComponentsInChildren<Renderer>();
             for (int i = 0; i < renderers.Length; i++)
                 listDefaults.Add(renderers[i].sharedMaterial);
         }
-        camPreview = snakePreview.GetComponentInChildren<Camera>().transform;
-        snake = snakePreview.transform.Find("Snake3D");
+
+        //snake = snakePreview.transform.Find("Snake3D");
         shopSnakes = GetObject("ShopSnakes");
         startCanvas = GetObject("CanvasShop").GetComponent<Canvas>();
     }
 
-    void Update()
-    {
-        if (gameObject.CompareTag("ShopSnakes"))
-            return;
-        if (isCameraGoing)
-            StartCoroutine(SmoothCamTrans(true));
-    }
-
     void OnMouseEnter()
     {
-        SetMaterial(hoverMaterial);
+        if (!isCameraGoing)
+            SetMaterial(hoverMaterial);
     }
 
     public void ActivatePreview(bool condition)
     {
         //  StartCoroutine(SmoothCamTrans(condition));
         SetCanvas(ref condition);
-        SetObj(ref condition);
+        isCameraGoing = true;
+        StartCoroutine(SmoothCamTrans(true));
     }
 
     private void SetCanvas(ref bool condition)
@@ -70,17 +66,9 @@ public class Shop : MonoBehaviour
         canvasPurchase.enabled = condition;
     }
 
-    private void SetObj(ref bool condition)
-    {
-        isCameraGoing = true;
-        snake.position = transform.position;
-        snakePreview.SetActive(condition);
-        gameObject.SetActive(false);
-    }
-
     void OnMouseOver()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && !isCameraGoing)
         {
             ActivatePreview(true);
             SetMaterial(listDefaults);
@@ -89,7 +77,6 @@ public class Shop : MonoBehaviour
 
     IEnumerator SmoothCamTrans(bool condition)
     {
-        isCameraGoing = false;
         Vector3 camPos = cam.position;
         Vector3 camPreviewPos = camPreview.position;
         if (!condition)
@@ -103,6 +90,7 @@ public class Shop : MonoBehaviour
         // Quaternion rotation = Quaternion.LookRotation(direction);
         while (cam.position != camPreview.position)
         {
+            print("a");
             yield return null;
             // cam.rotation = Quaternion.Lerp(cam.rotation, rotation, t * Time.deltaTime);
             cam.position = Vector3.MoveTowards(
@@ -111,7 +99,7 @@ public class Shop : MonoBehaviour
                 speedCam * Time.deltaTime
             );
         }
-        shopSnakes.SetActive(!condition);
+        //  shopSnakes.SetActive(!condition);
     }
 
     void OnMouseExit()
