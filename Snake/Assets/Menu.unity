@@ -587,7 +587,7 @@ GameObject:
   - component: {fileID: 228520612}
   - component: {fileID: 228520611}
   m_Layer: 5
-  m_Name: Dropdown
+  m_Name: DropdownGraphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -674,8 +674,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8581759073330734450}
-        m_TargetAssemblyTypeName: GraphicsSetttings, Assembly-CSharp
+      - m_Target: {fileID: 1667873373429980060}
+        m_TargetAssemblyTypeName: Pause, Assembly-CSharp
         m_MethodName: SetGraphics
         m_Mode: 0
         m_Arguments:
@@ -8772,7 +8772,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.084905684, g: 0.084905684, b: 0.084905684, a: 1}
+  m_Color: {r: 0.08627451, g: 0.08627451, b: 0.08627451, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

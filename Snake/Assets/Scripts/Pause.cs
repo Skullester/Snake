@@ -11,6 +11,8 @@ using YG.Example;
 
 public class Pause : MonoBehaviour
 {
+    private TMP_Dropdown dropdown;
+
     [SerializeField, Header("Текст анимации reward")]
     private TMP_Text rewardText;
 
@@ -95,6 +97,7 @@ public class Pause : MonoBehaviour
     public static DepthOfField Dof;
     public static bool IsSceneFirst;
     private ThemeChanger themeChanger;
+    private static bool isGraphicsSet;
 
     private void OnEnable() => YandexGame.GetDataEvent += LoadSettings;
 
@@ -114,6 +117,8 @@ public class Pause : MonoBehaviour
             clipTimer = _audioSourceSnake.clip;
             CounterText = GetComponentInChildren<TMP_Text>();
         }
+        else
+            dropdown = GetComponentInChildren<TMP_Dropdown>();
     }
 
     private void Update()
@@ -174,7 +179,17 @@ public class Pause : MonoBehaviour
         if (textRecord != null)
             textRecord.text += $" {YandexGame.savesData.Record}";
         if (IsSceneFirst)
+        {
+            dropdown.value = YandexGame.savesData.indexOfQuality;
+            if (!isGraphicsSet)
+            {
+                isGraphicsSet = true;
+                SetGraphics(dropdown.value);
+            }
+            dropdown.RefreshShownValue();
+
             return;
+        }
         if (ThemeChanger.Mode == 0)
             _requiresText.text += " " + RequireApples.ToString();
         else
@@ -203,6 +218,8 @@ public class Pause : MonoBehaviour
                 !YandexGame.savesData.IsRewardGiven)
                 YandexGame.savesData.IsReward = true;
         }
+        else
+            YandexGame.savesData.indexOfQuality = dropdown.value;
         YandexGame.SaveProgress();
     }
 
@@ -217,6 +234,11 @@ public class Pause : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         if (_vol.profile.TryGet<DepthOfField>(out var tmp))
             Dof = tmp;
+    }
+
+    public void SetGraphics(int index)
+    {
+        QualitySettings.SetQualityLevel(index);
     }
 
     public void Reward()
