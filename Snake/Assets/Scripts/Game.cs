@@ -67,7 +67,6 @@ public class Game : MonoBehaviour
 
     void Start()
     {
-        print(gameObject);
         textHintObj.GetComponent<TMP_Text>().color = ThemeChanger.CurrentThemeColor;
         Pause.IsLanguageSet = false;
         colInstance = GetComponentInChildren<Col>();

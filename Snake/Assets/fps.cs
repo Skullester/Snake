@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class fps : MonoBehaviour
 {
+    [SerializeField]
+    private Texture2D texture;
     private TMPro.TMP_Text text;
 
     [SerializeField]

@@ -98,11 +98,15 @@ public class Pause : MonoBehaviour
     public static bool IsSceneFirst;
     private ThemeChanger themeChanger;
     private static bool isGraphicsSet;
+    private string[] ruGraphicsTexts = { "Настройки графики: ", "Низкие", "Средние", "Высокие" };
+    private string[] enGraphicsTexts = { "Graphics settings:", "Low", "Medium", "High" };
+    private string[] trGraphicsTexts = { "", "Düşük", "Orta", "Yüksek" };
 
     private void OnEnable() => YandexGame.GetDataEvent += LoadSettings;
 
     private void OnDisable() => YandexGame.GetDataEvent -= LoadSettings;
 
+    private int graphicsIndex = 2;
     private bool b;
     public static bool test = true;
 
@@ -180,14 +184,12 @@ public class Pause : MonoBehaviour
             textRecord.text += $" {YandexGame.savesData.Record}";
         if (IsSceneFirst)
         {
-            dropdown.value = YandexGame.savesData.indexOfQuality;
+            graphicsIndex = YandexGame.savesData.indexOfQuality;
             if (!isGraphicsSet)
             {
                 isGraphicsSet = true;
-                SetGraphics(dropdown.value);
+                SetGraphics(graphicsIndex);
             }
-            dropdown.RefreshShownValue();
-
             return;
         }
         if (ThemeChanger.Mode == 0)
@@ -219,7 +221,7 @@ public class Pause : MonoBehaviour
                 YandexGame.savesData.IsReward = true;
         }
         else
-            YandexGame.savesData.indexOfQuality = dropdown.value;
+            YandexGame.savesData.indexOfQuality = graphicsIndex;
         YandexGame.SaveProgress();
     }
 
@@ -236,9 +238,15 @@ public class Pause : MonoBehaviour
             Dof = tmp;
     }
 
-    public void SetGraphics(int index)
+    public void SetGraphics(int index = -1)
     {
-        QualitySettings.SetQualityLevel(index);
+        if (index == -1)
+        {
+            graphicsIndex++;
+            if (graphicsIndex == 3)
+                graphicsIndex = 0;
+        }
+        QualitySettings.SetQualityLevel(graphicsIndex);
     }
 
     public void Reward()
