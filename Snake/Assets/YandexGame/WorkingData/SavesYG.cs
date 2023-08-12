@@ -21,6 +21,7 @@ namespace YG
         public int CounterCameras;
         public int CountOfCollectedItems;
         public int Record;
+        public int indexOfQuality = 2;
 
         // Ваши сохранения
 

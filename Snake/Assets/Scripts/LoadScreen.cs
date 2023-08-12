@@ -11,18 +11,12 @@ public class LoadScreen : MonoBehaviour
     private Sprite[] spritesItems;
 
     [SerializeField]
-    private Image logoImg;
-
-    [SerializeField]
     private Image fillImg;
     private Image loadScreenImg;
     private Image snakeImg;
 
     [SerializeField]
     private Sprite[] spritesScreen;
-
-    [SerializeField]
-    private Sprite[] spritesLogoSnake;
 
     [SerializeField]
     private Sprite[] spriteSnakeSlider;
@@ -57,7 +51,6 @@ public class LoadScreen : MonoBehaviour
         loadScreenImg.sprite = spritesScreen[index];
         snakeImg.sprite = spriteSnakeSlider[index];
         fillImg.color = ThemeChanger.Colors[index];
-        logoImg.sprite = spritesLogoSnake[index];
         Sprite sprite = spritesItems[index];
         for (int i = 0; i < imagesItems.Length; i++)
             imagesItems[i].sprite = sprite;
