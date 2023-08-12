@@ -7013,6 +7013,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56342cba7d8799d4c836242ad57aa3a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  texture: {fileID: 0}
   isFps: 1
 --- !u!114 &944248111
 MonoBehaviour:

@@ -269,6 +269,8 @@ public class Theme : MonoBehaviour
 
     private void ChangeFirstScene()
     {
+        Color newColor = new(color.r, color.g, color.b, 1f);
+        Pause.GraphicsText.color = newColor;
         btnPlaymode.color = color;
         unlockImg.color = color;
         SetThemeMusic(index);

@@ -99,16 +99,18 @@ public class Pause : MonoBehaviour
     private ThemeChanger themeChanger;
     private static bool isGraphicsSet;
     private string[] ruGraphicsTexts = { "Настройки графики: ", "Низкие", "Средние", "Высокие" };
-    private string[] enGraphicsTexts = { "Graphics settings:", "Low", "Medium", "High" };
-    private string[] trGraphicsTexts = { "", "Düşük", "Orta", "Yüksek" };
+    private string[] enGraphicsTexts = { "Graphics settings: ", "Low", "Medium", "High" };
+    private string[] trGraphicsTexts = { "Grafik ayarları: ", "Düşük", "Orta", "Yüksek" };
 
     private void OnEnable() => YandexGame.GetDataEvent += LoadSettings;
 
     private void OnDisable() => YandexGame.GetDataEvent -= LoadSettings;
 
+    public static TMP_Text GraphicsText;
+    private Animator animatorGraphics;
     private int graphicsIndex = 2;
     private bool b;
-    public static bool test = true;
+    public static bool test = false;
 
     private void Awake()
     {
@@ -120,9 +122,10 @@ public class Pause : MonoBehaviour
         {
             clipTimer = _audioSourceSnake.clip;
             CounterText = GetComponentInChildren<TMP_Text>();
+            return;
         }
-        else
-            dropdown = GetComponentInChildren<TMP_Dropdown>();
+        GraphicsText = transform.Find("GraphicsText").GetComponent<TMP_Text>();
+        animatorGraphics = GraphicsText.GetComponent<Animator>();
     }
 
     private void Update()
@@ -164,7 +167,15 @@ public class Pause : MonoBehaviour
     {
         bool isObjectsInitiliazed = themeChanger.isItemBought[0];
         if (Language.CurrentLanguage != null)
+        {
             YandexGame.SwitchLanguage(Language.CurrentLanguage);
+            ruGraphicsTexts = YG.Example.Language.CurrentLanguage switch
+            {
+                "en" => enGraphicsTexts,
+                "tr" => trGraphicsTexts,
+                _ => ruGraphicsTexts
+            };
+        }
         if (!isObjectsInitiliazed)
             themeChanger.LoadInfoAboutPayments();
         themeChanger.RewardForGame();
@@ -184,9 +195,9 @@ public class Pause : MonoBehaviour
             textRecord.text += $" {YandexGame.savesData.Record}";
         if (IsSceneFirst)
         {
-            graphicsIndex = YandexGame.savesData.indexOfQuality;
             if (!isGraphicsSet)
             {
+                graphicsIndex = YandexGame.savesData.indexOfQuality;
                 isGraphicsSet = true;
                 SetGraphics(graphicsIndex);
             }
@@ -245,6 +256,10 @@ public class Pause : MonoBehaviour
             graphicsIndex++;
             if (graphicsIndex == 3)
                 graphicsIndex = 0;
+            GraphicsText.text = ruGraphicsTexts[0];
+            GraphicsText.text += ruGraphicsTexts[graphicsIndex + 1];
+            if (!animatorGraphics.GetCurrentAnimatorStateInfo(0).IsName("GraphicsApperance"))
+                animatorGraphics.SetTrigger("Graphics");
         }
         QualitySettings.SetQualityLevel(graphicsIndex);
     }
