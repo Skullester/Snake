@@ -8,6 +8,15 @@ using System.Collections;
 
 public class Theme : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject spotLightObj;
+
+    [SerializeField]
+    private Light sun;
+
+    [SerializeField, Header("Материал для комнаты в 3D")]
+    private Material materialForRoom;
+
     [SerializeField, Header("Кнопка \"Назад\" в 3D")]
     private Image back3DButton;
 
@@ -176,6 +185,22 @@ public class Theme : MonoBehaviour
         themeItems = themeChanger.ThemeItems;
     }
 
+    public void SetMaterials3D()
+    {
+        if (ThemeChanger.ThemeNumber == 4)
+        {
+            floors[0].SetActive(true);
+            floors[1].SetActive(false);
+        }
+        if (ThemeChanger.ThemeNumber == 5)
+        {
+            sun.enabled = true;
+            spotLightObj.SetActive(false);
+        }
+        for (int i = 0; i < renderersObjects.Length; i++)
+            renderersObjects[i].sharedMaterial = materialForRoom;
+    }
+
     void Start()
     {
         if (Pause.IsScene3D)
@@ -247,7 +272,6 @@ public class Theme : MonoBehaviour
             priceText.text = shopTextStrs[0] + " " + shopTextStrs[3];
         else
             priceText.text = shopTextStrs[0] + " " + price;
-        print(IsThemeBought);
         unlockBtn.interactable = !IsThemeBought;
         unlockText.text = IsThemeBought ? shopTextStrs[1] : shopTextStrs[2];
     }
@@ -281,24 +305,23 @@ public class Theme : MonoBehaviour
 
     private void ChangeFirstScene()
     {
+        priceText.color = color;
         Color newColor = new(color.r, color.g, color.b, 1f);
         if (Pause.IsScene3D)
         {
-            color = newColor;
+            Color color = new(this.color.r, this.color.g, this.color.b, 0.75f);
             ThemeChanger.CurrentThemeColor = color;
-        }
-        if (back3DButton)
             back3DButton.color = color;
-        if (Pause.GraphicsText)
-            Pause.GraphicsText.color = newColor;
-        if (btnPlaymode)
-            btnPlaymode.color = color;
+            priceText.color = newColor;
+        }
         unlockImg.color = color;
         SetThemeMusic(index);
         if (Pause.IsLanguageSet)
             LockButton();
         if (Pause.IsScene3D)
             return;
+        Pause.GraphicsText.color = newColor;
+        btnPlaymode.color = color;
         blockBtnObj.SetActive(!IsThemeBought);
         blockBtn.interactable = IsThemeBought;
         startGameBtnImg.color = color;
@@ -306,7 +329,6 @@ public class Theme : MonoBehaviour
         btnDifficult.color = color;
         shopBtn.color = color;
         themeNameTextInShop.color = mapNameText.color;
-
         btnItem.GetComponent<Image>().color = color;
         btnItem.SetActive(isPaidSkin);
         ChangeThemeItem(index);
@@ -316,6 +338,8 @@ public class Theme : MonoBehaviour
 
     public void ChangeTheme(bool isBackToMenu = false)
     {
+        if (Pause.IsScene3D && ThemeChanger.ThemeNumber == 5)
+            spotLightObj.SetActive(true);
         ThemeChanger.CurrentThemeColor = color;
         if (panelImg)
             panelImg.color = color;
@@ -339,13 +363,17 @@ public class Theme : MonoBehaviour
         floors[1].SetActive(index == 4);
     }
 
-    public void SetItems(bool condition = true)
+    public void SetItems(bool isExit3D = false)
     {
+        int index = new();
+        bool condition = true;
         if (Pause.IsScene3D)
-            return;
-        for (int i = 0; i < ThemeChanger.ThemeCount; i++)
+            index = 3;
+        if (isExit3D)
+            condition = false;
+        for (int i = index; i < ThemeChanger.ThemeCount; i++)
         {
-            bool isThemeItem = i == index && condition;
+            bool isThemeItem = i == ThemeChanger.ThemeNumber && condition;
             Items[i].SetActive(isThemeItem);
         }
     }

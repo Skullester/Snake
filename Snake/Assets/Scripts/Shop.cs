@@ -7,6 +7,9 @@ using UnityEngine.UI;
 public class Shop : MonoBehaviour
 {
     [SerializeField]
+    private Theme theme;
+
+    [SerializeField]
     private ThemeChanger themeChanger;
     private static Transform empty;
     private Button btnBack;
@@ -64,7 +67,11 @@ public class Shop : MonoBehaviour
     public void ActivatePreview(bool condition)
     {
         if (canvasPurchase.enabled)
+        {
+            theme.SetMaterials3D();
+            theme.SetItems(true);
             canvasPurchase.enabled = false;
+        }
         startCanvas.enabled = !condition;
         isCameraGoing = condition;
         SmoothCamTrans(ref condition);

@@ -302,9 +302,11 @@ public class ThemeChanger : MonoBehaviour
             themes[i].Initiliaze(textsOfMapRu[i], shopTextStrsRu);
         themes[ThemeNumber].SetMapName();
         themes[ThemeNumber].LockButton();
-        if (Pause.IsSceneFirst)
+        if (Pause.IsSceneFirst || Pause.IsScene3D)
         {
             Pause.IsLanguageSet = true;
+            if (Pause.IsScene3D)
+                return;
             ChooseLevel();
             Game.MultiplierForTasks = (float)UnityEngine.Random.Range(11, 12 + 1) / 10;
         }
@@ -349,6 +351,8 @@ public class ThemeChanger : MonoBehaviour
     public void ChangeTheme(int themeNum = -1, bool isBackToMenu = false)
     {
         isThemeSet = true;
+        if (Pause.IsScene3D)
+            itemHasBeenBought = false;
         ThemeNumber = themeNum == -1 || itemHasBeenBought ? ThemeNumber : themeNum;
         itemHasBeenBought = false;
         themes[ThemeNumber].ChangeTheme(isBackToMenu);

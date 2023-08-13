@@ -39,6 +39,7 @@ public class Buttons : MonoBehaviour
 
     public void SwitchTo3D(int index)
     {
+        //  LoadScreen.IsGameStarted = false;
         StartAnim("3D");
         StartCoroutine(Delay(index, 1f));
     }

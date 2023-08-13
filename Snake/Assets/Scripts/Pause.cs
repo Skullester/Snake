@@ -158,8 +158,8 @@ public class Pause : MonoBehaviour
         bool isObjectsInitiliazed = themeChanger.isItemBought[0];
         if (Language.CurrentLanguage != null)
         {
-            YandexGame.SwitchLanguage("en");
-            ruGraphicsTexts = YG.Example.Language.CurrentLanguage switch
+            YandexGame.SwitchLanguage(Language.CurrentLanguage);
+            ruGraphicsTexts = Language.CurrentLanguage switch
             {
                 "en" => enGraphicsTexts,
                 "tr" => trGraphicsTexts,
@@ -169,7 +169,7 @@ public class Pause : MonoBehaviour
         if (!isObjectsInitiliazed)
             themeChanger.LoadInfoAboutPayments();
         countOfCollectedItems = YandexGame.savesData.CountOfCollectedItems;
-        if (textCollectedItems != null)
+        if (textCollectedItems)
             textCollectedItems.text += $" {countOfCollectedItems}";
         if (Pause.IsScene3D)
             return;
@@ -185,7 +185,7 @@ public class Pause : MonoBehaviour
             textCollectedInShop.text = textCollectedItems.text;
         if (textRecord != null)
             textRecord.text += $" {YandexGame.savesData.Record}";
-        if (IsSceneFirst || Pause.IsScene3D)
+        if (IsSceneFirst)
         {
             if (!isGraphicsSet)
             {
