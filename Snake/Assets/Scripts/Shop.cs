@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,8 @@ using UnityEngine.UI;
 
 public class Shop : MonoBehaviour
 {
+    [SerializeField]
+    private ThemeChanger themeChanger;
     private static Transform empty;
     private Button btnBack;
 
@@ -29,7 +32,7 @@ public class Shop : MonoBehaviour
 
     private void Awake()
     {
-        audioSource = GetObject("Platform").GetComponent<AudioSource>();
+        audioSource = GetObject("Sun").GetComponent<AudioSource>();
         cam = Camera.main.GetComponent<Transform>();
         if (gameObject.CompareTag("ShopSnakes"))
         {
@@ -71,6 +74,7 @@ public class Shop : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1") && !isCameraGoing)
         {
+            themeChanger.ChangeTheme(Convert.ToInt32(gameObject.name));
             ActivatePreview(true);
             SetMaterial(listDefaults);
         }

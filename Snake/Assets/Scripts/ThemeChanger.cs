@@ -220,16 +220,16 @@ public class ThemeChanger : MonoBehaviour
             return;
         YandexGame.savesData.IsReward = false;
         YandexGame.savesData.IsRewardGiven = true;
-        rewardObj = transform.Find("RewardForRecord").gameObject;
-        rewardObj.SetActive(true);
-        int index = new();
-        PlaySound(1);
         bool isAllThemesBought = true;
         for (int i = 0; i < themes.Length; i++)
             if (!themes[i].IsThemeBought)
                 isAllThemesBought = false;
         if (isAllThemesBought)
             return;
+        int index = new();
+        PlaySound(1);
+        rewardObj = transform.Find("RewardForRecord").gameObject;
+        rewardObj.SetActive(true);
         while (themes[index].IsThemeBought)
             index = UnityEngine.Random.Range(3, themes.Length);
         themes[index].IsThemeBought = true;
@@ -342,7 +342,7 @@ public class ThemeChanger : MonoBehaviour
 
     private void Update()
     {
-        if (!isThemeSet)
+        if (!isThemeSet && !Pause.IsScene3D)
             ChangeTheme();
     }
 
@@ -352,9 +352,10 @@ public class ThemeChanger : MonoBehaviour
         ThemeNumber = themeNum == -1 || itemHasBeenBought ? ThemeNumber : themeNum;
         itemHasBeenBought = false;
         themes[ThemeNumber].ChangeTheme(isBackToMenu);
-        ThemeItems[ThemeNumber].SetActive(GetStateItem());
         bool isThemeAndSun = ThemeNumber != 5 && Pause.IsSun;
         _sun.enabled = isThemeAndSun;
+        if (!Pause.IsScene3D)
+            ThemeItems[ThemeNumber].SetActive(GetStateItem());
     }
 
     public bool GetStateItem()

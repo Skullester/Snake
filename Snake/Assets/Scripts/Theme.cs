@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.Serialization;
 using System;
@@ -7,6 +8,9 @@ using System.Collections;
 
 public class Theme : MonoBehaviour
 {
+    [SerializeField, Header("Кнопка \"Назад\" в 3D")]
+    private Image back3DButton;
+
     [SerializeField, Header("Полы")]
     private GameObject[] floors;
 
@@ -167,6 +171,8 @@ public class Theme : MonoBehaviour
     void Awake()
     {
         isThemePassed = false;
+        if (SceneManager.GetActiveScene().buildIndex == 2)
+            return;
         themeItems = themeChanger.ThemeItems;
     }
 
@@ -235,12 +241,13 @@ public class Theme : MonoBehaviour
 
     public void LockButton()
     {
-        if (!Pause.IsSceneFirst)
+        if (!Pause.IsSceneFirst && !Pause.IsScene3D)
             return;
         if (IsThemeBought)
             priceText.text = shopTextStrs[0] + " " + shopTextStrs[3];
         else
             priceText.text = shopTextStrs[0] + " " + price;
+        print(IsThemeBought);
         unlockBtn.interactable = !IsThemeBought;
         unlockText.text = IsThemeBought ? shopTextStrs[1] : shopTextStrs[2];
     }
@@ -275,10 +282,23 @@ public class Theme : MonoBehaviour
     private void ChangeFirstScene()
     {
         Color newColor = new(color.r, color.g, color.b, 1f);
-        Pause.GraphicsText.color = newColor;
-        btnPlaymode.color = color;
+        if (Pause.IsScene3D)
+        {
+            color = newColor;
+            ThemeChanger.CurrentThemeColor = color;
+        }
+        if (back3DButton)
+            back3DButton.color = color;
+        if (Pause.GraphicsText)
+            Pause.GraphicsText.color = newColor;
+        if (btnPlaymode)
+            btnPlaymode.color = color;
         unlockImg.color = color;
         SetThemeMusic(index);
+        if (Pause.IsLanguageSet)
+            LockButton();
+        if (Pause.IsScene3D)
+            return;
         blockBtnObj.SetActive(!IsThemeBought);
         blockBtn.interactable = IsThemeBought;
         startGameBtnImg.color = color;
@@ -286,8 +306,7 @@ public class Theme : MonoBehaviour
         btnDifficult.color = color;
         shopBtn.color = color;
         themeNameTextInShop.color = mapNameText.color;
-        if (Pause.IsLanguageSet)
-            LockButton();
+
         btnItem.GetComponent<Image>().color = color;
         btnItem.SetActive(isPaidSkin);
         ChangeThemeItem(index);
@@ -298,19 +317,21 @@ public class Theme : MonoBehaviour
     public void ChangeTheme(bool isBackToMenu = false)
     {
         ThemeChanger.CurrentThemeColor = color;
-        panelImg.color = color;
+        if (panelImg)
+            panelImg.color = color;
         AnimateSnake(index);
-        btnChangeMapImg.color = color;
+        if (btnChangeMapImg)
+            btnChangeMapImg.color = color;
         for (int i = 0; i < matSnake.Length - 5; i++)
         {
-            renderersSnake[i].sharedMaterial = matSnake[i];
+            if (!Pause.IsScene3D)
+                renderersSnake[i].sharedMaterial = matSnake[i];
             renderersObjects[i].sharedMaterial = matSnake[i + 5];
         }
         SetItems();
         SetMapName();
-
         mapNameText.color = new Color(color.r, color.g, color.b, 0.85f);
-        if (Pause.IsSceneFirst)
+        if (Pause.IsSceneFirst || Pause.IsScene3D)
             ChangeFirstScene();
         else
             ChangeSecondScene();
@@ -320,6 +341,8 @@ public class Theme : MonoBehaviour
 
     public void SetItems(bool condition = true)
     {
+        if (Pause.IsScene3D)
+            return;
         for (int i = 0; i < ThemeChanger.ThemeCount; i++)
         {
             bool isThemeItem = i == index && condition;
@@ -336,11 +359,12 @@ public class Theme : MonoBehaviour
 
     public void AnimateSnake(int index)
     {
-        if (animLogoSnake.gameObject.activeInHierarchy)
-        {
-            animLogoSnake.SetTrigger("Exit");
-            animLogoSnake.SetInteger("IndexOfSnake", index);
-        }
+        if (animLogoSnake)
+            if (animLogoSnake.gameObject.activeInHierarchy)
+            {
+                animLogoSnake.SetTrigger("Exit");
+                animLogoSnake.SetInteger("IndexOfSnake", index);
+            }
     }
 
     private void ChangeThemeItem(int index)

@@ -118,8 +118,10 @@ public class Pause : MonoBehaviour
         themeChanger = GetComponent<ThemeChanger>();
         IsVictory = false;
         IsSceneFirst = SceneManager.GetActiveScene().buildIndex == 0;
-        if (!IsSceneFirst || !IsScene3D && !IsSceneFirst)
+        if (!IsSceneFirst)
         {
+            if (IsScene3D)
+                return;
             clipTimer = _audioSourceSnake.clip;
             CounterText = GetComponentInChildren<TMP_Text>();
             return;
@@ -156,7 +158,7 @@ public class Pause : MonoBehaviour
         bool isObjectsInitiliazed = themeChanger.isItemBought[0];
         if (Language.CurrentLanguage != null)
         {
-            YandexGame.SwitchLanguage(Language.CurrentLanguage);
+            YandexGame.SwitchLanguage("en");
             ruGraphicsTexts = YG.Example.Language.CurrentLanguage switch
             {
                 "en" => enGraphicsTexts,
@@ -166,6 +168,11 @@ public class Pause : MonoBehaviour
         }
         if (!isObjectsInitiliazed)
             themeChanger.LoadInfoAboutPayments();
+        countOfCollectedItems = YandexGame.savesData.CountOfCollectedItems;
+        if (textCollectedItems != null)
+            textCollectedItems.text += $" {countOfCollectedItems}";
+        if (Pause.IsScene3D)
+            return;
         themeChanger.RewardForGame();
         CameraChanger.CounterCameras = YandexGame.savesData.CounterCameras;
         cameraChanger.CameraManager();
@@ -174,9 +181,6 @@ public class Pause : MonoBehaviour
         _soundImg.sprite = isOn ? soundMute[0] : soundMute[1];
         IsSun = YandexGame.savesData.IsSunOn;
         _sun.enabled = IsSun;
-        countOfCollectedItems = YandexGame.savesData.CountOfCollectedItems;
-        if (textCollectedItems != null)
-            textCollectedItems.text += $" {countOfCollectedItems}";
         if (textCollectedInShop != null)
             textCollectedInShop.text = textCollectedItems.text;
         if (textRecord != null)
