@@ -7342,6 +7342,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d60016fe75ba90438d05173e94f26e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteScreens: []
+  imageShop: {fileID: 0}
+  imageBackInShop: {fileID: 0}
+  textTitleInShop: {fileID: 0}
   spotLightObj: {fileID: 1570813518}
   sun: {fileID: 4256403405244178667}
   materialForRoom: {fileID: 2100000, guid: f2b86b412c8c0f742b1b1c73934f93ac, type: 2}
@@ -10286,6 +10290,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4187905440648152222, guid: 125fcf2112f53d845ab54e97ed7f47d5,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 2534964839176971238, guid: 1c5afc0a92bb8e342880b9cdc95f4a78,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

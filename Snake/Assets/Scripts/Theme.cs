@@ -8,10 +8,22 @@ using System.Collections;
 
 public class Theme : MonoBehaviour
 {
-    [SerializeField]
+    [SerializeField, Header("Спрайты экранов")]
+    private Sprite[] spriteScreens;
+
+    [SerializeField, Header("Фон магазина")]
+    private Image imageShop;
+
+    [SerializeField, Header("Текст \"Назад\" в магазине")]
+    private Image imageBackInShop;
+
+    [SerializeField, Header("Текст \"Заголовка\" в магазине")]
+    private TMP_Text textTitleInShop;
+
+    [SerializeField, Header("Объект предмета шахтера")]
     private GameObject spotLightObj;
 
-    [SerializeField]
+    [SerializeField, Header("Солнце")]
     private Light sun;
 
     [SerializeField, Header("Материал для комнаты в 3D")]
@@ -320,6 +332,9 @@ public class Theme : MonoBehaviour
             LockButton();
         if (Pause.IsScene3D)
             return;
+        imageBackInShop.color = color;
+        textTitleInShop.color = color;
+        imageShop.sprite = spriteScreens[index];
         Pause.GraphicsText.color = newColor;
         btnPlaymode.color = color;
         blockBtnObj.SetActive(!IsThemeBought);
