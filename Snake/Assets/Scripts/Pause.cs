@@ -96,6 +96,7 @@ public class Pause : MonoBehaviour
     private Volume _vol;
     public static DepthOfField Dof;
     public static bool IsSceneFirst;
+    public static bool IsScene3D;
     private ThemeChanger themeChanger;
     private static bool isGraphicsSet;
     private string[] ruGraphicsTexts = { "Настройки графики: ", "Низкие", "Средние", "Высокие" };
@@ -108,17 +109,16 @@ public class Pause : MonoBehaviour
 
     public static TMP_Text GraphicsText;
     private Animator animatorGraphics;
-    private int graphicsIndex = 2;
-    private bool b;
-    public static bool test = false;
+    private static int graphicsIndex = 2;
 
     private void Awake()
     {
+        IsScene3D = SceneManager.GetActiveScene().buildIndex == 2;
         IsLanguageSet = false;
         themeChanger = GetComponent<ThemeChanger>();
         IsVictory = false;
         IsSceneFirst = SceneManager.GetActiveScene().buildIndex == 0;
-        if (!IsSceneFirst)
+        if (!IsSceneFirst || !IsScene3D && !IsSceneFirst)
         {
             clipTimer = _audioSourceSnake.clip;
             CounterText = GetComponentInChildren<TMP_Text>();
@@ -133,19 +133,7 @@ public class Pause : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
             ScreenCapture.CaptureScreenshot("Screen.png");
         if (!IsSceneFirst && !Col.isGameOver && !IsVictory && Input.GetKeyDown(KeyCode.Tab))
-            if (test)
-                a();
-            else
-                SetPauseOptions(true, 0);
-    }
-
-    void a()
-    {
-        b = !b;
-        if (b)
-            Time.timeScale = 0f;
-        else
-            Time.timeScale = 1f;
+            SetPauseOptions(true, 0);
     }
 
     public void PlayBlockSound()
@@ -193,7 +181,7 @@ public class Pause : MonoBehaviour
             textCollectedInShop.text = textCollectedItems.text;
         if (textRecord != null)
             textRecord.text += $" {YandexGame.savesData.Record}";
-        if (IsSceneFirst)
+        if (IsSceneFirst || Pause.IsScene3D)
         {
             if (!isGraphicsSet)
             {
@@ -241,7 +229,7 @@ public class Pause : MonoBehaviour
         StartCoroutine(AwakeCour());
         if (YandexGame.SDKEnabled)
             LoadSettings();
-        if (IsSceneFirst)
+        if (IsSceneFirst || Pause.IsScene3D)
             return;
         gameOverBackToMenuBtn.color = ThemeChanger.CurrentThemeColor;
         Cursor.lockState = CursorLockMode.Locked;

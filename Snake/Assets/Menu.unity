@@ -298,6 +298,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d60016fe75ba90438d05173e94f26e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  floors:
+  - {fileID: 1056198481}
+  - {fileID: 284641830}
   animatorSpriteCounter: {fileID: 0}
   Multiplier: {fileID: 0}
   victoryImgCounter: {fileID: 0}
@@ -1013,6 +1016,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 278206736}
   m_CullTransparentMesh: 1
+--- !u!1 &284641830 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1019319148463653819, guid: 853be2df707ae4448b857c75ec78b077,
+    type: 3}
+  m_PrefabInstance: {fileID: 1877120006}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &286652133 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6759729122528873182, guid: 393137afd78171d428af27fd99ba6953,
@@ -1985,7 +1994,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 93ef0532046af1d4289b2169868b99a5, type: 3}
   - {fileID: 21300000, guid: 41e0af55f6fed5b4dab4cd9de7ac2de2, type: 3}
   - {fileID: 21300000, guid: b57234c322727024a989ad68d9f44340, type: 3}
-  - {fileID: 21300000, guid: 8ba37e23c308dc1458d73b5b38ae3db5, type: 3}
+  - {fileID: 21300000, guid: be143146ded51414fb021a970ac784d8, type: 3}
   - {fileID: 21300000, guid: 8ba37e23c308dc1458d73b5b38ae3db5, type: 3}
   spriteSnakeSlider:
   - {fileID: 21300000, guid: 4c1c76cec160c3f43a90426dc432f3e5, type: 3}
@@ -2161,6 +2170,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d60016fe75ba90438d05173e94f26e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  floors:
+  - {fileID: 1056198481}
+  - {fileID: 284641830}
   animatorSpriteCounter: {fileID: 0}
   Multiplier: {fileID: 0}
   victoryImgCounter: {fileID: 0}
@@ -2722,6 +2734,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d60016fe75ba90438d05173e94f26e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  floors:
+  - {fileID: 1056198481}
+  - {fileID: 284641830}
   animatorSpriteCounter: {fileID: 0}
   Multiplier: {fileID: 0}
   victoryImgCounter: {fileID: 0}
@@ -2982,14 +2997,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 1}
+  m_Color: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 93ef0532046af1d4289b2169868b99a5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: abd8684e11d61254ca0b29b272977c26, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3528,6 +3543,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4047828396868454548}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1056198481 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4941465834884734300, guid: ae156c63bdaffac44a7718eb17ffd021,
+    type: 3}
+  m_PrefabInstance: {fileID: 1254940215}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1075161422
 GameObject:
   m_ObjectHideFlags: 0
@@ -3748,6 +3769,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d60016fe75ba90438d05173e94f26e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  floors:
+  - {fileID: 1056198481}
+  - {fileID: 284641830}
   animatorSpriteCounter: {fileID: 0}
   Multiplier: {fileID: 0}
   victoryImgCounter: {fileID: 0}
@@ -4247,7 +4271,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 9c6b9e42f73930e42b3141bcf36ad7cb, type: 2}
+      objectReference: {fileID: 2100000, guid: f2b86b412c8c0f742b1b1c73934f93ac, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7045,6 +7069,89 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1525733608}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1877120006
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 391401889941313793, guid: 853be2df707ae4448b857c75ec78b077,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 391401889941313793, guid: 853be2df707ae4448b857c75ec78b077,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 391401889941313793, guid: 853be2df707ae4448b857c75ec78b077,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 337
+      objectReference: {fileID: 0}
+    - target: {fileID: 391401889941313793, guid: 853be2df707ae4448b857c75ec78b077,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 391401889941313793, guid: 853be2df707ae4448b857c75ec78b077,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 391401889941313793, guid: 853be2df707ae4448b857c75ec78b077,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 391401889941313793, guid: 853be2df707ae4448b857c75ec78b077,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 391401889941313793, guid: 853be2df707ae4448b857c75ec78b077,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 391401889941313793, guid: 853be2df707ae4448b857c75ec78b077,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 391401889941313793, guid: 853be2df707ae4448b857c75ec78b077,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1019319148463653819, guid: 853be2df707ae4448b857c75ec78b077,
+        type: 3}
+      propertyPath: m_Name
+      value: Clouds
+      objectReference: {fileID: 0}
+    - target: {fileID: 1019319148463653819, guid: 853be2df707ae4448b857c75ec78b077,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1019319148463653819, guid: 853be2df707ae4448b857c75ec78b077,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1523805663141143150, guid: 853be2df707ae4448b857c75ec78b077,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e2f9e01259129064fbf864e118947561, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 853be2df707ae4448b857c75ec78b077, type: 3}
 --- !u!23 &1899084629 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 7733926202094768433, guid: b2e0d6589095ae14db8a8ff16d091090,
@@ -7631,6 +7738,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d60016fe75ba90438d05173e94f26e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  floors:
+  - {fileID: 1056198481}
+  - {fileID: 284641830}
   animatorSpriteCounter: {fileID: 0}
   Multiplier: {fileID: 0}
   victoryImgCounter: {fileID: 0}
@@ -7923,9 +8033,9 @@ RectTransform:
   - {fileID: 5547832780941052831}
   - {fileID: 124250593824402213}
   - {fileID: 167584753863395006}
-  - {fileID: 1188233398}
   - {fileID: 1642538857}
   - {fileID: 577103497}
+  - {fileID: 1188233398}
   - {fileID: 1149160458}
   - {fileID: 850118979}
   m_Father: {fileID: 0}
@@ -9300,10 +9410,10 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 2278b6366859e1744b9033387727a4e9, type: 2}
   - {fileID: 2100000, guid: 2278b6366859e1744b9033387727a4e9, type: 2}
   - {fileID: 2100000, guid: 12a9071553a00f245870d4c7c8ddc19b, type: 2}
-  - {fileID: 2100000, guid: 2278b6366859e1744b9033387727a4e9, type: 2}
-  - {fileID: 2100000, guid: 2278b6366859e1744b9033387727a4e9, type: 2}
-  - {fileID: 2100000, guid: 2278b6366859e1744b9033387727a4e9, type: 2}
-  - {fileID: 2100000, guid: 2278b6366859e1744b9033387727a4e9, type: 2}
+  - {fileID: 2100000, guid: 1b3aa6b7cc099de459af0aa0c45e811b, type: 2}
+  - {fileID: 2100000, guid: 1b3aa6b7cc099de459af0aa0c45e811b, type: 2}
+  - {fileID: 2100000, guid: 1b3aa6b7cc099de459af0aa0c45e811b, type: 2}
+  - {fileID: 2100000, guid: 1b3aa6b7cc099de459af0aa0c45e811b, type: 2}
   gold:
   - {fileID: 2100000, guid: 010750833dcaee540b54206d2da3e966, type: 2}
   - {fileID: 2100000, guid: d18a605fd6a752a4f9ae005c1f2c9b69, type: 2}
@@ -10828,6 +10938,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d60016fe75ba90438d05173e94f26e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  floors:
+  - {fileID: 1056198481}
+  - {fileID: 284641830}
   animatorSpriteCounter: {fileID: 0}
   Multiplier: {fileID: 0}
   victoryImgCounter: {fileID: 0}
@@ -12343,3 +12456,4 @@ SceneRoots:
   - {fileID: 1495352571}
   - {fileID: 2725051301313904110}
   - {fileID: 1662496709}
+  - {fileID: 1877120006}

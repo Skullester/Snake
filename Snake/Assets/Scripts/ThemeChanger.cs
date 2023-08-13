@@ -194,7 +194,7 @@ public class ThemeChanger : MonoBehaviour
         Colors[1] = new Color(0.905f, 0.064f, 0.111f, 0.392f);
         Colors[2] = new Color(0f, 1f, 1f, 0.592f);
         Colors[3] = new Color(0.905f, 0.05f, 0.482f, 0.7f);
-        Colors[4] = new Color(0.86f, 0.24f, 0.35f, 0.64f);
+        Colors[4] = new Color(0.86f, 0.24f, 0.35f, 0.85f);
         Colors[5] = new Color(1f, 0.39f, 0.06f, 0.572f);
         for (int i = 0; i < ThemeCount; i++)
         {

@@ -28,18 +28,12 @@ namespace YG.Example
             CurrentLanguage = lang;
             for (int i = 0; i < texts.Length; i++)
             {
-                switch (lang)
+                texts[i].text = lang switch
                 {
-                    case "ru":
-                        texts[i].text = ru[i];
-                        break;
-                    case "en":
-                        texts[i].text = en[i];
-                        break;
-                    case "tr":
-                        texts[i].text = tr[i];
-                        break;
-                }
+                    "en" => en[i],
+                    "tr" => tr[i],
+                    _ => ru[i]
+                };
             }
         }
     }

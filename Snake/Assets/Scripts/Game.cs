@@ -53,7 +53,7 @@ public class Game : MonoBehaviour
 
     [SerializeField]
     private Image _panelImg;
-    public AudioSource AudioSourceSnake;
+    private AudioSource audioSourceSnake;
 
     [SerializeField]
     private AudioClip audioClip;
@@ -67,7 +67,8 @@ public class Game : MonoBehaviour
 
     void Start()
     {
-        textHintObj.GetComponent<TMP_Text>().color = ThemeChanger.CurrentThemeColor;
+        Color color = ThemeChanger.CurrentThemeColor;
+        textHintObj.GetComponent<TMP_Text>().color = new Color(color.r, color.g, color.b, 0.9f);
         Pause.IsLanguageSet = false;
         colInstance = GetComponentInChildren<Col>();
         TimerTextForTasks.text = string.Empty;
@@ -82,11 +83,9 @@ public class Game : MonoBehaviour
             );
             RollRandomTask();
         }
-
         _bodyPrefab = _bodyPrefabsThemes[ThemeChanger.ThemeNumber];
-        AudioSourceSnake = GetComponent<AudioSource>();
+        audioSourceSnake = GetComponent<AudioSource>();
         StartCoroutine(TimerCour());
-        Color color = ThemeChanger.CurrentThemeColor;
         _panelImg.color = new Color(color.r, color.g, color.b, 0.0588f);
     }
 
@@ -154,16 +153,16 @@ public class Game : MonoBehaviour
             return;
         if (!isClassic && !AudioSourceTaskTimer.isPlaying)
             AudioSourceTaskTimer.Play();
-        if (!AudioSourceSnake.isPlaying)
+        if (!audioSourceSnake.isPlaying)
         {
-            AudioSourceSnake.clip = ThemeChanger.ThemeSound;
-            AudioSourceSnake.Play();
+            audioSourceSnake.clip = ThemeChanger.ThemeSound;
+            audioSourceSnake.Play();
         }
         #endregion
         #region Game
         if (tempCounter != Counter.CounterInt && !Pause.IsVictory)
         {
-            AudioSourceSnake.PlayOneShot(audioClip, 0.5f);
+            audioSourceSnake.PlayOneShot(audioClip, 0.5f);
             tempCounter = Counter.CounterInt;
             var obj = Instantiate(
                 _bodyPrefab,

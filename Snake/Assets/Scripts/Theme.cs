@@ -7,6 +7,9 @@ using System.Collections;
 
 public class Theme : MonoBehaviour
 {
+    [SerializeField, Header("Полы")]
+    private GameObject[] floors;
+
     [SerializeField, Header("Аниматор спрайт счетчика")]
     private Animator animatorSpriteCounter;
 
@@ -169,6 +172,8 @@ public class Theme : MonoBehaviour
 
     void Start()
     {
+        if (Pause.IsScene3D)
+            return;
         foreach (var item in themeItems)
             item.SetActive(false);
     }
@@ -303,11 +308,14 @@ public class Theme : MonoBehaviour
         }
         SetItems();
         SetMapName();
+
         mapNameText.color = new Color(color.r, color.g, color.b, 0.85f);
         if (Pause.IsSceneFirst)
             ChangeFirstScene();
         else
             ChangeSecondScene();
+        floors[0].SetActive(index != 4);
+        floors[1].SetActive(index == 4);
     }
 
     public void SetItems(bool condition = true)
