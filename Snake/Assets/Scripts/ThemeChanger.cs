@@ -9,6 +9,8 @@ using YG.Example;
 
 public class ThemeChanger : MonoBehaviour
 {
+    [SerializeField]
+    private AudioClip blockSound;
     private GameObject rewardObj;
     private Button btnPlayMode;
 
@@ -244,6 +246,11 @@ public class ThemeChanger : MonoBehaviour
 
     public void UnlockBtn()
     {
+        if (YandexGame.savesData.CountOfCollectedItems < themes[ThemeNumber].Price)
+        {
+            audioSource.PlayOneShot(blockSound);
+            return;
+        }
         itemHasBeenBought = true;
         PlaySound(0);
         themes[ThemeNumber].IsThemeBought = true;

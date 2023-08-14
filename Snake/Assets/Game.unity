@@ -309,6 +309,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d60016fe75ba90438d05173e94f26e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteScreens: []
+  imageShop: {fileID: 0}
+  imageBackInShop: {fileID: 0}
+  textTitleInShop: {fileID: 0}
+  spotLightObj: {fileID: 0}
+  sun: {fileID: 0}
+  materialForRoom: {fileID: 0}
+  back3DButton: {fileID: 0}
   floors:
   - {fileID: 558859656}
   - {fileID: 1422330732}
@@ -3775,6 +3783,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d60016fe75ba90438d05173e94f26e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteScreens: []
+  imageShop: {fileID: 0}
+  imageBackInShop: {fileID: 0}
+  textTitleInShop: {fileID: 0}
+  spotLightObj: {fileID: 0}
+  sun: {fileID: 0}
+  materialForRoom: {fileID: 0}
+  back3DButton: {fileID: 0}
   floors:
   - {fileID: 558859656}
   - {fileID: 1422330732}
@@ -4737,6 +4753,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d60016fe75ba90438d05173e94f26e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteScreens: []
+  imageShop: {fileID: 0}
+  imageBackInShop: {fileID: 0}
+  textTitleInShop: {fileID: 0}
+  spotLightObj: {fileID: 0}
+  sun: {fileID: 0}
+  materialForRoom: {fileID: 0}
+  back3DButton: {fileID: 0}
   floors:
   - {fileID: 558859656}
   - {fileID: 1422330732}
@@ -5939,6 +5963,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d60016fe75ba90438d05173e94f26e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteScreens: []
+  imageShop: {fileID: 0}
+  imageBackInShop: {fileID: 0}
+  textTitleInShop: {fileID: 0}
+  spotLightObj: {fileID: 0}
+  sun: {fileID: 0}
+  materialForRoom: {fileID: 0}
+  back3DButton: {fileID: 0}
   floors:
   - {fileID: 558859656}
   - {fileID: 1422330732}
@@ -8778,6 +8810,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d60016fe75ba90438d05173e94f26e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteScreens: []
+  imageShop: {fileID: 0}
+  imageBackInShop: {fileID: 0}
+  textTitleInShop: {fileID: 0}
+  spotLightObj: {fileID: 0}
+  sun: {fileID: 0}
+  materialForRoom: {fileID: 0}
+  back3DButton: {fileID: 0}
   floors:
   - {fileID: 558859656}
   - {fileID: 1422330732}
@@ -15263,7 +15303,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1092806360}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4675375715023516106, guid: 26098d9284b6ac54690a413f315177dc, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26098d9284b6ac54690a413f315177dc, type: 3}

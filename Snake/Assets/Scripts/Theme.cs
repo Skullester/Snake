@@ -73,7 +73,7 @@ public class Theme : MonoBehaviour
 
     [SerializeField, Header("Кнопка покупки")]
     private Button unlockBtn;
-    private float price;
+    public float Price;
 
     [Space(10f)]
     [SerializeField, Header("Кнопка магазина")]
@@ -244,7 +244,7 @@ public class Theme : MonoBehaviour
         this.matSnake = matSnake;
         this.themeItem = themeItem;
         this.ostAudioClip = ostAudioClip;
-        this.price = price;
+        this.Price = price;
         this.index = index;
     }
 
@@ -283,7 +283,7 @@ public class Theme : MonoBehaviour
         if (IsThemeBought)
             priceText.text = shopTextStrs[0] + " " + shopTextStrs[3];
         else
-            priceText.text = shopTextStrs[0] + " " + price;
+            priceText.text = shopTextStrs[0] + " " + Price;
         unlockBtn.interactable = !IsThemeBought;
         unlockText.text = IsThemeBought ? shopTextStrs[1] : shopTextStrs[2];
     }
