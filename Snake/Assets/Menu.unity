@@ -9180,11 +9180,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rewardText: {fileID: 0}
-  textCollectedInShop: {fileID: 1708263696}
   blockSound: {fileID: 8300000, guid: bbd42714865501944b4c4733657b68b3, type: 3}
   cameraChanger: {fileID: 8638828347466624398}
   textRecord: {fileID: 1125605543}
-  textCollectedItems: {fileID: 6146025593705908680}
   gameObj: {fileID: 0}
   head: {fileID: 0}
   buttonAD: {fileID: 0}
@@ -9972,6 +9970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c05af0977c886a4289669b44a9d1d8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animatorCollectedItems: {fileID: 1708263698}
   blockSound: {fileID: 8300000, guid: bbd42714865501944b4c4733657b68b3, type: 3}
   animGratitude: {fileID: 7656559565866296642}
   audioSource: {fileID: 8581759073330734449}
@@ -9981,7 +9980,7 @@ MonoBehaviour:
   - 0
   - 1500
   - 2500
-  - 1500
+  - 2000
   ThemeItems:
   - {fileID: 2262952771841604368}
   - {fileID: 4462351093526069933}

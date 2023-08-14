@@ -10,6 +10,9 @@ using YG.Example;
 public class ThemeChanger : MonoBehaviour
 {
     [SerializeField]
+    private Animator animatorCollectedItems;
+
+    [SerializeField]
     private AudioClip blockSound;
     private GameObject rewardObj;
     private Button btnPlayMode;
@@ -248,9 +251,20 @@ public class ThemeChanger : MonoBehaviour
     {
         if (YandexGame.savesData.CountOfCollectedItems < themes[ThemeNumber].Price)
         {
+            if (Pause.IsScene3D)
+                animatorCollectedItems.SetTrigger("ERROR3D");
+            else
+                animatorCollectedItems.SetTrigger("ERROR");
             audioSource.PlayOneShot(blockSound);
             return;
         }
+        YandexGame.savesData.CountOfCollectedItems -= (int)themes[ThemeNumber].Price;
+        Pause.textCollectedItems.text =
+            Pause.collectedItemsWithoutPrice
+            + " "
+            + YandexGame.savesData.CountOfCollectedItems.ToString();
+        if (!Pause.IsScene3D)
+            Pause.textCollectedInShop.text = Pause.textCollectedItems.text;
         itemHasBeenBought = true;
         PlaySound(0);
         themes[ThemeNumber].IsThemeBought = true;
@@ -323,16 +337,8 @@ public class ThemeChanger : MonoBehaviour
     {
         for (int i = 0; i < isItemBought.Length; i++)
         {
-            if (i < 3)
-            {
-                isItemBought[i] = true;
-                themes[i].Initiliaze(isPaidSkin: false, isItemBought[i]);
-            }
-            else
-            {
-                isItemBought[i] = YandexGame.savesData.IsThemeBought[i];
-                themes[i].Initiliaze(isPaidSkin: true, isItemBought[i]);
-            }
+            isItemBought[i] = i < 3 ? true : YandexGame.savesData.IsThemeBought[i];
+            themes[i].Initiliaze(isPaidSkin: i > 2, isItemBought[i]);
         }
         isThemeSet = false;
     }

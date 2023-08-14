@@ -317,7 +317,7 @@ public class Theme : MonoBehaviour
 
     private void ChangeFirstScene()
     {
-        priceText.color = color;
+        priceText.color = new Color(color.r, color.g, color.b, 0.8f);
         Color newColor = new(color.r, color.g, color.b, 1f);
         if (Pause.IsScene3D)
         {

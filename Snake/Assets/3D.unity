@@ -7307,11 +7307,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rewardText: {fileID: 0}
-  textCollectedInShop: {fileID: 0}
   blockSound: {fileID: 0}
   cameraChanger: {fileID: 0}
   textRecord: {fileID: 0}
-  textCollectedItems: {fileID: 1745079481}
   gameObj: {fileID: 0}
   head: {fileID: 0}
   buttonAD: {fileID: 0}
@@ -7365,6 +7363,7 @@ MonoBehaviour:
   priceText: {fileID: 724481726}
   unlockText: {fileID: 1725295239}
   unlockBtn: {fileID: 281408670}
+  Price: 0
   shopBtn: {fileID: 0}
   panelForAD: {fileID: 0}
   panelForADInTasks: {fileID: 0}
@@ -7427,6 +7426,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c05af0977c886a4289669b44a9d1d8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animatorCollectedItems: {fileID: 1745079483}
+  blockSound: {fileID: 8300000, guid: bbd42714865501944b4c4733657b68b3, type: 3}
   animGratitude: {fileID: 199398746}
   audioSource: {fileID: 7206665199417655060}
   prices:
@@ -7435,7 +7436,7 @@ MonoBehaviour:
   - 0
   - 1500
   - 2500
-  - 1500
+  - 2000
   ThemeItems:
   - {fileID: 0}
   - {fileID: 0}
@@ -8671,6 +8672,7 @@ GameObject:
   - component: {fileID: 1745079480}
   - component: {fileID: 1745079482}
   - component: {fileID: 1745079481}
+  - component: {fileID: 1745079483}
   m_Layer: 5
   m_Name: Collected
   m_TagString: Untagged
@@ -8692,9 +8694,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1506351335}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 570, y: 66}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 570, y: -436}
   m_SizeDelta: {x: 894.3333, y: 138.91418}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1745079481
@@ -8795,6 +8797,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1745079479}
   m_CullTransparentMesh: 1
+--- !u!95 &1745079483
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745079479}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e52cca127ee402c4985658519b1a15d1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1757024365 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4941465834884734300, guid: ae156c63bdaffac44a7718eb17ffd021,
@@ -12741,7 +12764,7 @@ Transform:
   m_GameObject: {fileID: 7091539294535574600}
   serializedVersion: 2
   m_LocalRotation: {x: 0.009357079, y: -0.9971926, z: 0.057242762, w: 0.047356684}
-  m_LocalPosition: {x: -2.09, y: 13.25, z: 25.38}
+  m_LocalPosition: {x: -3.17, y: 13.25, z: 25.38}
   m_LocalScale: {x: 2.053264, y: 2.053264, z: 2.053264}
   m_ConstrainProportionsScale: 0
   m_Children:

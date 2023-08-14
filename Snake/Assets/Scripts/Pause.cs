@@ -16,8 +16,7 @@ public class Pause : MonoBehaviour
     [SerializeField, Header("Текст анимации reward")]
     private TMP_Text rewardText;
 
-    [SerializeField, Header("Текст собранных предметов в магазине")]
-    private TMP_Text textCollectedInShop;
+    public static TMP_Text textCollectedInShop;
 
     [SerializeField, Header("Звук блока")]
     private AudioClip blockSound;
@@ -29,8 +28,7 @@ public class Pause : MonoBehaviour
     [SerializeField, Header("Текст \"Рекорд\"")]
     private TMP_Text textRecord;
 
-    [SerializeField, Header("Текст \"Собрано\"")]
-    private TMP_Text textCollectedItems;
+    public static TMP_Text textCollectedItems;
     private int countOfCollectedItems;
 
     [SerializeField, Header("Экземпляр класса \"Game\"")]
@@ -98,6 +96,7 @@ public class Pause : MonoBehaviour
     public static bool IsSceneFirst;
     public static bool IsScene3D;
     private ThemeChanger themeChanger;
+    public static string collectedItemsWithoutPrice;
     private static bool isGraphicsSet;
     private string[] ruGraphicsTexts = { "Настройки графики: ", "Низкие", "Средние", "Высокие" };
     private string[] enGraphicsTexts = { "Graphics settings: ", "Low", "Medium", "High" };
@@ -121,11 +120,16 @@ public class Pause : MonoBehaviour
         if (!IsSceneFirst)
         {
             if (IsScene3D)
+            {
+                textCollectedItems = GameObject.Find("Collected").GetComponent<TMP_Text>();
                 return;
+            }
             clipTimer = _audioSourceSnake.clip;
             CounterText = GetComponentInChildren<TMP_Text>();
             return;
         }
+        textCollectedItems = GameObject.Find("Collected").GetComponent<TMP_Text>();
+        textCollectedInShop = GameObject.Find("CollectedItems").GetComponent<TMP_Text>();
         GraphicsText = transform.Find("GraphicsText").GetComponent<TMP_Text>();
         animatorGraphics = GraphicsText.GetComponent<Animator>();
     }
@@ -158,8 +162,7 @@ public class Pause : MonoBehaviour
         bool isObjectsInitiliazed = themeChanger.isItemBought[0];
         if (Language.CurrentLanguage != null)
         {
-            /* YandexGame.SwitchLanguage(Language.CurrentLanguage);
-             */YandexGame.SwitchLanguage("en");
+            YandexGame.SwitchLanguage(Language.CurrentLanguage);
             ruGraphicsTexts = Language.CurrentLanguage switch
             {
                 "en" => enGraphicsTexts,
@@ -171,7 +174,10 @@ public class Pause : MonoBehaviour
             themeChanger.LoadInfoAboutPayments();
         countOfCollectedItems = YandexGame.savesData.CountOfCollectedItems;
         if (textCollectedItems)
+        {
+            collectedItemsWithoutPrice = textCollectedItems.text;
             textCollectedItems.text += $" {countOfCollectedItems}";
+        }
         if (Pause.IsScene3D)
             return;
         themeChanger.RewardForGame();
@@ -182,9 +188,9 @@ public class Pause : MonoBehaviour
         _soundImg.sprite = isOn ? soundMute[0] : soundMute[1];
         IsSun = YandexGame.savesData.IsSunOn;
         _sun.enabled = IsSun;
-        if (textCollectedInShop != null)
+        if (textCollectedInShop)
             textCollectedInShop.text = textCollectedItems.text;
-        if (textRecord != null)
+        if (textRecord)
             textRecord.text += $" {YandexGame.savesData.Record}";
         if (IsSceneFirst)
         {
@@ -231,6 +237,7 @@ public class Pause : MonoBehaviour
 
     void Start()
     {
+        Counter.CounterInt = 100000;
         StartCoroutine(AwakeCour());
         if (YandexGame.SDKEnabled)
             LoadSettings();
