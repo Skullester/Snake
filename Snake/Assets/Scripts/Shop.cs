@@ -32,10 +32,12 @@ public class Shop : MonoBehaviour
     [SerializeField]
     private float speedCam;
     private bool isCameraGoing;
+    private AudioClip defaultClip;
 
     private void Awake()
     {
         audioSource = GetObject("Sun").GetComponent<AudioSource>();
+        defaultClip = audioSource.clip;
         cam = Camera.main.GetComponent<Transform>();
         if (gameObject.CompareTag("ShopSnakes"))
         {
@@ -68,6 +70,8 @@ public class Shop : MonoBehaviour
     {
         if (canvasPurchase.enabled)
         {
+            audioSource.clip = defaultClip;
+            audioSource.Play();
             theme.SetMaterials3D();
             theme.SetItems(true);
             canvasPurchase.enabled = false;
