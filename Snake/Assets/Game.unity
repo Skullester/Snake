@@ -12526,7 +12526,7 @@ PrefabInstance:
     - target: {fileID: 4941465834884734300, guid: ae156c63bdaffac44a7718eb17ffd021,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4941465834884734300, guid: ae156c63bdaffac44a7718eb17ffd021,
         type: 3}
@@ -14868,6 +14868,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Clouds (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 502827517610889601, guid: 125fcf2112f53d845ab54e97ed7f47d5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 986770291181833019, guid: 125fcf2112f53d845ab54e97ed7f47d5,
         type: 3}

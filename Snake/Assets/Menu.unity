@@ -3575,6 +3575,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1072245818015344011, guid: 85a12be5ffc39d349bf6dccb22596603,
         type: 3}
+      propertyPath: YANAddToPrice
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1072245818015344011, guid: 85a12be5ffc39d349bf6dccb22596603,
+        type: 3}
       propertyPath: multiplePurchase
       value: 1
       objectReference: {fileID: 0}
@@ -6645,7 +6650,7 @@ PrefabInstance:
     - target: {fileID: 3157483472541429372, guid: caf9732433f4dc044845763962493607,
         type: 3}
       propertyPath: closingADValues.audioPause
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7340,7 +7345,7 @@ PrefabInstance:
     - target: {fileID: 1019319148463653819, guid: 853be2df707ae4448b857c75ec78b077,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1019319148463653819, guid: 853be2df707ae4448b857c75ec78b077,
         type: 3}

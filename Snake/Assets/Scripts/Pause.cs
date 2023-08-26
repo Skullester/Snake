@@ -269,7 +269,8 @@ public class Pause : MonoBehaviour
 
     public void Reward()
     {
-        themeChanger.PlaySound(0);
+        if (!isOn)
+            themeChanger.PlaySound(0);
         if (IsVictory)
             buttonAD = buttonADInTasks;
         buttonAD.SetActive(false);
@@ -287,7 +288,8 @@ public class Pause : MonoBehaviour
         }
         gameObj.AudioSourceTaskTimer.Stop();
         _audioSourceSnake.Stop();
-        _audioSourceSnake.PlayOneShot(clipTimer);
+        if (!isOn)
+            _audioSourceSnake.PlayOneShot(clipTimer);
         head.transform.position = checkPoint.position;
         bodies.position = checkPoint.position;
         _gameOver.SetActive(false);
