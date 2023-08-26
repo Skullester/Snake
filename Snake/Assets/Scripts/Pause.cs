@@ -51,7 +51,7 @@ public class Pause : MonoBehaviour
 
     [SerializeField, Header("Тела змейки")]
     private Transform bodies;
-    private bool isOn;
+    public static bool isOn;
     public static bool IsSun = true;
     public static bool IsVictory;
     public static bool IsLanguageSet;
@@ -137,7 +137,10 @@ public class Pause : MonoBehaviour
     private void Update()
     {
         if (Input.GetButtonDown("Jump"))
-            ScreenCapture.CaptureScreenshot("Screen.png");
+        {
+            YandexGame.ResetSaveProgress();
+            YandexGame.SaveProgress();
+        }
         if (!IsSceneFirst && !Col.isGameOver && !IsVictory && Input.GetKeyDown(KeyCode.Tab))
             SetPauseOptions(true, 0);
     }
@@ -178,7 +181,7 @@ public class Pause : MonoBehaviour
             collectedItemsWithoutPrice = textCollectedItems.text;
             textCollectedItems.text += $" {countOfCollectedItems}";
         }
-        if (Pause.IsScene3D)
+        if (IsScene3D)
             return;
         themeChanger.RewardForGame();
         CameraChanger.CounterCameras = YandexGame.savesData.CounterCameras;
@@ -221,7 +224,7 @@ public class Pause : MonoBehaviour
         {
             YandexGame.savesData.CountOfCollectedItems += Counter.CounterInt;
             YandexGame.NewLeaderboardScores(
-                "ItemsCollected",
+                "Collected",
                 YandexGame.savesData.CountOfCollectedItems
             );
             if (Counter.CounterInt > YandexGame.savesData.Record)
@@ -237,7 +240,7 @@ public class Pause : MonoBehaviour
 
     void Start()
     {
-        Counter.CounterInt = 100000;
+        //Counter.CounterInt = 100000;
         StartCoroutine(AwakeCour());
         if (YandexGame.SDKEnabled)
             LoadSettings();
@@ -310,15 +313,6 @@ public class Pause : MonoBehaviour
     {
         if (IsVictory)
             AudioListener.pause = true;
-    }
-
-    private void TestButton(ref float variable, float value)
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Counter.CounterInt = 340;
-            variable = value;
-        }
     }
 
     public void CloseMenu()
