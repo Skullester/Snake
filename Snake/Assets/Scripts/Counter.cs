@@ -46,10 +46,12 @@ public class Counter : MonoBehaviour
             SetCounters(Game.MultiplierForTasks);
         Pause.IsVictory = true;
         AudioListener.pause = true;
-        _audioSource.ignoreListenerPause = true;
-        _audioSource.Play();
         Cursor.lockState = CursorLockMode.None;
         _victory.SetActive(true);
         Pause.Dof.active = true;
+        if (Pause.isOn)
+            return;
+        _audioSource.ignoreListenerPause = true;
+        _audioSource.Play();
     }
 }

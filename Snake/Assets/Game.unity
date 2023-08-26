@@ -332,6 +332,7 @@ MonoBehaviour:
   priceText: {fileID: 0}
   unlockText: {fileID: 0}
   unlockBtn: {fileID: 0}
+  Price: 0
   shopBtn: {fileID: 0}
   panelForAD: {fileID: 1269055904}
   panelForADInTasks: {fileID: 272251643}
@@ -1286,7 +1287,7 @@ PrefabInstance:
     - target: {fileID: 3157483472541429372, guid: caf9732433f4dc044845763962493607,
         type: 3}
       propertyPath: closingADValues.audioPause
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3157483472541429372, guid: caf9732433f4dc044845763962493607,
         type: 3}
@@ -3806,6 +3807,7 @@ MonoBehaviour:
   priceText: {fileID: 0}
   unlockText: {fileID: 0}
   unlockBtn: {fileID: 0}
+  Price: 0
   shopBtn: {fileID: 0}
   panelForAD: {fileID: 1269055904}
   panelForADInTasks: {fileID: 272251643}
@@ -4776,6 +4778,7 @@ MonoBehaviour:
   priceText: {fileID: 0}
   unlockText: {fileID: 0}
   unlockBtn: {fileID: 0}
+  Price: 0
   shopBtn: {fileID: 0}
   panelForAD: {fileID: 1269055904}
   panelForADInTasks: {fileID: 272251643}
@@ -5986,6 +5989,7 @@ MonoBehaviour:
   priceText: {fileID: 0}
   unlockText: {fileID: 0}
   unlockBtn: {fileID: 0}
+  Price: 0
   shopBtn: {fileID: 0}
   panelForAD: {fileID: 1269055904}
   panelForADInTasks: {fileID: 272251643}
@@ -8833,6 +8837,7 @@ MonoBehaviour:
   priceText: {fileID: 0}
   unlockText: {fileID: 0}
   unlockBtn: {fileID: 0}
+  Price: 0
   shopBtn: {fileID: 0}
   panelForAD: {fileID: 1269055904}
   panelForADInTasks: {fileID: 272251643}

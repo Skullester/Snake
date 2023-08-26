@@ -280,7 +280,6 @@ public class Pause : MonoBehaviour
             rewardText.GetComponent<Animator>().SetTrigger("Trigger");
             return;
         }
-
         if (Game.Time < 10 && ThemeChanger.Mode != 0)
         {
             Game.Time = Mathf.Round(Game.Time) + 15;
@@ -293,10 +292,7 @@ public class Pause : MonoBehaviour
         bodies.position = checkPoint.position;
         _gameOver.SetActive(false);
         Dof.active = false;
-        AudioListener.pause = false;
         head.transform.localRotation = Quaternion.Euler(0, -180, 0);
-        Cursor.lockState = CursorLockMode.Locked;
-        Time.timeScale = 1f;
         for (int i = 0; i < gameObj.Bodies.Count; i++)
         {
             gameObj.Bodies[i].transform.rotation = Quaternion.identity;
@@ -312,7 +308,14 @@ public class Pause : MonoBehaviour
     public void CloseAD()
     {
         if (IsVictory)
+        {
             AudioListener.pause = true;
+            return;
+        }
+        if (!isOn)
+            AudioListener.pause = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = 1f;
     }
 
     public void CloseMenu()
