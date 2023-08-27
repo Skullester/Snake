@@ -32,7 +32,7 @@ public class Col : MonoBehaviour
     void OnCollisionEnter(Collision other)
     {
         GameObject obj = other.gameObject;
-        if ((obj.CompareTag("Wallsq") || obj.CompareTag("Bodыies")) && !isGameOver)
+        if ((obj.CompareTag("Walls") || obj.CompareTag("Bodies")) && !isGameOver)
             SetGameOver();
     }
 

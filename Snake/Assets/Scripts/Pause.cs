@@ -185,7 +185,6 @@ public class Pause : MonoBehaviour
         if (Language.CurrentLanguage != null)
         {
             YandexGame.SwitchLanguage(Language.CurrentLanguage);
-            YandexGame.SwitchLanguage("en");
             ruGraphicsTexts = Language.CurrentLanguage switch
             {
                 "en" => enGraphicsTexts,

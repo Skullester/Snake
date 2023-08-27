@@ -7,6 +7,8 @@ using UnityEngine.Serialization;
 
 public class Game : MonoBehaviour
 {
+    [SerializeField]
+    private int devApple;
     public GameObject[] Items;
 
     [FormerlySerializedAs("spawnPoints")]
@@ -182,8 +184,8 @@ public class Game : MonoBehaviour
             tempCounter = Counter.CounterInt;
             InstantiateNewBody();
         }
-        /* if (Pause.CheckKey(KeyCode.X))
-            InstantiateNewBody(81); */
+        if (Pause.CheckKey(KeyCode.X))
+            InstantiateNewBody(devApple);
         _head.transform.position =
             _head.transform.position
             - SpeedOfMoving * UnityEngine.Time.deltaTime * _head.transform.forward;
