@@ -138,6 +138,22 @@ public class Game : MonoBehaviour
         colInstance.SetGameOver();
     }
 
+    private void InstantiateNewBody(int length = 1)
+    {
+        for (int i = 0; i < length; i++)
+        {
+            var obj = Instantiate(
+                _bodyPrefab,
+                Bodies[^1].position,
+                Quaternion.identity,
+                _bodiesObj.transform
+            );
+            Bodies.Add(obj.transform);
+        }
+        if (length != 1)
+            Counter.CounterInt += length;
+    }
+
     void Update()
     {
         #region Start
@@ -164,14 +180,10 @@ public class Game : MonoBehaviour
         {
             audioSourceSnake.PlayOneShot(audioClip, 0.5f);
             tempCounter = Counter.CounterInt;
-            var obj = Instantiate(
-                _bodyPrefab,
-                Bodies[Bodies.Count - 1].position,
-                Quaternion.identity,
-                _bodiesObj.transform
-            );
-            Bodies.Add(obj.transform);
+            InstantiateNewBody();
         }
+        if (Pause.CheckKey(KeyCode.X))
+            InstantiateNewBody(81);
         _head.transform.position =
             _head.transform.position
             - SpeedOfMoving * UnityEngine.Time.deltaTime * _head.transform.forward;

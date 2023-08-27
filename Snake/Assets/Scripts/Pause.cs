@@ -137,9 +137,7 @@ public class Pause : MonoBehaviour
     private void Update()
     {
         if (CheckButton("Cancel"))
-            Counter.CounterInt = 235;
-        if (CheckKey(KeyCode.LeftAlt))
-            ScreenCapture.CaptureScreenshot("Screen.png");
+            Counter.CounterInt += 235;
         if (CheckButton("Jump"))
         {
             YandexGame.ResetSaveProgress();
@@ -149,9 +147,9 @@ public class Pause : MonoBehaviour
             SetPauseOptions(true, 0);
     }
 
-    private bool CheckButton(string button) => Input.GetButtonDown(button);
+    public static bool CheckButton(string button) => Input.GetButtonDown(button);
 
-    private bool CheckKey(KeyCode key) => Input.GetKeyDown(key);
+    public static bool CheckKey(KeyCode key) => Input.GetKeyDown(key);
 
     void Start()
     {
