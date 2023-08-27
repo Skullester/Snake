@@ -182,8 +182,8 @@ public class Game : MonoBehaviour
             tempCounter = Counter.CounterInt;
             InstantiateNewBody();
         }
-        if (Pause.CheckKey(KeyCode.X))
-            InstantiateNewBody(81);
+        /* if (Pause.CheckKey(KeyCode.X))
+            InstantiateNewBody(81); */
         _head.transform.position =
             _head.transform.position
             - SpeedOfMoving * UnityEngine.Time.deltaTime * _head.transform.forward;

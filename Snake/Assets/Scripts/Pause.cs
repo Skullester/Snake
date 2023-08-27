@@ -137,7 +137,7 @@ public class Pause : MonoBehaviour
     private void Update()
     {
         if (CheckButton("Cancel"))
-            Counter.CounterInt += 235;
+            Counter.CounterInt += 115;
         if (CheckButton("Jump"))
         {
             YandexGame.ResetSaveProgress();
@@ -185,6 +185,7 @@ public class Pause : MonoBehaviour
         if (Language.CurrentLanguage != null)
         {
             YandexGame.SwitchLanguage(Language.CurrentLanguage);
+            YandexGame.SwitchLanguage("en");
             ruGraphicsTexts = Language.CurrentLanguage switch
             {
                 "en" => enGraphicsTexts,
