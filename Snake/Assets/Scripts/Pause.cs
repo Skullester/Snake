@@ -136,6 +136,8 @@ public class Pause : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetButtonDown("Fire2"))
+            ScreenCapture.CaptureScreenshot("Screen.png");
         if (Input.GetButtonDown("Jump"))
         {
             YandexGame.ResetSaveProgress();
@@ -240,7 +242,7 @@ public class Pause : MonoBehaviour
 
     void Start()
     {
-        //Counter.CounterInt = 100000;
+        Counter.CounterInt = 10000;
         StartCoroutine(AwakeCour());
         if (YandexGame.SDKEnabled)
             LoadSettings();
