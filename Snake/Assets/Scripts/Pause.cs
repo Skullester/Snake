@@ -136,9 +136,11 @@ public class Pause : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Fire2"))
+        if (CheckButton("Cancel"))
+            Counter.CounterInt = 235;
+        if (CheckKey(KeyCode.LeftAlt))
             ScreenCapture.CaptureScreenshot("Screen.png");
-        if (Input.GetButtonDown("Jump"))
+        if (CheckButton("Jump"))
         {
             YandexGame.ResetSaveProgress();
             YandexGame.SaveProgress();
@@ -147,13 +149,16 @@ public class Pause : MonoBehaviour
             SetPauseOptions(true, 0);
     }
 
+    private bool CheckButton(string button) => Input.GetButtonDown(button);
+
+    private bool CheckKey(KeyCode key) => Input.GetKeyDown(key);
+
     void Start()
     {
-        Counter.CounterInt = 235;
         StartCoroutine(AwakeCour());
         if (YandexGame.SDKEnabled)
             LoadSettings();
-        if (IsSceneFirst || Pause.IsScene3D)
+        if (IsSceneFirst || IsScene3D)
             return;
         gameOverBackToMenuBtn.color = ThemeChanger.CurrentThemeColor;
         Cursor.lockState = CursorLockMode.Locked;
