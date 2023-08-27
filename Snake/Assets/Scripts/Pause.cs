@@ -147,6 +147,20 @@ public class Pause : MonoBehaviour
             SetPauseOptions(true, 0);
     }
 
+    void Start()
+    {
+        Counter.CounterInt = 235;
+        StartCoroutine(AwakeCour());
+        if (YandexGame.SDKEnabled)
+            LoadSettings();
+        if (IsSceneFirst || Pause.IsScene3D)
+            return;
+        gameOverBackToMenuBtn.color = ThemeChanger.CurrentThemeColor;
+        Cursor.lockState = CursorLockMode.Locked;
+        if (_vol.profile.TryGet<DepthOfField>(out var tmp))
+            Dof = tmp;
+    }
+
     public void PlayBlockSound()
     {
         _audioSourceSnake.PlayOneShot(blockSound);
@@ -238,20 +252,6 @@ public class Pause : MonoBehaviour
         else
             YandexGame.savesData.indexOfQuality = graphicsIndex;
         YandexGame.SaveProgress();
-    }
-
-    void Start()
-    {
-        Counter.CounterInt = 10000;
-        StartCoroutine(AwakeCour());
-        if (YandexGame.SDKEnabled)
-            LoadSettings();
-        if (IsSceneFirst || Pause.IsScene3D)
-            return;
-        gameOverBackToMenuBtn.color = ThemeChanger.CurrentThemeColor;
-        Cursor.lockState = CursorLockMode.Locked;
-        if (_vol.profile.TryGet<DepthOfField>(out var tmp))
-            Dof = tmp;
     }
 
     public void SetGraphics(int index = -1)
