@@ -10,6 +10,9 @@ using YG.Example;
 public class ThemeChanger : MonoBehaviour
 {
     [SerializeField]
+    private GameObject buyingCoins;
+
+    [SerializeField]
     private Animator animatorCollectedItems;
 
     [SerializeField]
@@ -245,6 +248,34 @@ public class ThemeChanger : MonoBehaviour
     public void CloseRewardForGame()
     {
         rewardObj.SetActive(false);
+    }
+
+    public void OpenBuyingCoins(bool condition)
+    {
+        buyingCoins.SetActive(condition);
+    }
+
+    private void OnEnable()
+    {
+        YandexGame.PurchaseSuccessEvent += AddMoney;
+    }
+
+    private void OnDisable()
+    {
+        YandexGame.PurchaseSuccessEvent -= AddMoney;
+    }
+
+    private void AddMoney(string key)
+    {
+        YandexGame.savesData.CountOfCollectedItems += int.Parse(key);
+        Pause.textCollectedItems.text =
+            Pause.collectedItemsWithoutPrice
+            + " "
+            + YandexGame.savesData.CountOfCollectedItems.ToString();
+        if (!Pause.IsScene3D)
+            Pause.textCollectedInShop.text = Pause.textCollectedItems.text;
+        PlaySound(0);
+        buyingCoins.SetActive(false);
     }
 
     public void UnlockBtn()

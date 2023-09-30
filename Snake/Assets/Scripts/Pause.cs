@@ -136,13 +136,6 @@ public class Pause : MonoBehaviour
 
     private void Update()
     {
-        if (CheckButton("Cancel"))
-            Counter.CounterInt += 115;
-        if (CheckButton("Jump"))
-        {
-            YandexGame.ResetSaveProgress();
-            YandexGame.SaveProgress();
-        }
         if (!IsSceneFirst && !Col.isGameOver && !IsVictory && Input.GetKeyDown(KeyCode.Tab))
             SetPauseOptions(true, 0);
     }
@@ -248,8 +241,7 @@ public class Pause : MonoBehaviour
             );
             if (Counter.CounterInt > YandexGame.savesData.Record)
                 YandexGame.savesData.Record = Counter.CounterInt;
-            if ( /* Counter.CounterInt > 300 &&  */
-                !YandexGame.savesData.IsRewardGiven)
+            if (Counter.CounterInt > 150 && !YandexGame.savesData.IsRewardGiven)
                 YandexGame.savesData.IsReward = true;
         }
         else

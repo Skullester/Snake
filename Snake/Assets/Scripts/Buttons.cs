@@ -56,6 +56,7 @@ public class Buttons : MonoBehaviour
     {
         StartAnim("IsOpen", false, true);
         themeChangerInstance.ChangeTheme(Theme.IndexOfSceneBeforeShop, true);
+        themeChangerInstance.OpenBuyingCoins(false);
     }
 
     IEnumerator Delay(int indexScene, float time)
