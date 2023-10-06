@@ -8,6 +8,9 @@ using System.Collections;
 
 public class Theme : MonoBehaviour
 {
+    [SerializeField, Header("Картинка кнопки депозита")]
+    private Image depositImg;
+
     [SerializeField, Header("Спрайты экранов")]
     private Sprite[] spriteScreens;
 
@@ -334,6 +337,7 @@ public class Theme : MonoBehaviour
             return;
         imageBackInShop.color = color;
         textTitleInShop.color = color;
+        depositImg.color = color;
         imageShop.sprite = spriteScreens[index];
         Pause.GraphicsText.color = newColor;
         btnPlaymode.color = color;
