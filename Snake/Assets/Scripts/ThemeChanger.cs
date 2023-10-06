@@ -258,11 +258,13 @@ public class ThemeChanger : MonoBehaviour
     private void OnEnable()
     {
         YandexGame.PurchaseSuccessEvent += AddMoney;
+        //  YandexGame.PurchaseFailedEvent += FailedPurchased;
     }
 
     private void OnDisable()
     {
         YandexGame.PurchaseSuccessEvent -= AddMoney;
+        // YandexGame.PurchaseFailedEvent -= FailedPurchased;
     }
 
     private void AddMoney(string key)
@@ -274,9 +276,16 @@ public class ThemeChanger : MonoBehaviour
             + YandexGame.savesData.CountOfCollectedItems.ToString();
         if (!Pause.IsScene3D)
             Pause.textCollectedInShop.text = Pause.textCollectedItems.text;
+        YandexGame.SaveProgress();
         PlaySound(0);
         buyingCoins.SetActive(false);
     }
+
+    /*
+        void FailedPurchased(string id)
+        {
+            failedPurchased?.Invoke();
+        } */
 
     public void UnlockBtn()
     {

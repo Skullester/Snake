@@ -12,28 +12,21 @@ namespace YG
         public Image spriteImage;
         public string urlImage;
         public GameObject loadAnimObj;
-
         [Tooltip("Вы можете выключить запись лога в консоль.")]
-        [SerializeField]
-        bool debug;
+        [SerializeField] bool debug;
 
         private void Awake()
         {
-            if (rawImage)
-                rawImage.enabled = false;
-            if (spriteImage)
-                spriteImage.enabled = false;
+            if (rawImage) rawImage.enabled = false;
+            if (spriteImage) spriteImage.enabled = false;
 
-            if (startLoad)
-                Load();
-            else if (loadAnimObj)
-                loadAnimObj.SetActive(false);
+            if (startLoad) Load();
+            else if (loadAnimObj) loadAnimObj.SetActive(false);
         }
 
         public void Load()
         {
-            if (loadAnimObj)
-                loadAnimObj.SetActive(true);
+            if (loadAnimObj) loadAnimObj.SetActive(true);
             StartCoroutine(SwapPlayerPhoto(urlImage));
         }
 
@@ -41,10 +34,45 @@ namespace YG
         {
             if (url != "null")
             {
-                if (loadAnimObj)
-                    loadAnimObj.SetActive(true);
+                if (loadAnimObj) loadAnimObj.SetActive(true);
                 StartCoroutine(SwapPlayerPhoto(url));
             }
+        }
+
+        public void ClearImage()
+        {
+            if (rawImage)
+            {
+                rawImage.texture = null;
+                rawImage.enabled = false;
+            }
+
+            if (spriteImage)
+            {
+                spriteImage.sprite = null;
+                spriteImage.enabled = false;
+            }
+
+            if (loadAnimObj)
+                loadAnimObj.SetActive(false);
+        }
+
+        public void PutSprite(Sprite sprite)
+        {
+            if (rawImage)
+            {
+                rawImage.texture = sprite.texture;
+                rawImage.enabled = true;
+            }
+
+            if (spriteImage)
+            {
+                spriteImage.sprite = sprite;
+                spriteImage.enabled = true;
+            }
+
+            if (loadAnimObj)
+                loadAnimObj.SetActive(false);
         }
 
         IEnumerator SwapPlayerPhoto(string url)
@@ -54,18 +82,15 @@ namespace YG
             {
                 yield return webRequest.SendWebRequest();
 
-                if (
-                    webRequest.result == UnityWebRequest.Result.ConnectionError
-                    || webRequest.result == UnityWebRequest.Result.DataProcessingError
-                )
+                if (webRequest.result == UnityWebRequest.Result.ConnectionError ||
+                    webRequest.result == UnityWebRequest.Result.DataProcessingError)
                 {
                     if (debug)
                         Debug.LogError("Error: " + webRequest.error);
                 }
                 else
                 {
-                    DownloadHandlerTexture handlerTexture =
-                        webRequest.downloadHandler as DownloadHandlerTexture;
+                    DownloadHandlerTexture handlerTexture = webRequest.downloadHandler as DownloadHandlerTexture;
 
                     if (rawImage)
                     {
@@ -77,16 +102,8 @@ namespace YG
                     if (spriteImage)
                     {
                         if (handlerTexture.isDone)
-                            spriteImage.sprite = Sprite.Create(
-                                (Texture2D)handlerTexture.texture,
-                                new Rect(
-                                    0,
-                                    0,
-                                    handlerTexture.texture.width,
-                                    handlerTexture.texture.height
-                                ),
-                                Vector2.zero
-                            );
+                            spriteImage.sprite = Sprite.Create((Texture2D)handlerTexture.texture,
+                                new Rect(0, 0, handlerTexture.texture.width, handlerTexture.texture.height), Vector2.zero);
 
                         spriteImage.enabled = true;
                     }
@@ -97,9 +114,9 @@ namespace YG
             }
 #endif
 #if !UNITY_2020_1_OR_NEWER
-#pragma warning disable CS0618 // Тип или член устарел
+#pragma warning disable CS0618
             using (WWW www = new WWW(url))
-#pragma warning restore CS0618 // Тип или член устарел
+#pragma warning restore CS0618
             {
                 yield return www;
                 Texture2D texture = www.texture;
@@ -112,8 +129,7 @@ namespace YG
             }
 
             rawImage.enabled = true;
-            if (loadAnimObj)
-                loadAnimObj.SetActive(false);
+            if (loadAnimObj) loadAnimObj.SetActive(false);
 #endif
         }
     }
