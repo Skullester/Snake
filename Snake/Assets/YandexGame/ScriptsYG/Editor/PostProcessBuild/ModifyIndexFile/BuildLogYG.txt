@@ -1,2 +1,2 @@
-Build path: D:/Unity/Release/PluginYG/PluginYG
-Build number: 18
+Build path: P:/Unity/Games/WEB/Snake3D
+Build number: 23

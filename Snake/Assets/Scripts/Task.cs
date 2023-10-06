@@ -26,7 +26,7 @@ public class Task : MonoBehaviour
             return;
         }
         gameInstance = GameObject.Find("Snake").GetComponent<Game>();
-        textAboutRu = YG.Example.Language.CurrentLanguage switch
+        textAboutRu = YG.Example.LanguageConverter.CurrentLanguage switch
         {
             "en" => textAboutEn,
             "tr" => textAboutTr,

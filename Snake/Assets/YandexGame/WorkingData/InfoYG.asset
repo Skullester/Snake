@@ -269,22 +269,22 @@ MonoBehaviour:
     hi: 
   purshasesSimulation:
   - id: 500
-    title: Gun
-    description: Product - Gun
-    imageURI: https://justplaygames.ru/public/Paymant1.png
-    priceValue: 5
+    title: Coins
+    description: 
+    imageURI: 
+    priceValue: 29
     consumed: 1
   - id: 1000
-    title: Armor
-    description: Product - Armor
-    imageURI: https://justplaygames.ru/public/Paymant2.png
-    priceValue: 10
+    title: Coins
+    description: 
+    imageURI: 
+    priceValue: 55
     consumed: 1
   - id: 2000
-    title: Grenade
-    description: Product - Grenade
-    imageURI: https://justplaygames.ru/public/Paymant3.png
-    priceValue: 30
+    title: 
+    description: 
+    imageURI: 
+    priceValue: 105
     consumed: 1
   metricaEnable: 0
   metricaCounterID: 0

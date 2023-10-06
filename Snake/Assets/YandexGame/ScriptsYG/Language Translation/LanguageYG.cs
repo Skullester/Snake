@@ -14,7 +14,9 @@ using TMPro;
 
 namespace YG
 {
-    [HelpURL("https://ash-message-bf4.notion.site/PluginYG-d457b23eee604b7aa6076116aab647ed#00b98bcff9cf45428b137f5565a797a1")]
+    [HelpURL(
+        "https://ash-message-bf4.notion.site/PluginYG-d457b23eee604b7aa6076116aab647ed#00b98bcff9cf45428b137f5565a797a1"
+    )]
     public class LanguageYG : MonoBehaviour
     {
 #if YG_TEXT_MESH_PRO
@@ -23,9 +25,36 @@ namespace YG
 #endif
         public Text textLComponent;
         public InfoYG infoYG;
+
         [Space(10)]
         public string text;
-        public string ru, en, tr, az, be, he, hy, ka, et, fr, kk, ky, lt, lv, ro, tg, tk, uk, uz, es, pt, ar, id, ja, it, de, hi;
+        public string ru,
+            en,
+            tr,
+            az,
+            be,
+            he,
+            hy,
+            ka,
+            et,
+            fr,
+            kk,
+            ky,
+            lt,
+            lv,
+            ro,
+            tg,
+            tk,
+            uk,
+            uz,
+            es,
+            pt,
+            ar,
+            id,
+            ja,
+            it,
+            de,
+            hi;
         public bool changeOnlyFont;
         public int fontNumber;
         public Font uniqueFont;
@@ -129,7 +158,8 @@ namespace YG
             {
                 font = fontArray[fontNumber];
             }
-            else font = null;
+            else
+                font = null;
 
             if (uniqueFont)
             {
@@ -137,7 +167,10 @@ namespace YG
             }
             else if (font == null)
             {
-                if (infoYG.fonts.defaultFont.Length >= fontNumber + 1 && infoYG.fonts.defaultFont[fontNumber])
+                if (
+                    infoYG.fonts.defaultFont.Length >= fontNumber + 1
+                    && infoYG.fonts.defaultFont[fontNumber]
+                )
                 {
                     font = infoYG.fonts.defaultFont[fontNumber];
                 }
@@ -162,7 +195,8 @@ namespace YG
             {
                 font = fontArray[fontNumber];
             }
-            else font = null;
+            else
+                font = null;
 
             if (uniqueFontTMP)
             {
@@ -170,7 +204,10 @@ namespace YG
             }
             else if (font == null)
             {
-                if (infoYG.fontsTMP.defaultFont.Length >= fontNumber + 1 && infoYG.fontsTMP.defaultFont[fontNumber])
+                if (
+                    infoYG.fontsTMP.defaultFont.Length >= fontNumber + 1
+                    && infoYG.fontsTMP.defaultFont[fontNumber]
+                )
                 {
                     font = infoYG.fontsTMP.defaultFont[fontNumber];
                 }
@@ -276,9 +313,14 @@ namespace YG
         }
 
 #if UNITY_EDITOR
-        [HideInInspector] public float textHeight = 20f;
-        [HideInInspector] public string processTranslateLabel;
-        [HideInInspector] public bool componentTextField;
+        [HideInInspector]
+        public float textHeight = 20f;
+
+        [HideInInspector]
+        public string processTranslateLabel;
+
+        [HideInInspector]
+        public bool componentTextField;
 
         public void SetLang(int index, string text)
         {
@@ -345,12 +387,16 @@ namespace YG
 
             return response;
 #else
-            Debug.LogError("Missing library 'Newtonsoft.Json.Linq'. You need to import it. You need to import 'Newtonsoft Json' for auto-localization.");
+            Debug.LogError(
+                "Missing library 'Newtonsoft.Json.Linq'. You need to import it. You need to import 'Newtonsoft Json' for auto-localization."
+            );
             return null;
 #endif
         }
 
-        [HideInInspector] public int countLang = 0;
+        [HideInInspector]
+        public int countLang = 0;
+
         IEnumerator TranslateEmptyFields(int countLangAvailable)
         {
             countLang = 0;

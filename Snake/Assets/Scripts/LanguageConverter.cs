@@ -3,7 +3,7 @@ using TMPro;
 
 namespace YG.Example
 {
-    public class Language : MonoBehaviour
+    public class LanguageConverter : MonoBehaviour
     {
         [SerializeField, TextArea]
         private string[] ru;

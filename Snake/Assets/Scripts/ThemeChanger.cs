@@ -347,13 +347,13 @@ public class ThemeChanger : MonoBehaviour
 
     public void SetLanguage()
     {
-        if (Language.CurrentLanguage == "en")
+        if (LanguageConverter.CurrentLanguage == "en")
         {
             textsOfMapRu = textsOfMapEn;
             shopTextStrsRu = shopTextStrsEn;
             levelLanguageRu = levelLanguageEn;
         }
-        else if (Language.CurrentLanguage == "tr")
+        else if (LanguageConverter.CurrentLanguage == "tr")
         {
             shopTextStrsRu = shopTextStrsTr;
             textsOfMapRu = textsOfMapTr;

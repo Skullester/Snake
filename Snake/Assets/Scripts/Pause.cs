@@ -175,10 +175,10 @@ public class Pause : MonoBehaviour
     private void LoadSettings()
     {
         bool isObjectsInitiliazed = themeChanger.isItemBought[0];
-        if (Language.CurrentLanguage != null)
+        if (LanguageConverter.CurrentLanguage != null)
         {
-            YandexGame.SwitchLanguage(Language.CurrentLanguage);
-            ruGraphicsTexts = Language.CurrentLanguage switch
+            YandexGame.SwitchLanguage(LanguageConverter.CurrentLanguage);
+            ruGraphicsTexts = LanguageConverter.CurrentLanguage switch
             {
                 "en" => enGraphicsTexts,
                 "tr" => trGraphicsTexts,
