@@ -49,7 +49,7 @@ public class Counter : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         _victory.SetActive(true);
         Pause.Dof.active = true;
-        if (Pause.isOn)
+        if (!Pause.isOn)
             return;
         _audioSource.ignoreListenerPause = true;
         _audioSource.Play();

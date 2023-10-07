@@ -12,7 +12,7 @@ namespace YG
         public bool promptDone;
 
         public bool[] IsThemeBought = new bool[30];
-        public bool IsMuted;
+        public bool IsOn = true;
         public bool IsReward;
         public bool IsRewardGiven;
         public bool IsSunOn = true;

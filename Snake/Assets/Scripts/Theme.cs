@@ -295,7 +295,7 @@ public class Theme : MonoBehaviour
     {
         animatorSpriteCounter.SetInteger("Index", index);
         Multiplier.color = color;
-        panelForAD.color = new Color(color.r, color.g, color.b, 0.25f);
+        panelForAD.color = new Color(color.r, color.g, color.b, 0.55f);
         panelForADInTasks.color = panelForAD.color;
         requiresText.color = new Color(color.r, color.g, color.b, 0.85f);
         _btnRestartGame.color = color;

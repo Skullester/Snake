@@ -51,7 +51,7 @@ public class Pause : MonoBehaviour
 
     [SerializeField, Header("Тела змейки")]
     private Transform bodies;
-    public static bool isOn;
+    public static bool isOn = true;
     public static bool IsSun = true;
     public static bool IsVictory;
     public static bool IsLanguageSet;
@@ -198,8 +198,8 @@ public class Pause : MonoBehaviour
         themeChanger.RewardForGame();
         CameraChanger.CounterCameras = YandexGame.savesData.CounterCameras;
         cameraChanger.CameraManager();
-        isOn = YandexGame.savesData.IsMuted;
-        AudioListener.pause = isOn;
+        isOn = YandexGame.savesData.IsOn;
+        AudioListener.volume = Convert.ToInt32(isOn);
         _soundImg.sprite = isOn ? soundMute[0] : soundMute[1];
         IsSun = YandexGame.savesData.IsSunOn;
         _sun.enabled = IsSun;
@@ -225,11 +225,12 @@ public class Pause : MonoBehaviour
 
     public void Save()
     {
+        AudioListener.pause = false;
         IsVictory = true;
         Time.timeScale = 1f;
-        if (!isOn)
-            AudioListener.pause = false;
-        YandexGame.savesData.IsMuted = isOn;
+        if (isOn)
+            AudioListener.volume = 1;
+        YandexGame.savesData.IsOn = isOn;
         YandexGame.savesData.IsSunOn = IsSun;
         YandexGame.savesData.CounterCameras = CameraChanger.CounterCameras;
         if (!IsSceneFirst)
@@ -266,7 +267,7 @@ public class Pause : MonoBehaviour
 
     public void Reward()
     {
-        if (!isOn)
+        if (isOn)
             themeChanger.PlaySound(0);
         if (IsVictory)
             buttonAD = buttonADInTasks;
@@ -285,7 +286,7 @@ public class Pause : MonoBehaviour
         }
         gameObj.AudioSourceTaskTimer.Stop();
         _audioSourceSnake.Stop();
-        if (!isOn)
+        if (isOn)
             _audioSourceSnake.PlayOneShot(clipTimer);
         head.transform.position = checkPoint.position;
         bodies.position = checkPoint.position;
@@ -306,13 +307,10 @@ public class Pause : MonoBehaviour
 
     public void CloseAD()
     {
-        if (IsVictory)
-        {
-            AudioListener.pause = true;
-            return;
-        }
         if (!isOn)
-            AudioListener.pause = false;
+            AudioListener.volume = 0f;
+        if (IsVictory)
+            return;
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1f;
     }
@@ -324,6 +322,7 @@ public class Pause : MonoBehaviour
 
     public void SetAD(bool isOn)
     {
+        print("dasda");
         if (isOn)
             _audioSourceSnake.Pause();
         else
@@ -341,10 +340,10 @@ public class Pause : MonoBehaviour
             _audioSourceSnake.UnPause();
         if (index != 0)
             return;
-        if (isOn)
-            AudioListener.pause = true;
+        if (!isOn)
+            AudioListener.volume = 0f;
         else
-            AudioListener.pause = condition;
+            AudioListener.volume = Convert.ToInt32(!condition);
         menu.SetActive(condition);
     }
 
@@ -380,10 +379,11 @@ public class Pause : MonoBehaviour
     public void SoundMute()
     {
         isOn = !isOn;
+        print(isOn);
         if (SceneManager.GetActiveScene().buildIndex != 2 && menu.activeSelf && !IsSceneFirst)
-            AudioListener.pause = true;
+            AudioListener.volume = 0;
         else
-            AudioListener.pause = isOn;
+            AudioListener.volume = Convert.ToInt32(isOn);
         _soundImg.sprite = isOn ? soundMute[0] : soundMute[1];
     }
 

@@ -309,6 +309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d60016fe75ba90438d05173e94f26e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  depositImg: {fileID: 0}
   spriteScreens: []
   imageShop: {fileID: 0}
   imageBackInShop: {fileID: 0}
@@ -1245,13 +1246,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3157483472541429372, guid: caf9732433f4dc044845763962493607,
         type: 3}
+      propertyPath: doClosingVoidOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3157483472541429372, guid: caf9732433f4dc044845763962493607,
+        type: 3}
       propertyPath: openingADValues.timeScale
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3157483472541429372, guid: caf9732433f4dc044845763962493607,
         type: 3}
       propertyPath: closingADValues.audioPause
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3157483472541429372, guid: caf9732433f4dc044845763962493607,
         type: 3}
@@ -3664,6 +3670,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d60016fe75ba90438d05173e94f26e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  depositImg: {fileID: 0}
   spriteScreens: []
   imageShop: {fileID: 0}
   imageBackInShop: {fileID: 0}
@@ -4605,6 +4612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d60016fe75ba90438d05173e94f26e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  depositImg: {fileID: 0}
   spriteScreens: []
   imageShop: {fileID: 0}
   imageBackInShop: {fileID: 0}
@@ -5756,6 +5764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d60016fe75ba90438d05173e94f26e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  depositImg: {fileID: 0}
   spriteScreens: []
   imageShop: {fileID: 0}
   imageBackInShop: {fileID: 0}
@@ -8574,6 +8583,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d60016fe75ba90438d05173e94f26e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  depositImg: {fileID: 0}
   spriteScreens: []
   imageShop: {fileID: 0}
   imageBackInShop: {fileID: 0}
@@ -17330,6 +17340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d60016fe75ba90438d05173e94f26e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  depositImg: {fileID: 0}
   spriteScreens: []
   imageShop: {fileID: 0}
   imageBackInShop: {fileID: 0}
@@ -18617,6 +18628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c05af0977c886a4289669b44a9d1d8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buyingCoins: {fileID: 0}
   animatorCollectedItems: {fileID: 0}
   blockSound: {fileID: 0}
   animGratitude: {fileID: 0}
@@ -22880,8 +22892,8 @@ MonoBehaviour:
   _soundImg: {fileID: 8114568881316607449}
   _audioSourceSnake: {fileID: 1117588418}
   soundMute:
-  - {fileID: 21300000, guid: 35daf8ff4c9db5744836a6f3aa8008d9, type: 3}
   - {fileID: 21300000, guid: abe6a3735c717ed43bb031aae93883b5, type: 3}
+  - {fileID: 21300000, guid: 35daf8ff4c9db5744836a6f3aa8008d9, type: 3}
   _requiresText: {fileID: 4120043550158272057}
   gameOverBackToMenuBtn: {fileID: 7087883356181416029}
   _vol: {fileID: 1949783920}

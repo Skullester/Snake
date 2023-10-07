@@ -44,7 +44,7 @@ public class Col : MonoBehaviour
         _gameOver.SetActive(true);
         _dof.active = true;
         Time.timeScale = 0f;
-        if (Pause.isOn)
+        if (!Pause.isOn)
             return;
         _audioSourceGameOver.ignoreListenerPause = true;
         _audioSourceGameOver.Play();
