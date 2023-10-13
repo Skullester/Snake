@@ -271,7 +271,7 @@ MonoBehaviour:
   - id: 500
     title: Coins
     description: 
-    imageURI: https://avatars.mds.yandex.net/get-games/1881371/2a0000018a33f0fd2cbb933960bed5d0e3ec//default87x87
+    imageURI: https://avatars.mds.yandex.net/get-games/1881957/2a0000018b10879ebba43a2a0e1f148638f9//default87x87
     priceValue: 29
     consumed: 1
   - id: 1000
@@ -281,6 +281,12 @@ MonoBehaviour:
     priceValue: 55
     consumed: 1
   - id: 2000
+    title: 
+    description: 
+    imageURI: 
+    priceValue: 105
+    consumed: 1
+  - id: 3000
     title: 
     description: 
     imageURI: 
