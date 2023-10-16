@@ -1,5 +1,5 @@
 {
-    "idSave": 27,
+    "idSave": 32,
     "isFirstSession": false,
     "language": "ru",
     "promptDone": false,
@@ -41,7 +41,7 @@
     "IsRewardGiven": false,
     "IsSunOn": true,
     "CounterCameras": 0,
-    "CountOfCollectedItems": 2007,
-    "Record": 7,
+    "CountOfCollectedItems": 2016,
+    "Record": 9,
     "indexOfQuality": 2
 }
