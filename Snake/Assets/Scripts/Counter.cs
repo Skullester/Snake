@@ -13,6 +13,9 @@ public class Counter : MonoBehaviour
     [SerializeField]
     private GameObject _victory;
 
+    [SerializeField]
+    private Game game;
+
     void Start()
     {
         if (Pause.CounterText != null)
@@ -38,6 +41,8 @@ public class Counter : MonoBehaviour
         }
         if (CounterInt >= Pause.RequireApples && !Pause.IsVictory)
             SetVictory();
+        if (!Pause.IsVictory)
+            game.CountNewApple();
     }
 
     public void SetVictory()

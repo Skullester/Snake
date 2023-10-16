@@ -156,15 +156,23 @@ public class Game : MonoBehaviour
             Counter.CounterInt += length;
     }
 
+    public void CountNewApple()
+    {
+        AudioSourceSnake.PlayOneShot(audioClip, 0.5f);
+        InstantiateNewBody();
+    }
+
+    private void StartGame()
+    {
+        StartGameAnim.SetBool("StartAnim", true);
+        isGameStarted = false;
+        StartCoroutine(StartGameCour());
+    }
+
     void Update()
     {
         #region Start
-        if (isGameStarted)
-        {
-            StartGameAnim.SetBool("StartAnim", true);
-            isGameStarted = false;
-            StartCoroutine(StartGameCour());
-        }
+        /* if (isGameStarted) { } */
         if (!isSoundStarted)
             return;
         if (UnityEngine.Time.timeScale == 0 || Pause.IsVictory || Col.isGameOver)
@@ -178,12 +186,6 @@ public class Game : MonoBehaviour
         }
         #endregion
         #region Game
-        if (tempCounter != Counter.CounterInt && !Pause.IsVictory)
-        {
-            AudioSourceSnake.PlayOneShot(audioClip, 0.5f);
-            tempCounter = Counter.CounterInt;
-            InstantiateNewBody();
-        }
         _head.transform.position =
             _head.transform.position
             - SpeedOfMoving * UnityEngine.Time.deltaTime * _head.transform.forward;
@@ -228,7 +230,8 @@ public class Game : MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
         _timer.text = string.Empty;
-        isGameStarted = true;
+        StartGame();
+        /* isGameStarted = true; */
         if (!isClassic)
             StartCoroutine(StartTimer());
     }

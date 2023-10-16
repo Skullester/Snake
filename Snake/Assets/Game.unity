@@ -3652,7 +3652,7 @@ Transform:
   m_GameObject: {fileID: 798671193}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.0980325, y: 0.33552027, z: 351.4085}
+  m_LocalPosition: {x: -3.0980325, y: 0.33552027, z: 350.2}
   m_LocalScale: {x: 0.53930014, y: 0.5393001, z: 0.5393001}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7375,6 +7375,7 @@ MonoBehaviour:
   _counterTextInTasks: {fileID: 8199944790893396791}
   _audioSource: {fileID: 7020510273706991641}
   _victory: {fileID: 3844548593069365643}
+  game: {fileID: 3241334548336102228}
 --- !u!1 &1719290602
 GameObject:
   m_ObjectHideFlags: 0
