@@ -55,7 +55,7 @@ public class Game : MonoBehaviour
 
     [SerializeField]
     private Image _panelImg;
-    private AudioSource audioSourceSnake;
+    public AudioSource AudioSourceSnake;
 
     [SerializeField]
     private AudioClip audioClip;
@@ -86,7 +86,7 @@ public class Game : MonoBehaviour
             RollRandomTask();
         }
         _bodyPrefab = _bodyPrefabsThemes[ThemeChanger.ThemeNumber];
-        audioSourceSnake = GetComponent<AudioSource>();
+        AudioSourceSnake = GetComponent<AudioSource>();
         StartCoroutine(TimerCour());
         _panelImg.color = new Color(color.r, color.g, color.b, 0.0588f);
     }
@@ -171,16 +171,16 @@ public class Game : MonoBehaviour
             return;
         if (!isClassic && !AudioSourceTaskTimer.isPlaying)
             AudioSourceTaskTimer.Play();
-        if (!audioSourceSnake.isPlaying)
+        if (!AudioSourceSnake.isPlaying)
         {
-            audioSourceSnake.clip = ThemeChanger.ThemeSound;
-            audioSourceSnake.Play();
+            AudioSourceSnake.clip = ThemeChanger.ThemeSound;
+            AudioSourceSnake.Play();
         }
         #endregion
         #region Game
         if (tempCounter != Counter.CounterInt && !Pause.IsVictory)
         {
-            audioSourceSnake.PlayOneShot(audioClip, 0.5f);
+            AudioSourceSnake.PlayOneShot(audioClip, 0.5f);
             tempCounter = Counter.CounterInt;
             InstantiateNewBody();
         }
@@ -233,7 +233,6 @@ public class Game : MonoBehaviour
             _timer.text = i.ToString();
             yield return new WaitForSeconds(1f);
         }
-
         _timer.text = string.Empty;
         isGameStarted = true;
         if (!isClassic)

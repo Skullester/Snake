@@ -281,12 +281,6 @@ public class ThemeChanger : MonoBehaviour
         buyingCoins.SetActive(false);
     }
 
-    /*
-        void FailedPurchased(string id)
-        {
-            failedPurchased?.Invoke();
-        } */
-
     public void UnlockBtn()
     {
         if (YandexGame.savesData.CountOfCollectedItems < themes[ThemeNumber].Price)

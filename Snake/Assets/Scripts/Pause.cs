@@ -277,12 +277,14 @@ public class Pause : MonoBehaviour
         buttonAD.SetActive(false);
         if (IsVictory)
         {
+            gameObj.AudioSourceSnake.Stop();
+            gameObj.AudioSourceTaskTimer.Stop();
             rewardText.gameObject.SetActive(true);
             rewardText.text += ((int)(Counter.CounterInt * 0.3f)).ToString();
             rewardText.GetComponent<Animator>().SetTrigger("Trigger");
             return;
         }
-        if (Game.Time < 10 && ThemeChanger.Mode != 0)
+        if (Game.Time < 15 && ThemeChanger.Mode != 0)
         {
             Game.Time = Mathf.Round(Game.Time) + 15;
             gameObj.TimerTextForTasks.text = Game.Time.ToString();
