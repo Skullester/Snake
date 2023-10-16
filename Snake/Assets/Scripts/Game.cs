@@ -184,8 +184,6 @@ public class Game : MonoBehaviour
             tempCounter = Counter.CounterInt;
             InstantiateNewBody();
         }
-        if (Pause.CheckKey(KeyCode.X))
-            InstantiateNewBody(devApple);
         _head.transform.position =
             _head.transform.position
             - SpeedOfMoving * UnityEngine.Time.deltaTime * _head.transform.forward;
@@ -227,16 +225,17 @@ public class Game : MonoBehaviour
 
     public IEnumerator TimerCour()
     {
+        Col.isGameOver = false;
+        isSoundStarted = false;
         SetAnimToDefault();
-        _timer.text = "3";
-        yield return new WaitForSeconds(1f);
-        _timer.text = "2";
-        yield return new WaitForSeconds(1f);
-        _timer.text = "1";
-        yield return new WaitForSeconds(1f);
+        for (int i = 3; i > 0; i--)
+        {
+            _timer.text = i.ToString();
+            yield return new WaitForSeconds(1f);
+        }
+
         _timer.text = string.Empty;
         isGameStarted = true;
-        Col.isGameOver = false;
         if (!isClassic)
             StartCoroutine(StartTimer());
     }

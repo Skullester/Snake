@@ -140,10 +140,6 @@ public class Pause : MonoBehaviour
             SetPauseOptions(true, 0);
     }
 
-    public static bool CheckButton(string button) => Input.GetButtonDown(button);
-
-    public static bool CheckKey(KeyCode key) => Input.GetKeyDown(key);
-
     void Start()
     {
         StartCoroutine(AwakeCour());
@@ -179,6 +175,7 @@ public class Pause : MonoBehaviour
             YandexGame.savesData.IsNew = true;
             YandexGame.savesData.CountOfCollectedItems = 0;
             YandexGame.savesData.Record = 0;
+            YandexGame.SaveProgress();
         }
         bool isObjectsInitiliazed = themeChanger.isItemBought[0];
         if (LanguageConverter.CurrentLanguage != null)
@@ -313,12 +310,18 @@ public class Pause : MonoBehaviour
 
     public void CloseAD()
     {
-        if (!isOn)
-            AudioListener.volume = 0f;
+        AudioListener.pause = false;
+        if (isOn)
+            AudioListener.volume = 1f;
         if (IsVictory)
             return;
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1f;
+    }
+
+    public void OpenAD()
+    {
+        AudioListener.volume = 0f;
     }
 
     public void CloseMenu()
