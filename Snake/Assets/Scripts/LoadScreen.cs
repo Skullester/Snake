@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using YG;
 
 public class LoadScreen : MonoBehaviour
 {
@@ -65,7 +66,9 @@ public class LoadScreen : MonoBehaviour
         }
         yield return new WaitForSeconds(0.6f);
         loadScreenObj.GetComponent<Animator>().SetTrigger("StartGame");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
+        YandexGame.GameReadyAPI();
+        yield return new WaitForSeconds(0.5f);
         IsGameStarted = true;
         loadScreenObj.SetActive(false);
     }

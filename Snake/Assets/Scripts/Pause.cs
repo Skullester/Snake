@@ -174,6 +174,12 @@ public class Pause : MonoBehaviour
 
     private void LoadSettings()
     {
+        if (!YandexGame.savesData.IsNew)
+        {
+            YandexGame.savesData.IsNew = true;
+            YandexGame.savesData.CountOfCollectedItems = 0;
+            YandexGame.savesData.Record = 0;
+        }
         bool isObjectsInitiliazed = themeChanger.isItemBought[0];
         if (LanguageConverter.CurrentLanguage != null)
         {
@@ -237,7 +243,7 @@ public class Pause : MonoBehaviour
         {
             YandexGame.savesData.CountOfCollectedItems += Counter.CounterInt;
             YandexGame.NewLeaderboardScores(
-                "Collected",
+                "CollectedItems",
                 YandexGame.savesData.CountOfCollectedItems
             );
             if (Counter.CounterInt > YandexGame.savesData.Record)
