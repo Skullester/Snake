@@ -191,14 +191,8 @@ public class Game : MonoBehaviour
             Input.GetAxis("Horizontal") * SpeedOfRotate * UnityEngine.Time.deltaTime;
         _head.transform.Rotate(0f, angleRotation, 0f);
         SpeedOfMoving += 0.001f;
-        if ((Bodies[0].position - _head.position).sqrMagnitude > DistanceBetweenHead)
+        if ((Bodies[1].position - _head.position).sqrMagnitude > DistanceBetweenHead)
         {
-            Bodies[0].LookAt(_head.position);
-            Bodies[0].position = Vector3.MoveTowards(
-                Bodies[0].position,
-                _head.position,
-                SpeedOfMoving * UnityEngine.Time.deltaTime
-            );
             for (int i = 1; i < Bodies.Count; i++)
             {
                 if (

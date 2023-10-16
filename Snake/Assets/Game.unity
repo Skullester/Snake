@@ -14176,6 +14176,7 @@ MonoBehaviour:
   - {fileID: 1457720953153498549, guid: aa4ba726fcecfcc48b35a34b2bf34e29, type: 3}
   - {fileID: 7242221936292187128, guid: 0198f02b7fa8fe740921abaa732e2b24, type: 3}
   Bodies:
+  - {fileID: 5172177467042535932}
   - {fileID: 4147122661371707905}
   - {fileID: 5244764615305448015}
   _head: {fileID: 5172177467042535932}
@@ -14184,6 +14185,7 @@ MonoBehaviour:
   SpeedOfMoving: 5
   SpeedOfRotate: 290
   _panelImg: {fileID: 4607596808285210411}
+  AudioSourceSnake: {fileID: 0}
   audioClip: {fileID: 8300000, guid: a7590a1cbdb19ad46a526bdecfdd0c39, type: 3}
   StartGameAnim: {fileID: 8015763180484389832}
 --- !u!222 &3267874127507454588
