@@ -36,7 +36,7 @@ public class SpawnApplse : MonoBehaviour
             if (isDuplicate)
                 break;
         }
-        print("дубликат - " + isDuplicate);
+        //print("дубликат - " + isDuplicate);
         return isDuplicate ? CheckDublicate() : spawnPosition;
     }
 
