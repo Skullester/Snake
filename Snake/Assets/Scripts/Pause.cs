@@ -240,7 +240,7 @@ public class Pause : MonoBehaviour
         {
             YandexGame.savesData.CountOfCollectedItems += Counter.CounterInt;
             YandexGame.NewLeaderboardScores(
-                "CollectedItems",
+                "CollectedCoins",
                 YandexGame.savesData.CountOfCollectedItems
             );
             if (Counter.CounterInt > YandexGame.savesData.Record)

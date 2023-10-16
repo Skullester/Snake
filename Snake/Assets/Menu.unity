@@ -256,9 +256,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 648417344}
+      - m_Target: {fileID: 648417339}
         m_TargetAssemblyTypeName: LoadScreen, Assembly-CSharp
-        m_MethodName: CheckSliderValue
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5262,8 +5262,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 270.58203, y: 73.62305}
-  m_SizeDelta: {x: 495.97, y: 103.74}
+  m_AnchoredPosition: {x: 233.83594, y: 73.62305}
+  m_SizeDelta: {x: 422.4778, y: 103.74}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1075161424
 MonoBehaviour:
@@ -12721,7 +12721,7 @@ PrefabInstance:
     - target: {fileID: 2958867626268191089, guid: c68ac72675f89134997d07d4426ff6e8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -78
+      value: -65
       objectReference: {fileID: 0}
     - target: {fileID: 4583821048844009486, guid: c68ac72675f89134997d07d4426ff6e8,
         type: 3}
@@ -12736,22 +12736,22 @@ PrefabInstance:
     - target: {fileID: 4583821048844009486, guid: c68ac72675f89134997d07d4426ff6e8,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4583821048844009486, guid: c68ac72675f89134997d07d4426ff6e8,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4583821048844009486, guid: c68ac72675f89134997d07d4426ff6e8,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4583821048844009486, guid: c68ac72675f89134997d07d4426ff6e8,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4583821048844009486, guid: c68ac72675f89134997d07d4426ff6e8,
         type: 3}
@@ -12801,12 +12801,12 @@ PrefabInstance:
     - target: {fileID: 4583821048844009486, guid: c68ac72675f89134997d07d4426ff6e8,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -1232.9999
+      value: -272.99988
       objectReference: {fileID: 0}
     - target: {fileID: 4583821048844009486, guid: c68ac72675f89134997d07d4426ff6e8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 396
+      value: -148
       objectReference: {fileID: 0}
     - target: {fileID: 4583821048844009486, guid: c68ac72675f89134997d07d4426ff6e8,
         type: 3}
