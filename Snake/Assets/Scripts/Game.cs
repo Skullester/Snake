@@ -42,9 +42,7 @@ public class Game : MonoBehaviour
 
     [SerializeField]
     private TMP_Text _timer;
-    private bool isGameStarted;
     private bool isSoundStarted;
-    private int tempCounter = 0;
 
     [SerializeField]
     private float SpeedOfMoving = 5f;
@@ -76,7 +74,6 @@ public class Game : MonoBehaviour
         TimerTextForTasks.text = string.Empty;
         DistanceBetweenHead *= DistanceBetweenHead;
         isClassic = (int)ThemeChanger.Mode == 0;
-        isGameStarted = false;
         if (!isClassic)
         {
             task.Initialize(
@@ -165,14 +162,12 @@ public class Game : MonoBehaviour
     private void StartGame()
     {
         StartGameAnim.SetBool("StartAnim", true);
-        isGameStarted = false;
         StartCoroutine(StartGameCour());
     }
 
     void Update()
     {
         #region Start
-        /* if (isGameStarted) { } */
         if (!isSoundStarted)
             return;
         if (UnityEngine.Time.timeScale == 0 || Pause.IsVictory || Col.isGameOver)
@@ -231,7 +226,6 @@ public class Game : MonoBehaviour
         }
         _timer.text = string.Empty;
         StartGame();
-        /* isGameStarted = true; */
         if (!isClassic)
             StartCoroutine(StartTimer());
     }

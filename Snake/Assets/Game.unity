@@ -1071,8 +1071,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2211564899198745196, guid: caf9732433f4dc044845763962493607,
         type: 3}
+      propertyPath: OpenFullscreenAd.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211564899198745196, guid: caf9732433f4dc044845763962493607,
+        type: 3}
       propertyPath: CloseFullscreenAd.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2211564899198745196, guid: caf9732433f4dc044845763962493607,
         type: 3}
@@ -1096,6 +1101,11 @@ PrefabInstance:
       objectReference: {fileID: 8218770007312973674}
     - target: {fileID: 2211564899198745196, guid: caf9732433f4dc044845763962493607,
         type: 3}
+      propertyPath: OpenFullscreenAd.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211564899198745196, guid: caf9732433f4dc044845763962493607,
+        type: 3}
       propertyPath: CloseFullscreenAd.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
@@ -1109,6 +1119,11 @@ PrefabInstance:
       propertyPath: CloseVideoAd.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Reward
       objectReference: {fileID: 0}
+    - target: {fileID: 2211564899198745196, guid: caf9732433f4dc044845763962493607,
+        type: 3}
+      propertyPath: OpenFullscreenAd.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8218770007312973674}
     - target: {fileID: 2211564899198745196, guid: caf9732433f4dc044845763962493607,
         type: 3}
       propertyPath: RewardVideoAd.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -1126,13 +1141,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2211564899198745196, guid: caf9732433f4dc044845763962493607,
         type: 3}
+      propertyPath: OpenFullscreenAd.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211564899198745196, guid: caf9732433f4dc044845763962493607,
+        type: 3}
       propertyPath: CloseFullscreenAd.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2211564899198745196, guid: caf9732433f4dc044845763962493607,
         type: 3}
+      propertyPath: OpenFullscreenAd.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenAD
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211564899198745196, guid: caf9732433f4dc044845763962493607,
+        type: 3}
       propertyPath: CloseFullscreenAd.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Reward
+      value: CloseFullScreenAD
       objectReference: {fileID: 0}
     - target: {fileID: 2211564899198745196, guid: caf9732433f4dc044845763962493607,
         type: 3}
@@ -1146,8 +1171,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2211564899198745196, guid: caf9732433f4dc044845763962493607,
         type: 3}
+      propertyPath: OpenFullscreenAd.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Pause, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211564899198745196, guid: caf9732433f4dc044845763962493607,
+        type: 3}
       propertyPath: CloseFullscreenAd.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Pause1, Assembly-CSharp
+      value: Pause, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2211564899198745196, guid: caf9732433f4dc044845763962493607,
         type: 3}
@@ -1157,6 +1187,11 @@ PrefabInstance:
     - target: {fileID: 2211564899198745196, guid: caf9732433f4dc044845763962493607,
         type: 3}
       propertyPath: RewardVideoAd.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211564899198745196, guid: caf9732433f4dc044845763962493607,
+        type: 3}
+      propertyPath: OpenFullscreenAd.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2211564899198745196, guid: caf9732433f4dc044845763962493607,
@@ -12253,7 +12288,7 @@ GameObject:
   - component: {fileID: 8649515204850766405}
   - component: {fileID: 5566177681032721871}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: GameOverText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15153,8 +15188,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 177, y: 8}
+  m_SizeDelta: {x: 47.6985, y: -58.9875}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3832880827681733133
 GameObject:
@@ -19968,7 +20003,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: "\u0412\u0442\u043E\u0440\u0430\u044F \u0436\u0438\u0437\u043D\u044C \u0437\u0430
+    \u0440\u0435\u043A\u043B\u0430\u043C\u0443"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 071afbaeedf12514a97803e5b9684c9b, type: 2}
   m_sharedMaterial: {fileID: -9136021430273650147, guid: 071afbaeedf12514a97803e5b9684c9b,
@@ -21023,6 +21059,7 @@ MonoBehaviour:
   - "\u0418\u0433\u0440\u0430 \u0437\u0430\u043A\u043E\u043D\u0447\u0435\u043D\u0430"
   - "\u041F\u0435\u0440\u0435\u0437\u0430\u043F\u0443\u0441\u0442\u0438\u0442\u044C
     \u0438\u0433\u0440\u0443"
+  - "\u0412\u0435\u0440\u043D\u0443\u0442\u044C\u0441\u044F \u0432 \u043C\u0435\u043D\u044E"
   en:
   - 'Map:'
   - 'Necessary:'
@@ -21033,6 +21070,7 @@ MonoBehaviour:
   - Back to menu
   - Game Over
   - Restart game
+  - Back to menu
   tr:
   - 'Harita:'
   - 'Gerekli:'
@@ -21043,6 +21081,7 @@ MonoBehaviour:
   - "Men\xFCye d\xF6n"
   - Oyun bitti
   - "Oyunu yeniden ba\u015Flat"
+  - "Men\xFCye d\xF6n"
   texts:
   - {fileID: 5719841432161461423}
   - {fileID: 4120043550158272057}
@@ -21053,6 +21092,7 @@ MonoBehaviour:
   - {fileID: 2084309349437150392}
   - {fileID: 5566177681032721871}
   - {fileID: 1335580068218539689}
+  - {fileID: 2305850494257792603}
 --- !u!1 &7286827306973239039
 GameObject:
   m_ObjectHideFlags: 0

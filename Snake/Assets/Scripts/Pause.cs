@@ -326,6 +326,12 @@ public class Pause : MonoBehaviour
         AudioListener.volume = 0f;
     }
 
+    public void CloseFullScreenAD()
+    {
+        if (isOn)
+            AudioListener.volume = 1f;
+    }
+
     public void CloseMenu()
     {
         SetPauseOptions(false, 0);

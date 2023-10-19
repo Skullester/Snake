@@ -286,12 +286,6 @@ MonoBehaviour:
     imageURI: 
     priceValue: 105
     consumed: 1
-  - id: 3000
-    title: 
-    description: 
-    imageURI: 
-    priceValue: 105
-    consumed: 1
   metricaEnable: 0
   metricaCounterID: 0
   debug: 1
