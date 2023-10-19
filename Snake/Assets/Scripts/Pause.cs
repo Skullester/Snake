@@ -102,13 +102,20 @@ public class Pause : MonoBehaviour
     private string[] enGraphicsTexts = { "Graphics settings: ", "Low", "Medium", "High" };
     private string[] trGraphicsTexts = { "Grafik ayarları: ", "Düşük", "Orta", "Yüksek" };
 
-    private void OnEnable() => YandexGame.GetDataEvent += LoadSettings;
+    private void OnEnable()
+    {
+        YandexGame.GetDataEvent += LoadSettings;
+    }
 
-    private void OnDisable() => YandexGame.GetDataEvent -= LoadSettings;
+    private void OnDisable()
+    {
+        YandexGame.GetDataEvent -= LoadSettings;
+    }
 
     public static TMP_Text GraphicsText;
     private Animator animatorGraphics;
     private static int graphicsIndex = 2;
+    private bool isAD;
 
     private void Awake()
     {
@@ -228,7 +235,9 @@ public class Pause : MonoBehaviour
 
     public void Save()
     {
-        AudioListener.pause = false;
+        if (!isAD)
+            AudioListener.pause = false;
+        isAD = false;
         IsVictory = true;
         Time.timeScale = 1f;
         if (isOn)
@@ -245,7 +254,7 @@ public class Pause : MonoBehaviour
             );
             if (Counter.CounterInt > YandexGame.savesData.Record)
                 YandexGame.savesData.Record = Counter.CounterInt;
-            if (Counter.CounterInt > 150 && !YandexGame.savesData.IsRewardGiven)
+            if (Counter.CounterInt >= 150 && !YandexGame.savesData.IsRewardGiven)
                 YandexGame.savesData.IsReward = true;
         }
         else
@@ -323,11 +332,14 @@ public class Pause : MonoBehaviour
 
     public void OpenAD()
     {
+        AudioListener.pause = true;
         AudioListener.volume = 0f;
+        isAD = true;
     }
 
     public void CloseFullScreenAD()
     {
+        AudioListener.pause = false;
         if (isOn)
             AudioListener.volume = 1f;
     }
