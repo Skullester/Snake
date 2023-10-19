@@ -10250,7 +10250,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1471757473762848031}
-  m_Mesh: {fileID: 4300000, guid: fd897f49cb2c3bf48be0974f48f941fc, type: 2}
+  m_Mesh: {fileID: 4300000, guid: 5792ca5f5af959c478ef131c4db7f8b9, type: 2}
 --- !u!4 &803974062219598701
 Transform:
   m_ObjectHideFlags: 0
@@ -10274,6 +10274,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6458588851275693412}
     m_Modifications:
+    - target: {fileID: 1076450205583192764, guid: c4689c2d0460f9b478e6e695eb0a4527,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 5792ca5f5af959c478ef131c4db7f8b9, type: 2}
+    - target: {fileID: 2045013202269756927, guid: c4689c2d0460f9b478e6e695eb0a4527,
+        type: 3}
+      propertyPath: _quality
+      value: 0.525
+      objectReference: {fileID: 0}
     - target: {fileID: 3337980760916464316, guid: c4689c2d0460f9b478e6e695eb0a4527,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10323,6 +10333,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3632774525544261213, guid: c4689c2d0460f9b478e6e695eb0a4527,
+        type: 3}
+      propertyPath: _quality
+      value: 0.607
       objectReference: {fileID: 0}
     - target: {fileID: 3961551189861383804, guid: c4689c2d0460f9b478e6e695eb0a4527,
         type: 3}
@@ -10494,7 +10509,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1304181898085835266}
-  m_Mesh: {fileID: 4300000, guid: fd897f49cb2c3bf48be0974f48f941fc, type: 2}
+  m_Mesh: {fileID: 4300000, guid: 5792ca5f5af959c478ef131c4db7f8b9, type: 2}
 --- !u!1 &965725761439411062
 GameObject:
   m_ObjectHideFlags: 0
@@ -14424,7 +14439,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3388159758275612177
 Transform:
   m_ObjectHideFlags: 0
@@ -16473,6 +16488,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0.001
       objectReference: {fileID: 0}
+    - target: {fileID: 3220925034176850752, guid: a723e8caec65b524f916c17b21b6a3e2,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 5792ca5f5af959c478ef131c4db7f8b9, type: 2}
     - target: {fileID: 7692443518736566813, guid: a723e8caec65b524f916c17b21b6a3e2,
         type: 3}
       propertyPath: m_Name
