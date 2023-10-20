@@ -5,9 +5,16 @@ using TMPro;
 using UnityEngine.Serialization;
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 
 public class Theme : MonoBehaviour
 {
+    [SerializeField, Header("Картинка сердца в награде")]
+    private Image heartInReward;
+
+    [SerializeField, Header("Текст награды смерти")]
+    private TMP_Text rewardDeadText;
+
     [SerializeField, Header("Картинка кнопки депозита")]
     private Image depositImg;
 
@@ -295,13 +302,15 @@ public class Theme : MonoBehaviour
     {
         animatorSpriteCounter.SetInteger("Index", index);
         Multiplier.color = color;
-        panelForAD.color = new Color(color.r, color.g, color.b, 0.55f);
-        panelForADInTasks.color = panelForAD.color;
+
+        panelForADInTasks.color = new Color(color.r, color.g, color.b, 0.55f);
         requiresText.color = new Color(color.r, color.g, color.b, 0.85f);
+        rewardDeadText.color = requiresText.color;
         _btnRestartGame.color = color;
         counterImg.sprite = counterImgSprite;
         victoryImgCounter.sprite = counterImg.sprite;
         imgTask.sprite = counterImg.sprite;
+        heartInReward.color = requiresText.color;
         if (index == 4)
         {
             counterImg.color = new Color(0.91f, 0.56f, 0.56f);

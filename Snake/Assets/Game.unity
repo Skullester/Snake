@@ -309,6 +309,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d60016fe75ba90438d05173e94f26e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heartInReward: {fileID: 2377813606418048577}
+  rewardDeadText: {fileID: 6577086552374479830}
   depositImg: {fileID: 0}
   spriteScreens: []
   imageShop: {fileID: 0}
@@ -335,7 +337,7 @@ MonoBehaviour:
   unlockBtn: {fileID: 0}
   Price: 0
   shopBtn: {fileID: 0}
-  panelForAD: {fileID: 8240281313364740741}
+  panelForAD: {fileID: 0}
   panelForADInTasks: {fileID: 5434666316012594832}
   continueImg: {fileID: 6762917698043816357}
   startGameBtnImg: {fileID: 0}
@@ -3705,6 +3707,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d60016fe75ba90438d05173e94f26e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heartInReward: {fileID: 2377813606418048577}
+  rewardDeadText: {fileID: 6577086552374479830}
   depositImg: {fileID: 0}
   spriteScreens: []
   imageShop: {fileID: 0}
@@ -3731,7 +3735,7 @@ MonoBehaviour:
   unlockBtn: {fileID: 0}
   Price: 0
   shopBtn: {fileID: 0}
-  panelForAD: {fileID: 8240281313364740741}
+  panelForAD: {fileID: 0}
   panelForADInTasks: {fileID: 5434666316012594832}
   continueImg: {fileID: 6762917698043816357}
   startGameBtnImg: {fileID: 0}
@@ -4647,6 +4651,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d60016fe75ba90438d05173e94f26e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heartInReward: {fileID: 2377813606418048577}
+  rewardDeadText: {fileID: 6577086552374479830}
   depositImg: {fileID: 0}
   spriteScreens: []
   imageShop: {fileID: 0}
@@ -4673,7 +4679,7 @@ MonoBehaviour:
   unlockBtn: {fileID: 0}
   Price: 0
   shopBtn: {fileID: 0}
-  panelForAD: {fileID: 8240281313364740741}
+  panelForAD: {fileID: 0}
   panelForADInTasks: {fileID: 5434666316012594832}
   continueImg: {fileID: 6762917698043816357}
   startGameBtnImg: {fileID: 0}
@@ -5799,6 +5805,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d60016fe75ba90438d05173e94f26e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heartInReward: {fileID: 2377813606418048577}
+  rewardDeadText: {fileID: 6577086552374479830}
   depositImg: {fileID: 0}
   spriteScreens: []
   imageShop: {fileID: 0}
@@ -5825,7 +5833,7 @@ MonoBehaviour:
   unlockBtn: {fileID: 0}
   Price: 0
   shopBtn: {fileID: 0}
-  panelForAD: {fileID: 8240281313364740741}
+  panelForAD: {fileID: 0}
   panelForADInTasks: {fileID: 5434666316012594832}
   continueImg: {fileID: 6762917698043816357}
   startGameBtnImg: {fileID: 0}
@@ -8619,6 +8627,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d60016fe75ba90438d05173e94f26e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heartInReward: {fileID: 2377813606418048577}
+  rewardDeadText: {fileID: 6577086552374479830}
   depositImg: {fileID: 0}
   spriteScreens: []
   imageShop: {fileID: 0}
@@ -8645,7 +8655,7 @@ MonoBehaviour:
   unlockBtn: {fileID: 0}
   Price: 0
   shopBtn: {fileID: 0}
-  panelForAD: {fileID: 8240281313364740741}
+  panelForAD: {fileID: 0}
   panelForADInTasks: {fileID: 5434666316012594832}
   continueImg: {fileID: 6762917698043816357}
   startGameBtnImg: {fileID: 0}
@@ -10522,7 +10532,7 @@ GameObject:
   - component: {fileID: 8343498829114227684}
   - component: {fileID: 6577086552374479830}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: RewardText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11917,14 +11927,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!222 &1992823092925745161
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3760785960408609905}
-  m_CullTransparentMesh: 1
 --- !u!1 &2024805976502735612
 GameObject:
   m_ObjectHideFlags: 0
@@ -12551,7 +12553,8 @@ RectTransform:
   - {fileID: 6592025178501030860}
   - {fileID: 6004967894392912616}
   - {fileID: 5641724459720025203}
-  - {fileID: 2405035075213662096}
+  - {fileID: 2782187984333883148}
+  - {fileID: 3829411166158443275}
   - {fileID: 4563019067171429004}
   - {fileID: 7441741155908841905}
   m_Father: {fileID: 640270483417048955}
@@ -12785,14 +12788,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.18592966, b: 0, a: 1}
+  m_Color: {r: 0.9198113, g: 1, b: 0.99857575, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 97ac55cfc7f5efd47932f59059fa1a1e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d444f4d06bcd7dc4a8cf837e7c3759a0, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -12874,26 +12877,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 343.1807, y: 441.64923, z: 449.43015}
   m_Center: {x: -0.000001928278, y: 236.19164, z: 13.088874}
---- !u!224 &2405035075213662096
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3760785960408609905}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.17709109, y: 0.17709109, z: 0.17709109}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2782187984333883148}
-  m_Father: {fileID: 2314355008329962280}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 33, y: -377}
-  m_SizeDelta: {x: 935.3533, y: 764.0543}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &2407728406225817207
 Transform:
   m_ObjectHideFlags: 0
@@ -13446,16 +13429,15 @@ RectTransform:
   m_GameObject: {fileID: 3667344153208291767}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.6468115, y: 5.6468115, z: 5.6468115}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3829411166158443275}
-  m_Father: {fileID: 2405035075213662096}
+  m_Children: []
+  m_Father: {fileID: 2314355008329962280}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.9062824, y: -2.3839111}
-  m_SizeDelta: {x: 218.467, y: 188.187}
+  m_AnchoredPosition: {x: 256, y: -349}
+  m_SizeDelta: {x: 116.6577, y: 110.2392}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &2815761620010320691
 RectTransform:
@@ -15060,24 +15042,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &3760785960408609905
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2405035075213662096}
-  - component: {fileID: 1992823092925745161}
-  - component: {fileID: 8240281313364740741}
-  m_Layer: 5
-  m_Name: Panel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &3770911847432482782
 GameObject:
   m_ObjectHideFlags: 0
@@ -15194,17 +15158,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 965725761439411062}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2782187984333883148}
+  m_Father: {fileID: 2314355008329962280}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 177, y: 8}
-  m_SizeDelta: {x: 47.6985, y: -58.9875}
+  m_AnchoredPosition: {x: -29.324951, y: -341.45758}
+  m_SizeDelta: {x: -1469.8, y: -938.0253}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3832880827681733133
 GameObject:
@@ -17398,6 +17362,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d60016fe75ba90438d05173e94f26e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heartInReward: {fileID: 2377813606418048577}
+  rewardDeadText: {fileID: 6577086552374479830}
   depositImg: {fileID: 0}
   spriteScreens: []
   imageShop: {fileID: 0}
@@ -17424,7 +17390,7 @@ MonoBehaviour:
   unlockBtn: {fileID: 0}
   Price: 0
   shopBtn: {fileID: 0}
-  panelForAD: {fileID: 8240281313364740741}
+  panelForAD: {fileID: 0}
   panelForADInTasks: {fileID: 5434666316012594832}
   continueImg: {fileID: 6762917698043816357}
   startGameBtnImg: {fileID: 0}
@@ -20023,8 +19989,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0412\u0442\u043E\u0440\u0430\u044F \u0436\u0438\u0437\u043D\u044C \u0437\u0430
-    \u0440\u0435\u043A\u043B\u0430\u043C\u0443"
+  m_text: "\u0412\u043E\u0437\u0440\u043E\u0434\u0438\u0442\u044C\u0441\u044F \u0437\u0430
+    \u0440\u0435\u043A\u043B\u0430\u043C\u0443 ->"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 071afbaeedf12514a97803e5b9684c9b, type: 2}
   m_sharedMaterial: {fileID: -9136021430273650147, guid: 071afbaeedf12514a97803e5b9684c9b,
@@ -20052,8 +20018,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 52
-  m_fontSizeBase: 52
+  m_fontSize: 29.1
+  m_fontSizeBase: 29.1
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -21080,6 +21046,8 @@ MonoBehaviour:
   - "\u041F\u0435\u0440\u0435\u0437\u0430\u043F\u0443\u0441\u0442\u0438\u0442\u044C
     \u0438\u0433\u0440\u0443"
   - "\u0412\u0435\u0440\u043D\u0443\u0442\u044C\u0441\u044F \u0432 \u043C\u0435\u043D\u044E"
+  - "\u0412\u043E\u0437\u0440\u043E\u0434\u0438\u0442\u044C\u0441\u044F \u0437\u0430
+    \u0440\u0435\u043A\u043B\u0430\u043C\u0443 ->"
   en:
   - 'Map:'
   - 'Necessary:'
@@ -21091,6 +21059,7 @@ MonoBehaviour:
   - Game Over
   - Restart game
   - Back to menu
+  - Reborn for advertising  ->
   tr:
   - 'Harita:'
   - 'Gerekli:'
@@ -21102,6 +21071,7 @@ MonoBehaviour:
   - Oyun bitti
   - "Oyunu yeniden ba\u015Flat"
   - "Men\xFCye d\xF6n"
+  - "Reklamc\u0131l\u0131k i\xE7in yeniden do\u011Fduk ->"
   texts:
   - {fileID: 5719841432161461423}
   - {fileID: 4120043550158272057}
@@ -21113,6 +21083,7 @@ MonoBehaviour:
   - {fileID: 5566177681032721871}
   - {fileID: 1335580068218539689}
   - {fileID: 2305850494257792603}
+  - {fileID: 6577086552374479830}
 --- !u!1 &7286827306973239039
 GameObject:
   m_ObjectHideFlags: 0
@@ -22936,13 +22907,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d36664be7ad9f44e8bce47c022ec8f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textAD: {fileID: 965725761439411062}
   rewardText: {fileID: 4738249624563688512}
   blockSound: {fileID: 0}
   cameraChanger: {fileID: 3784813812718848846}
   textRecord: {fileID: 0}
   gameObj: {fileID: 3241334548336102228}
   head: {fileID: 7437963691554847360}
-  buttonAD: {fileID: 3760785960408609905}
+  buttonAD: {fileID: 3667344153208291767}
   buttonADInTasks: {fileID: 8970961446421956998}
   checkPoint: {fileID: 798671197}
   bodies: {fileID: 939112104}
@@ -22960,36 +22932,6 @@ MonoBehaviour:
   _requiresText: {fileID: 4120043550158272057}
   gameOverBackToMenuBtn: {fileID: 7087883356181416029}
   _vol: {fileID: 1949783920}
---- !u!114 &8240281313364740741
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3760785960408609905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.9150943, g: 0.18560876, b: 0.46717325, a: 0.21960784}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 1
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!95 &8261366170885848914
 Animator:
   serializedVersion: 5

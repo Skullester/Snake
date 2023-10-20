@@ -367,6 +367,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d60016fe75ba90438d05173e94f26e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heartInReward: {fileID: 0}
+  rewardDeadText: {fileID: 0}
   depositImg: {fileID: 595627328}
   spriteScreens:
   - {fileID: 21300000, guid: 7c43fa9a7d0eb3142913a51c6215c600, type: 3}
@@ -2361,7 +2363,7 @@ PrefabInstance:
     - target: {fileID: 1072245816115058378, guid: 85a12be5ffc39d349bf6dccb22596603,
         type: 3}
       propertyPath: m_Color.a
-      value: 0.28235295
+      value: 0.05882353
       objectReference: {fileID: 0}
     - target: {fileID: 1072245816115058378, guid: 85a12be5ffc39d349bf6dccb22596603,
         type: 3}
@@ -2899,7 +2901,7 @@ RectTransform:
   m_Father: {fileID: 1220776342}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: -1.5, y: 4.799988}
   m_SizeDelta: {x: 84.2114, y: 43.311}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3179,6 +3181,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d60016fe75ba90438d05173e94f26e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heartInReward: {fileID: 0}
+  rewardDeadText: {fileID: 0}
   depositImg: {fileID: 595627328}
   spriteScreens:
   - {fileID: 21300000, guid: 7c43fa9a7d0eb3142913a51c6215c600, type: 3}
@@ -3969,6 +3973,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d60016fe75ba90438d05173e94f26e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heartInReward: {fileID: 0}
+  rewardDeadText: {fileID: 0}
   depositImg: {fileID: 595627328}
   spriteScreens:
   - {fileID: 21300000, guid: 7c43fa9a7d0eb3142913a51c6215c600, type: 3}
@@ -4288,7 +4294,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &850118979
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4639,7 +4645,7 @@ RectTransform:
   m_Father: {fileID: 1253480121}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5183,6 +5189,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d60016fe75ba90438d05173e94f26e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heartInReward: {fileID: 0}
+  rewardDeadText: {fileID: 0}
   depositImg: {fileID: 595627328}
   spriteScreens:
   - {fileID: 21300000, guid: 7c43fa9a7d0eb3142913a51c6215c600, type: 3}
@@ -6549,7 +6557,7 @@ PrefabInstance:
     - target: {fileID: 1072245816115058378, guid: 85a12be5ffc39d349bf6dccb22596603,
         type: 3}
       propertyPath: m_Color.a
-      value: 0.28235295
+      value: 0.05882353
       objectReference: {fileID: 0}
     - target: {fileID: 1072245816115058378, guid: 85a12be5ffc39d349bf6dccb22596603,
         type: 3}
@@ -7468,7 +7476,7 @@ PrefabInstance:
     - target: {fileID: 1072245816115058378, guid: 85a12be5ffc39d349bf6dccb22596603,
         type: 3}
       propertyPath: m_Color.a
-      value: 0.28235295
+      value: 0.05882353
       objectReference: {fileID: 0}
     - target: {fileID: 1072245816115058378, guid: 85a12be5ffc39d349bf6dccb22596603,
         type: 3}
@@ -9658,6 +9666,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d60016fe75ba90438d05173e94f26e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heartInReward: {fileID: 0}
+  rewardDeadText: {fileID: 0}
   depositImg: {fileID: 595627328}
   spriteScreens:
   - {fileID: 21300000, guid: 7c43fa9a7d0eb3142913a51c6215c600, type: 3}
@@ -10756,6 +10766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d36664be7ad9f44e8bce47c022ec8f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textAD: {fileID: 0}
   rewardText: {fileID: 0}
   blockSound: {fileID: 8300000, guid: bbd42714865501944b4c4733657b68b3, type: 3}
   cameraChanger: {fileID: 8638828347466624398}
@@ -13789,6 +13800,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d60016fe75ba90438d05173e94f26e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heartInReward: {fileID: 0}
+  rewardDeadText: {fileID: 0}
   depositImg: {fileID: 595627328}
   spriteScreens:
   - {fileID: 21300000, guid: 7c43fa9a7d0eb3142913a51c6215c600, type: 3}

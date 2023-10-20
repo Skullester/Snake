@@ -41,7 +41,7 @@ public class Counter : MonoBehaviour
         }
         if (CounterInt >= Pause.RequireApples && !Pause.IsVictory)
             SetVictory();
-        if (!Pause.IsVictory)
+        if (CounterInt < Pause.RequireApples)
             game.CountNewApple();
     }
 

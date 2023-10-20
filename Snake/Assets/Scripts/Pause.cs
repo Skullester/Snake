@@ -11,6 +11,8 @@ using YG.Example;
 
 public class Pause : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject textAD;
     private TMP_Dropdown dropdown;
 
     [SerializeField, Header("Текст анимации reward")]
@@ -143,6 +145,7 @@ public class Pause : MonoBehaviour
 
     private void Update()
     {
+        print(isAD);
         if (!IsSceneFirst && !Col.isGameOver && !IsVictory && Input.GetKeyDown(KeyCode.Tab))
             SetPauseOptions(true, 0);
     }
@@ -284,6 +287,7 @@ public class Pause : MonoBehaviour
         if (IsVictory)
             buttonAD = buttonADInTasks;
         buttonAD.SetActive(false);
+        textAD.SetActive(false);
         if (IsVictory)
         {
             gameObj.AudioSourceSnake.Stop();
@@ -351,7 +355,6 @@ public class Pause : MonoBehaviour
 
     public void SetAD(bool isOn)
     {
-        print("dasda");
         if (isOn)
             _audioSourceSnake.Pause();
         else
@@ -378,11 +381,7 @@ public class Pause : MonoBehaviour
 
     public void BackToMenu()
     {
-        if (IsVictory)
-        {
-            AudioListener.pause = false;
-            _audioSourceSnake.Play();
-        }
+        isAD = true;
         Save();
         BackToMenuAnim.SetTrigger("BackToMenu");
         StartCoroutine(BackToMenuCour());

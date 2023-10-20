@@ -99,7 +99,7 @@ public class Game : MonoBehaviour
         else if (MultiplierForTasks >= 1.5f)
         {
             time = Random.Range(80, 110 + 1);
-            countNumbers = (int)(time * 0.5f);
+            countNumbers = (int)(time * 0.48f);
         }
         else if (multiplier >= 1.3f)
         {
@@ -108,7 +108,7 @@ public class Game : MonoBehaviour
         }
         else
         {
-            time = Random.Range(30, 40 + 1);
+            time = Random.Range(35, 45 + 1);
             countNumbers = (int)(time * 0.38f);
         }
         bool condition = time % 5 != 0;
@@ -155,6 +155,7 @@ public class Game : MonoBehaviour
 
     public void CountNewApple()
     {
+        print("shot");
         AudioSourceSnake.PlayOneShot(audioClip, 0.5f);
         InstantiateNewBody();
     }

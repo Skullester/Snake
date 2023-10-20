@@ -363,7 +363,7 @@ public class ThemeChanger : MonoBehaviour
             if (Pause.IsScene3D)
                 return;
             ChooseLevel();
-            Game.MultiplierForTasks = (float)UnityEngine.Random.Range(11, 12 + 1) / 10;
+            //Game.MultiplierForTasks = (float)UnityEngine.Random.Range(11, 12 + 1) / 10;
         }
     }
 
@@ -503,7 +503,7 @@ public class ThemeChanger : MonoBehaviour
         switch (Level)
         {
             case LevelDifficults.Easy:
-                SetLevel((byte)Level, 25, Color.white);
+                SetLevel((byte)Level, 5, Color.white);
                 break;
             case LevelDifficults.Normal:
                 SetLevel((byte)Level, 50, Color.white);
