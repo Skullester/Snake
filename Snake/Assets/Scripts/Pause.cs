@@ -117,7 +117,7 @@ public class Pause : MonoBehaviour
     public static TMP_Text GraphicsText;
     private Animator animatorGraphics;
     private static int graphicsIndex = 2;
-    private bool isAD;
+    private static bool isAD;
 
     private void Awake()
     {
