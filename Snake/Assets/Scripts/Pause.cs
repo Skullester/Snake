@@ -180,10 +180,13 @@ public class Pause : MonoBehaviour
     private void LoadSettings()
     {
         if (isAD)
-            AudioListener.pause = true;
-        if (!YandexGame.savesData.IsNew)
         {
-            YandexGame.savesData.IsNew = true;
+            AudioListener.pause = true;
+            isAD = false;
+        }
+        if (!YandexGame.savesData.IsNewPlayer)
+        {
+            YandexGame.savesData.IsNewPlayer = true;
             YandexGame.savesData.CountOfCollectedItems = 0;
             YandexGame.savesData.Record = 0;
             YandexGame.SaveProgress();
@@ -252,7 +255,7 @@ public class Pause : MonoBehaviour
         {
             YandexGame.savesData.CountOfCollectedItems += Counter.CounterInt;
             YandexGame.NewLeaderboardScores(
-                "CollectedCoins",
+                "CollectedApples",
                 YandexGame.savesData.CountOfCollectedItems
             );
             if (Counter.CounterInt > YandexGame.savesData.Record)
@@ -352,7 +355,6 @@ public class Pause : MonoBehaviour
         AudioListener.pause = false;
         if (isOn)
             AudioListener.volume = 1f;
-        isAD = false;
     }
 
     public void CloseMenu()

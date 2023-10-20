@@ -17,38 +17,58 @@ namespace YG
     public class YandexGame : MonoBehaviour
     {
         public InfoYG infoYG;
-        [Tooltip("Объект YandexGame не будет удаляться при смене сцены. При выборе опции singleton, объект YandexGame необходимо поместить только на одну сцену, которая первая загружается при запуске игры.")]
+
+        [Tooltip(
+            "Объект YandexGame не будет удаляться при смене сцены. При выборе опции singleton, объект YandexGame необходимо поместить только на одну сцену, которая первая загружается при запуске игры."
+        )]
         public bool singleton;
+
         [Space(10)]
         public UnityEvent ResolvedAuthorization;
         public UnityEvent RejectedAuthorization;
+
         [Space(30)]
         public UnityEvent OpenFullscreenAd;
         public UnityEvent CloseFullscreenAd;
         public UnityEvent ErrorFullscreenAd;
+
         [Space(30)]
         public UnityEvent OpenVideoAd;
         public UnityEvent CloseVideoAd;
         public UnityEvent RewardVideoAd;
         public UnityEvent ErrorVideoAd;
+
         [Space(30)]
         public UnityEvent PurchaseSuccess;
         public UnityEvent PurchaseFailed;
+
         [Space(30)]
         public UnityEvent PromptDo;
         public UnityEvent PromptFail;
         public UnityEvent ReviewDo;
 
         #region Data Fields
-        public static bool SDKEnabled { get => _SDKEnabled; }
-        public static bool auth { get => _auth; }
-        public static bool initializedLB { get => _initializedLB; }
+        public static bool SDKEnabled
+        {
+            get => _SDKEnabled;
+        }
+        public static bool auth
+        {
+            get => _auth;
+        }
+        public static bool initializedLB
+        {
+            get => _initializedLB;
+        }
         public static string playerName
         {
             get => _playerName;
             set => _playerName = value;
         }
-        public static string playerId { get => _playerId; }
+        public static string playerId
+        {
+            get => _playerId;
+        }
         public static string playerPhoto
         {
             get => _playerPhoto;
@@ -70,7 +90,6 @@ namespace YG
                     return false;
             }
         }
-
 
         static bool _SDKEnabled;
         static bool _startGame;
@@ -96,6 +115,7 @@ namespace YG
             if (singleton)
                 SceneManager.sceneLoaded += OnSceneLoaded;
         }
+
         private void OnDisable()
         {
             if (singleton)
@@ -109,14 +129,16 @@ namespace YG
 
             if (singleton)
             {
-                if (Instance != null) Destroy(gameObject);
+                if (Instance != null)
+                    Destroy(gameObject);
                 else
                 {
                     Instance = this;
                     DontDestroyOnLoad(gameObject);
                 }
             }
-            else Instance = this;
+            else
+                Instance = this;
         }
 
         [DllImport("__Internal")]
@@ -135,7 +157,8 @@ namespace YG
 
         static void Message(string message)
         {
-            if (_debug) Debug.Log(message);
+            if (_debug)
+                Debug.Log(message);
         }
 
         void FirstСalls()
@@ -166,6 +189,7 @@ namespace YG
         }
 
         private static bool firstSceneLoad = true;
+
         private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
             if (firstSceneLoad)
@@ -277,6 +301,7 @@ namespace YG
 
         [DllImport("__Internal")]
         private static extern void SaveToLocalStorage(string key, string value);
+
         public static void SaveLocal()
         {
             Message("Save Local");
@@ -291,6 +316,7 @@ namespace YG
 
         [DllImport("__Internal")]
         private static extern string LoadFromLocalStorage(string key);
+
         public static void LoadLocal()
         {
             Message("Load Local");
@@ -300,7 +326,9 @@ namespace YG
             else
             {
 #if YG_NEWTONSOFT_FOR_SAVES
-                savesData = JsonConvert.DeserializeObject<SavesYG>(LoadFromLocalStorage("savesData"));
+                savesData = JsonConvert.DeserializeObject<SavesYG>(
+                    LoadFromLocalStorage("savesData")
+                );
 #else
                 savesData = JsonUtility.FromJson<SavesYG>(LoadFromLocalStorage("savesData"));
 #endif
@@ -309,9 +337,9 @@ namespace YG
             AfterLoading();
         }
 
-
         [DllImport("__Internal")]
         private static extern int HasKeyInLocalStorage(string key);
+
         public static bool HasKey(string key)
         {
             try
@@ -323,11 +351,11 @@ namespace YG
                 Debug.LogError(e.Message);
                 return false;
             }
-
         }
 
         [DllImport("__Internal")]
         private static extern void RemoveFromLocalStorage(string key);
+
         public void RemoveLocalSaves() => RemoveFromLocalStorage("savesData");
 
         static void AfterLoading()
@@ -335,8 +363,11 @@ namespace YG
             _SDKEnabled = true;
             GetDataEvent?.Invoke();
 
-            if (Instance.infoYG.LocalizationEnable &&
-                Instance.infoYG.callingLanguageCheck == InfoYG.CallingLanguageCheck.EveryGameLaunch)
+            if (
+                Instance.infoYG.LocalizationEnable
+                && Instance.infoYG.callingLanguageCheck
+                    == InfoYG.CallingLanguageCheck.EveryGameLaunch
+            )
             {
                 LanguageRequest();
             }
@@ -347,23 +378,28 @@ namespace YG
         }
 
         public static Action onResetProgress;
+
         public void _ResetSaveProgress()
         {
             Message("Reset Save Progress");
             savesData = new SavesYG { isFirstSession = false };
             _SDKEnabled = true;
 
-            if (infoYG.LocalizationEnable &&
-                (infoYG.callingLanguageCheck == InfoYG.CallingLanguageCheck.FirstLaunchOnly ||
-                infoYG.callingLanguageCheck == InfoYG.CallingLanguageCheck.EveryGameLaunch))
+            if (
+                infoYG.LocalizationEnable
+                && (
+                    infoYG.callingLanguageCheck == InfoYG.CallingLanguageCheck.FirstLaunchOnly
+                    || infoYG.callingLanguageCheck == InfoYG.CallingLanguageCheck.EveryGameLaunch
+                )
+            )
             {
                 LanguageRequest();
             }
 
             GetDataEvent?.Invoke();
             onResetProgress?.Invoke();
-
         }
+
         public static void ResetSaveProgress() => Instance._ResetSaveProgress();
 
         public void _SaveProgress()
@@ -386,8 +422,10 @@ namespace YG
                 SaveEditor();
 #endif
             }
-            else Debug.LogError("Данные не могут быть сохранены до инициализации SDK!");
+            else
+                Debug.LogError("Данные не могут быть сохранены до инициализации SDK!");
         }
+
         public static void SaveProgress() => Instance._SaveProgress();
 
         public void _LoadProgress()
@@ -397,21 +435,27 @@ namespace YG
             {
                 LoadLocal();
             }
-            else LoadCloud();
+            else
+                LoadCloud();
 #else
             LoadEditor();
 #endif
         }
+
         public static void LoadProgress() => Instance._LoadProgress();
 
-        #endregion Player Data        
+        #endregion Player Data
 
 
         // Sending messages
 
         #region Initialization SDK
         [DllImport("__Internal")]
-        private static extern void InitGame_Internal(string playerPhotoSize, bool scopes, bool gameReadyApi);
+        private static extern void InitGame_Internal(
+            string playerPhotoSize,
+            bool scopes,
+            bool gameReadyApi
+        );
 
         public void InitializationGame()
         {
@@ -459,6 +503,7 @@ namespace YG
 #endif
             }
         }
+
         public void _GameReadyAPI() => GameReadyAPI();
         #endregion Initialization SDK
 
@@ -545,7 +590,9 @@ namespace YG
             }
             else
             {
-                Message($"До запроса к показу Fullscreen рекламы {(infoYG.fullscreenAdInterval - timerShowAd).ToString("00.0")} сек.");
+                Message(
+                    $"До запроса к показу Fullscreen рекламы {(infoYG.fullscreenAdInterval - timerShowAd).ToString("00.0")} сек."
+                );
             }
         }
 
@@ -563,7 +610,8 @@ namespace YG
             errMessage.AddComponent<GraphicRaycaster>();
             errMessage.AddComponent<RawImage>().color = new Color(0, 1, 0, 0.5f);
 
-            Insides.CallingAnEvent call = errMessage.AddComponent(typeof(Insides.CallingAnEvent)) as Insides.CallingAnEvent;
+            Insides.CallingAnEvent call =
+                errMessage.AddComponent(typeof(Insides.CallingAnEvent)) as Insides.CallingAnEvent;
             call.StartCoroutine(call.CallingAd(infoYG.durationOfAdSimulation));
         }
 #endif
@@ -603,7 +651,8 @@ namespace YG
             errMessage.AddComponent<RawImage>().color = new Color(0, 0, 1, 0.5f);
             DontDestroyOnLoad(errMessage);
 
-            Insides.CallingAnEvent call = errMessage.AddComponent(typeof(Insides.CallingAnEvent)) as Insides.CallingAnEvent;
+            Insides.CallingAnEvent call =
+                errMessage.AddComponent(typeof(Insides.CallingAnEvent)) as Insides.CallingAnEvent;
             call.StartCoroutine(call.CallingAd(infoYG.durationOfAdSimulation, id));
         }
 #endif
@@ -626,6 +675,7 @@ namespace YG
             SetLanguage(EnvironmentData.language);
 #endif
         }
+
         public static void LanguageRequest() => Instance._LanguageRequest();
 
         public static Action<string> SwitchLangEvent;
@@ -667,7 +717,11 @@ namespace YG
             }
             catch (Exception error)
             {
-                Debug.LogError("The first method of following the link failed! Error:\n" + error + "\nInstead of the first method, let's try to call the second method 'Application.OpenURL'");
+                Debug.LogError(
+                    "The first method of following the link failed! Error:\n"
+                        + error
+                        + "\nInstead of the first method, let's try to call the second method 'Application.OpenURL'"
+                );
                 Application.OpenURL(url);
             }
         }
@@ -681,7 +735,8 @@ namespace YG
             {
                 OnURL(url);
             }
-            else Debug.LogError("OnURL_Yandex_DefineDomain: Domain not defined!");
+            else
+                Debug.LogError("OnURL_Yandex_DefineDomain: Domain not defined!");
 #else
             Application.OpenURL(url);
 #endif
@@ -736,9 +791,12 @@ namespace YG
                     string rec = secondsScore.ToString();
                     string sec = rec.Remove(indexComma);
                     string milSec = rec.Remove(0, indexComma + 1);
-                    if (milSec.Length > 3) milSec = milSec.Remove(3);
-                    else if (milSec.Length == 2) milSec += "0";
-                    else if (milSec.Length == 1) milSec += "00";
+                    if (milSec.Length > 3)
+                        milSec = milSec.Remove(3);
+                    else if (milSec.Length == 2)
+                        milSec += "0";
+                    else if (milSec.Length == 1)
+                        milSec += "00";
                     rec = sec + milSec;
                     result = int.Parse(rec);
                 }
@@ -748,9 +806,22 @@ namespace YG
         }
 
         [DllImport("__Internal")]
-        private static extern void GetLeaderboardScores(string nameLB, int maxQuantityPlayers, int quantityTop, int quantityAround, string photoSizeLB, bool auth);
+        private static extern void GetLeaderboardScores(
+            string nameLB,
+            int maxQuantityPlayers,
+            int quantityTop,
+            int quantityAround,
+            string photoSizeLB,
+            bool auth
+        );
 
-        public static void GetLeaderboard(string nameLB, int maxQuantityPlayers, int quantityTop, int quantityAround, string photoSizeLB)
+        public static void GetLeaderboard(
+            string nameLB,
+            int maxQuantityPlayers,
+            int quantityTop,
+            int quantityAround,
+            string photoSizeLB
+        )
         {
             void NoData()
             {
@@ -760,11 +831,7 @@ namespace YG
                     entries = "no data",
                     players = new LBPlayerData[1]
                     {
-                        new LBPlayerData()
-                        {
-                            name = "no data",
-                            photo = null
-                        }
+                        new LBPlayerData() { name = "no data", photo = null }
                     }
                 };
                 onGetLeaderboard?.Invoke(lb);
@@ -774,7 +841,14 @@ namespace YG
             if (_leaderboardEnable)
             {
                 Message("Get Leaderboard");
-                GetLeaderboardScores(nameLB, maxQuantityPlayers, quantityTop, quantityAround, photoSizeLB, _auth);
+                GetLeaderboardScores(
+                    nameLB,
+                    maxQuantityPlayers,
+                    quantityTop,
+                    quantityAround,
+                    photoSizeLB,
+                    _auth
+                );
             }
             else
             {
@@ -824,7 +898,6 @@ namespace YG
         }
 
         public void _BuyPayments(string id) => BuyPayments(id);
-
 
         [DllImport("__Internal")]
         private static extern void GetPaymentsInternal();
@@ -886,10 +959,13 @@ namespace YG
 #if !UNITY_EDITOR
             if (authDialog)
             {
-                if (_auth) ReviewInternal();
-                else _OpenAuthDialog();
+                if (_auth)
+                    ReviewInternal();
+                else
+                    _OpenAuthDialog();
             }
-            else ReviewInternal();
+            else
+                ReviewInternal();
 #else
             ReviewSent("true");
 #endif
@@ -918,6 +994,7 @@ namespace YG
             PromptSuccessEvent?.Invoke();
 #endif
         }
+
         public void _PromptShow() => PromptShow();
         #endregion Prompt
 
@@ -927,8 +1004,10 @@ namespace YG
 
         public static void StickyAdActivity(bool activity)
         {
-            if (activity) Message("Sticky Ad Show");
-            else Message("Sticky Ad Hide");
+            if (activity)
+                Message("Sticky Ad Show");
+            else
+                Message("Sticky Ad Hide");
 #if !UNITY_EDITOR
             StickyAdActivityInternal(activity);
 #endif
@@ -942,6 +1021,7 @@ namespace YG
 
         #region Fullscren Ad
         public static Action OpenFullAdEvent;
+
         public void OpenFullAd()
         {
             OpenFullscreenAd.Invoke();
@@ -950,6 +1030,7 @@ namespace YG
         }
 
         public static Action CloseFullAdEvent;
+
         public void CloseFullAd(string wasShown)
         {
             nowFullAd = false;
@@ -964,13 +1045,19 @@ namespace YG
             {
                 if (infoYG.adDisplayCalls == InfoYG.AdCallsMode.until)
                 {
-                    Message("The fullscreen ad was not shown! The next time the method is executed to display an ad, the ad will be called because you have selected the method (Until Ad Is Shown)");
+                    Message(
+                        "The fullscreen ad was not shown! The next time the method is executed to display an ad, the ad will be called because you have selected the method (Until Ad Is Shown)"
+                    );
                     ResetTimerFullAd();
                 }
-                else Message("The fullscreen ad was not shown! The next time the method is executed to display an ad, the ad will not be called, since you have selected the method (Resetting Time After Any Ad Display).");
+                else
+                    Message(
+                        "The fullscreen ad was not shown! The next time the method is executed to display an ad, the ad will not be called, since you have selected the method (Resetting Time After Any Ad Display)."
+                    );
             }
 #endif
         }
+
         public void CloseFullAd() => CloseFullAd("true");
 
         public void ResetTimerFullAd()
@@ -979,6 +1066,7 @@ namespace YG
         }
 
         public static Action ErrorFullAdEvent;
+
         public void ErrorFullAd()
         {
             ErrorFullscreenAd.Invoke();
@@ -990,6 +1078,7 @@ namespace YG
         private float timeOnOpenRewardedAds;
 
         public static Action OpenVideoEvent;
+
         public void OpenVideo()
         {
             OpenVideoEvent?.Invoke();
@@ -999,6 +1088,7 @@ namespace YG
         }
 
         public static Action CloseVideoEvent;
+
         public void CloseVideo()
         {
             nowVideoAd = false;
@@ -1011,7 +1101,7 @@ namespace YG
                 RewardVideoAd.Invoke();
                 RewardVideoEvent?.Invoke(lastRewardAdID);
             }
-            else if(rewardAdResult == RewardAdResult.Error)
+            else if (rewardAdResult == RewardAdResult.Error)
             {
                 ErrorVideo();
             }
@@ -1020,7 +1110,14 @@ namespace YG
         }
 
         public static Action<int> RewardVideoEvent;
-        private enum RewardAdResult { None, Success, Error };
+
+        private enum RewardAdResult
+        {
+            None,
+            Success,
+            Error
+        };
+
         private static RewardAdResult rewardAdResult = RewardAdResult.None;
         private static int lastRewardAdID;
 
@@ -1055,6 +1152,7 @@ namespace YG
         }
 
         public static Action ErrorVideoEvent;
+
         public void ErrorVideo()
         {
             ErrorVideoAd.Invoke();
@@ -1102,7 +1200,13 @@ namespace YG
         #endregion Set Initialization SDK
 
         #region Loading progress
-        enum DataState { Exist, NotExist, Broken };
+        enum DataState
+        {
+            Exist,
+            NotExist,
+            Broken
+        };
+
         public void SetLoadSaves(string data)
         {
             DataState cloudDataState = DataState.Exist;
@@ -1131,7 +1235,8 @@ namespace YG
                     cloudDataState = DataState.Broken;
                 }
             }
-            else cloudDataState = DataState.NotExist;
+            else
+                cloudDataState = DataState.NotExist;
 
             if (infoYG.localSaveSync == false)
             {
@@ -1143,8 +1248,11 @@ namespace YG
                 else
                 {
                     if (cloudDataState == DataState.Broken)
-                        Message("Load Cloud Broken! But we tried to restore and load cloud saves. Local saves are disabled.");
-                    else Message("Load Cloud Complete! Local saves are disabled.");
+                        Message(
+                            "Load Cloud Broken! But we tried to restore and load cloud saves. Local saves are disabled."
+                        );
+                    else
+                        Message("Load Cloud Complete! Local saves are disabled.");
 
                     savesData = cloudData;
                     AfterLoading();
@@ -1157,7 +1265,9 @@ namespace YG
                 try
                 {
 #if YG_NEWTONSOFT_FOR_SAVES
-                    localData = JsonConvert.DeserializeObject<SavesYG>(LoadFromLocalStorage("savesData"));
+                    localData = JsonConvert.DeserializeObject<SavesYG>(
+                        LoadFromLocalStorage("savesData")
+                    );
 #else
                     localData = JsonUtility.FromJson<SavesYG>(LoadFromLocalStorage("savesData"));
 #endif
@@ -1168,18 +1278,23 @@ namespace YG
                     localDataState = DataState.Broken;
                 }
             }
-            else localDataState = DataState.NotExist;
+            else
+                localDataState = DataState.NotExist;
 
             if (cloudDataState == DataState.Exist && localDataState == DataState.Exist)
             {
                 if (cloudData.idSave >= localData.idSave)
                 {
-                    Message($"Load Cloud Complete! ID Cloud Save: {cloudData.idSave}, ID Local Save: {localData.idSave}");
+                    Message(
+                        $"Load Cloud Complete! ID Cloud Save: {cloudData.idSave}, ID Local Save: {localData.idSave}"
+                    );
                     savesData = cloudData;
                 }
                 else
                 {
-                    Message($"Load Local Complete! ID Cloud Save: {cloudData.idSave}, ID Local Save: {localData.idSave}");
+                    Message(
+                        $"Load Local Complete! ID Cloud Save: {cloudData.idSave}, ID Local Save: {localData.idSave}"
+                    );
                     savesData = localData;
                 }
                 AfterLoading();
@@ -1196,8 +1311,10 @@ namespace YG
                 Message("Load Local Complete! Cloud Data - " + cloudDataState);
                 AfterLoading();
             }
-            else if (cloudDataState == DataState.Broken ||
-                (cloudDataState == DataState.Broken && localDataState == DataState.Broken))
+            else if (
+                cloudDataState == DataState.Broken
+                || (cloudDataState == DataState.Broken && localDataState == DataState.Broken)
+            )
             {
                 Message("Local Saves - " + localDataState);
                 Message("Cloud Saves - Broken! Data Recovering...");
@@ -1216,7 +1333,9 @@ namespace YG
                 Message("Local Saves - Broken! Data Recovering...");
                 ResetSaveProgress();
 #if YG_NEWTONSOFT_FOR_SAVES
-                savesData = JsonConvert.DeserializeObject<SavesYG>(LoadFromLocalStorage("savesData"));
+                savesData = JsonConvert.DeserializeObject<SavesYG>(
+                    LoadFromLocalStorage("savesData")
+                );
 #else
                 savesData = JsonUtility.FromJson<SavesYG>(LoadFromLocalStorage("savesData"));
 #endif
@@ -1249,127 +1368,152 @@ namespace YG
                 case "tr":
                     if (infoYG.languages.tr)
                         lang = language;
-                    else lang = "ru";
+                    else
+                        lang = "ru";
                     break;
                 case "az":
                     if (infoYG.languages.az)
                         lang = language;
-                    else lang = "en";
+                    else
+                        lang = "en";
                     break;
                 case "be":
                     if (infoYG.languages.be)
                         lang = language;
-                    else lang = "ru";
+                    else
+                        lang = "ru";
                     break;
                 case "he":
                     if (infoYG.languages.he)
                         lang = language;
-                    else lang = "en";
+                    else
+                        lang = "en";
                     break;
                 case "hy":
                     if (infoYG.languages.hy)
                         lang = language;
-                    else lang = "en";
+                    else
+                        lang = "en";
                     break;
                 case "ka":
                     if (infoYG.languages.ka)
                         lang = language;
-                    else lang = "en";
+                    else
+                        lang = "en";
                     break;
                 case "et":
                     if (infoYG.languages.et)
                         lang = language;
-                    else lang = "en";
+                    else
+                        lang = "en";
                     break;
                 case "fr":
                     if (infoYG.languages.fr)
                         lang = language;
-                    else lang = "en";
+                    else
+                        lang = "en";
                     break;
                 case "kk":
                     if (infoYG.languages.kk)
                         lang = language;
-                    else lang = "ru";
+                    else
+                        lang = "ru";
                     break;
                 case "ky":
                     if (infoYG.languages.ky)
                         lang = language;
-                    else lang = "en";
+                    else
+                        lang = "en";
                     break;
                 case "lt":
                     if (infoYG.languages.lt)
                         lang = language;
-                    else lang = "en";
+                    else
+                        lang = "en";
                     break;
                 case "lv":
                     if (infoYG.languages.lv)
                         lang = language;
-                    else lang = "en";
+                    else
+                        lang = "en";
                     break;
                 case "ro":
                     if (infoYG.languages.ro)
                         lang = language;
-                    else lang = "en";
+                    else
+                        lang = "en";
                     break;
                 case "tg":
                     if (infoYG.languages.tg)
                         lang = language;
-                    else lang = "en";
+                    else
+                        lang = "en";
                     break;
                 case "tk":
                     if (infoYG.languages.tk)
                         lang = language;
-                    else lang = "en";
+                    else
+                        lang = "en";
                     break;
                 case "uk":
                     if (infoYG.languages.uk)
                         lang = language;
-                    else lang = "ru";
+                    else
+                        lang = "ru";
                     break;
                 case "uz":
                     if (infoYG.languages.uz)
                         lang = language;
-                    else lang = "ru";
+                    else
+                        lang = "ru";
                     break;
                 case "es":
                     if (infoYG.languages.es)
                         lang = language;
-                    else lang = "en";
+                    else
+                        lang = "en";
                     break;
                 case "pt":
                     if (infoYG.languages.pt)
                         lang = language;
-                    else lang = "en";
+                    else
+                        lang = "en";
                     break;
                 case "ar":
                     if (infoYG.languages.ar)
                         lang = language;
-                    else lang = "en";
+                    else
+                        lang = "en";
                     break;
                 case "id":
                     if (infoYG.languages.id)
                         lang = language;
-                    else lang = "en";
+                    else
+                        lang = "en";
                     break;
                 case "ja":
                     if (infoYG.languages.ja)
                         lang = language;
-                    else lang = "en";
+                    else
+                        lang = "en";
                     break;
                 case "it":
                     if (infoYG.languages.it)
                         lang = language;
-                    else lang = "en";
+                    else
+                        lang = "en";
                     break;
                 case "de":
                     if (infoYG.languages.de)
                         lang = language;
-                    else lang = "en";
+                    else
+                        lang = "en";
                     break;
                 case "hi":
                     if (infoYG.languages.hi)
                         lang = language;
-                    else lang = "en";
+                    else
+                        lang = "en";
                     break;
                 default:
                     lang = "en";
@@ -1441,10 +1585,7 @@ namespace YG
 
         public void InitializedLB()
         {
-            LBData lb = new LBData()
-            {
-                entries = "initialized"
-            };
+            LBData lb = new LBData() { entries = "initialized" };
             onGetLeaderboard?.Invoke(lb);
             _initializedLB = true;
         }
@@ -1477,6 +1618,7 @@ namespace YG
         }
 
         public static Action<string> PurchaseSuccessEvent;
+
         public void OnPurchaseSuccess(string id)
         {
             PurchaseByID(id).consumed = true;
@@ -1485,6 +1627,7 @@ namespace YG
         }
 
         public static Action<string> PurchaseFailedEvent;
+
         public void OnPurchaseFailed(string id)
         {
             PurchaseFailed?.Invoke();
@@ -1494,19 +1637,22 @@ namespace YG
 
         #region Review
         public static Action<bool> ReviewSentEvent;
+
         public void ReviewSent(string feedbackSent)
         {
             EnvironmentData.reviewCanShow = false;
 
             bool sent = feedbackSent == "true" ? true : false;
             ReviewSentEvent?.Invoke(sent);
-            if (sent) ReviewDo?.Invoke();
+            if (sent)
+                ReviewDo?.Invoke();
         }
         #endregion Review
 
         #region Prompt
         public static Action PromptSuccessEvent;
         public static Action PromptFailEvent;
+
         public void OnPromptSuccess()
         {
             savesData.promptDone = true;

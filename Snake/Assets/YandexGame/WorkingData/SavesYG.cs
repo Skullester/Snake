@@ -11,6 +11,7 @@ namespace YG
         public string language = "ru";
         public bool promptDone;
         public bool IsNew;
+        public bool IsNewPlayer;
         public bool[] IsThemeBought = new bool[30];
         public bool IsOn = true;
         public bool IsReward;
