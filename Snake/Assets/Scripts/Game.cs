@@ -111,6 +111,7 @@ public class Game : MonoBehaviour
             time = Random.Range(35, 45 + 1);
             countNumbers = (int)(time * 0.38f);
         }
+        Pause.RequireApples = countNumbers;
         bool condition = time % 5 != 0;
         return condition ? GetRandomNumbers(out countNumbers, multiplier) : time;
     }
@@ -133,6 +134,8 @@ public class Game : MonoBehaviour
             TimerTextForTasks.text = tmp.ToString();
             yield return null;
         }
+        if (Col.isGameOver || Pause.IsVictory)
+            yield break;
         Time = 0;
         colInstance.SetGameOver();
     }
@@ -155,7 +158,6 @@ public class Game : MonoBehaviour
 
     public void CountNewApple()
     {
-        print("shot");
         AudioSourceSnake.PlayOneShot(audioClip, 0.5f);
         InstantiateNewBody();
     }

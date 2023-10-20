@@ -39,8 +39,8 @@ public class Task : MonoBehaviour
 
     void Update()
     {
-        if (Counter.CounterInt == countItems && !Pause.IsVictory)
-            counterInstance.SetVictory();
+        /* if (Counter.CounterInt == countItems && !Pause.IsVictory)
+            counterInstance.SetVictory(); */
     }
 
     public void Initialize(float time, float items)

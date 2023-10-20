@@ -503,7 +503,7 @@ public class ThemeChanger : MonoBehaviour
         switch (Level)
         {
             case LevelDifficults.Easy:
-                SetLevel((byte)Level, 5, Color.white);
+                SetLevel((byte)Level, 25, Color.white);
                 break;
             case LevelDifficults.Normal:
                 SetLevel((byte)Level, 50, Color.white);
