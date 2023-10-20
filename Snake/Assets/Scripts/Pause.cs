@@ -145,7 +145,6 @@ public class Pause : MonoBehaviour
 
     private void Update()
     {
-        print(isAD);
         if (!IsSceneFirst && !Col.isGameOver && !IsVictory && Input.GetKeyDown(KeyCode.Tab))
             SetPauseOptions(true, 0);
     }
@@ -338,6 +337,12 @@ public class Pause : MonoBehaviour
     {
         AudioListener.pause = true;
         AudioListener.volume = 0f;
+    }
+
+    public void OpenFullScreenAD()
+    {
+        AudioListener.pause = true;
+        AudioListener.volume = 0f;
         isAD = true;
     }
 
@@ -381,7 +386,6 @@ public class Pause : MonoBehaviour
 
     public void BackToMenu()
     {
-        isAD = true;
         Save();
         BackToMenuAnim.SetTrigger("BackToMenu");
         StartCoroutine(BackToMenuCour());
