@@ -24,12 +24,6 @@ public class Buttons : MonoBehaviour
         StartCoroutine(Delay(1, 0.1f));
     }
 
-    /*
-        public void ExitGame()
-        {
-            Application.Quit();
-        } */
-
     public void OpenShop()
     {
         Theme.IndexOfSceneBeforeShop = ThemeChanger.ThemeNumber;
@@ -39,7 +33,6 @@ public class Buttons : MonoBehaviour
 
     public void SwitchTo3D(int index)
     {
-        //  LoadScreen.IsGameStarted = false;
         StartAnim("3D");
         StartCoroutine(Delay(index, 1f));
     }

@@ -179,6 +179,8 @@ public class Pause : MonoBehaviour
 
     private void LoadSettings()
     {
+        if (isAD)
+            AudioListener.pause = true;
         if (!YandexGame.savesData.IsNew)
         {
             YandexGame.savesData.IsNew = true;
@@ -239,7 +241,6 @@ public class Pause : MonoBehaviour
     {
         if (!isAD)
             AudioListener.pause = false;
-        isAD = false;
         IsVictory = true;
         Time.timeScale = 1f;
         if (isOn)
@@ -351,6 +352,7 @@ public class Pause : MonoBehaviour
         AudioListener.pause = false;
         if (isOn)
             AudioListener.volume = 1f;
+        isAD = false;
     }
 
     public void CloseMenu()
