@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using YG;
 
 public class Buttons : MonoBehaviour
 {
@@ -34,6 +35,11 @@ public class Buttons : MonoBehaviour
     public void SwitchTo3D(int index)
     {
         StartAnim("3D");
+        YandexGame.savesData.IsOn = Pause.IsOn;
+        YandexGame.savesData.IsSunOn = Pause.IsSun;
+        YandexGame.savesData.CounterCameras = CameraChanger.CounterCameras;
+        YandexGame.savesData.IndexOfQuality = Pause.GraphicsIndex;
+        YandexGame.SaveProgress();
         StartCoroutine(Delay(index, 1f));
     }
 

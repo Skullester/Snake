@@ -30,10 +30,7 @@ public class Counter : MonoBehaviour
         YandexGame.savesData.CountOfCollectedItems += CounterInt - tmp;
         if (YandexGame.savesData.Record < CounterInt)
             YandexGame.savesData.Record = CounterInt;
-        YandexGame.NewLeaderboardScores(
-            "CollectedApples",
-            YandexGame.savesData.CountOfCollectedItems
-        );
+        YandexGame.NewLeaderboardScores("CountOfCoins", YandexGame.savesData.CountOfCollectedItems);
         Pause.CounterText.text = CounterInt.ToString();
         _counterTextInTasks.text = Pause.CounterText.text;
         YandexGame.SaveProgress();
@@ -71,7 +68,7 @@ public class Counter : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         _victory.SetActive(true);
         Pause.Dof.active = true;
-        if (!Pause.isOn)
+        if (!Pause.IsOn)
             return;
         _audioSource.ignoreListenerPause = true;
         _audioSource.Play();

@@ -53,7 +53,7 @@ public class Pause : MonoBehaviour
 
     [SerializeField, Header("Тела змейки")]
     private Transform bodies;
-    public static bool isOn = true;
+    public static bool IsOn = true;
     public static bool IsSun = true;
     public static bool IsVictory;
     public static bool IsLanguageSet;
@@ -116,7 +116,7 @@ public class Pause : MonoBehaviour
 
     public static TMP_Text GraphicsText;
     private Animator animatorGraphics;
-    private static int graphicsIndex = 2;
+    public static int GraphicsIndex = 2;
 
     private void Awake()
     {
@@ -210,9 +210,9 @@ public class Pause : MonoBehaviour
         themeChanger.RewardForGame();
         CameraChanger.CounterCameras = YandexGame.savesData.CounterCameras;
         cameraChanger.CameraManager();
-        isOn = YandexGame.savesData.IsOn;
-        AudioListener.volume = Convert.ToInt32(isOn);
-        _soundImg.sprite = isOn ? soundMute[0] : soundMute[1];
+        IsOn = YandexGame.savesData.IsOn;
+        AudioListener.volume = Convert.ToInt32(IsOn);
+        _soundImg.sprite = IsOn ? soundMute[0] : soundMute[1];
         IsSun = YandexGame.savesData.IsSunOn;
         _sun.enabled = IsSun;
         if (textCollectedInShop)
@@ -223,9 +223,9 @@ public class Pause : MonoBehaviour
         {
             if (!isGraphicsSet)
             {
-                graphicsIndex = YandexGame.savesData.IndexOfQuality;
+                GraphicsIndex = YandexGame.savesData.IndexOfQuality;
                 isGraphicsSet = true;
-                SetGraphics(graphicsIndex);
+                SetGraphics(GraphicsIndex);
             }
             return;
         }
@@ -239,9 +239,9 @@ public class Pause : MonoBehaviour
     {
         IsVictory = true;
         Time.timeScale = 1f;
-        if (isOn)
+        if (IsOn)
             AudioListener.volume = 1;
-        YandexGame.savesData.IsOn = isOn;
+        YandexGame.savesData.IsOn = IsOn;
         YandexGame.savesData.IsSunOn = IsSun;
         YandexGame.savesData.CounterCameras = CameraChanger.CounterCameras;
         if (!IsSceneFirst)
@@ -254,7 +254,7 @@ public class Pause : MonoBehaviour
                 YandexGame.savesData.IsReward = true;
         }
         else
-            YandexGame.savesData.IndexOfQuality = graphicsIndex;
+            YandexGame.savesData.IndexOfQuality = GraphicsIndex;
         YandexGame.SaveProgress();
     }
 
@@ -262,20 +262,20 @@ public class Pause : MonoBehaviour
     {
         if (index == -1)
         {
-            graphicsIndex++;
-            if (graphicsIndex == 3)
-                graphicsIndex = 0;
+            GraphicsIndex++;
+            if (GraphicsIndex == 3)
+                GraphicsIndex = 0;
             GraphicsText.text = ruGraphicsTexts[0];
-            GraphicsText.text += ruGraphicsTexts[graphicsIndex + 1];
+            GraphicsText.text += ruGraphicsTexts[GraphicsIndex + 1];
             if (!animatorGraphics.GetCurrentAnimatorStateInfo(0).IsName("GraphicsApperance"))
                 animatorGraphics.SetTrigger("Graphics");
         }
-        QualitySettings.SetQualityLevel(graphicsIndex);
+        QualitySettings.SetQualityLevel(GraphicsIndex);
     }
 
     public void Reward()
     {
-        if (isOn)
+        if (IsOn)
             themeChanger.PlaySound(0);
         if (IsVictory)
             buttonAD = buttonADInTasks;
@@ -297,7 +297,7 @@ public class Pause : MonoBehaviour
         }
         gameObj.AudioSourceTaskTimer.Stop();
         _audioSourceSnake.Stop();
-        if (isOn)
+        if (IsOn)
             _audioSourceSnake.PlayOneShot(clipTimer);
         head.transform.position = checkPoint.position;
         bodies.position = checkPoint.position;
@@ -319,7 +319,7 @@ public class Pause : MonoBehaviour
 
     public void CloseAD()
     {
-        if (isOn)
+        if (IsOn)
             AudioListener.volume = 1f;
         if (IsVictory)
             Cursor.lockState = CursorLockMode.None;
@@ -354,7 +354,7 @@ public class Pause : MonoBehaviour
             _audioSourceSnake.UnPause();
         if (index != 0)
             return;
-        if (!isOn)
+        if (!IsOn)
             AudioListener.volume = 0f;
         else
             AudioListener.volume = Convert.ToInt32(!condition);
@@ -387,12 +387,12 @@ public class Pause : MonoBehaviour
 
     public void SoundMute()
     {
-        isOn = !isOn;
+        IsOn = !IsOn;
         if (SceneManager.GetActiveScene().buildIndex != 2 && menu.activeSelf && !IsSceneFirst)
             AudioListener.volume = 0;
         else
-            AudioListener.volume = Convert.ToInt32(isOn);
-        _soundImg.sprite = isOn ? soundMute[0] : soundMute[1];
+            AudioListener.volume = Convert.ToInt32(IsOn);
+        _soundImg.sprite = IsOn ? soundMute[0] : soundMute[1];
     }
 
     public void ControlLighting()
