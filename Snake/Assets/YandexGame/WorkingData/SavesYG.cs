@@ -10,8 +10,7 @@ namespace YG
         public bool isFirstSession = true;
         public string language = "ru";
         public bool promptDone;
-        public bool IsNew;
-        public bool IsNewPlayer;
+        public bool IsPlayerNew;
         public bool[] IsThemeBought = new bool[30];
         public bool IsOn = true;
         public bool IsReward;
@@ -20,6 +19,6 @@ namespace YG
         public int CounterCameras;
         public int CountOfCollectedItems;
         public int Record;
-        public int indexOfQuality = 2;
+        public int IndexOfQuality = 2;
     }
 }

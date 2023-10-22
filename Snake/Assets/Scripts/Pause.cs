@@ -179,9 +179,9 @@ public class Pause : MonoBehaviour
 
     private void LoadSettings()
     {
-        if (!YandexGame.savesData.IsNewPlayer)
+        if (!YandexGame.savesData.IsPlayerNew)
         {
-            YandexGame.savesData.IsNewPlayer = true;
+            YandexGame.savesData.IsPlayerNew = true;
             YandexGame.savesData.CountOfCollectedItems = 0;
             YandexGame.savesData.Record = 0;
             YandexGame.SaveProgress();
@@ -223,7 +223,7 @@ public class Pause : MonoBehaviour
         {
             if (!isGraphicsSet)
             {
-                graphicsIndex = YandexGame.savesData.indexOfQuality;
+                graphicsIndex = YandexGame.savesData.IndexOfQuality;
                 isGraphicsSet = true;
                 SetGraphics(graphicsIndex);
             }
@@ -246,11 +246,15 @@ public class Pause : MonoBehaviour
         YandexGame.savesData.CounterCameras = CameraChanger.CounterCameras;
         if (!IsSceneFirst)
         {
-            if (Counter.CounterInt >= 150 && !YandexGame.savesData.IsRewardGiven)
+            if (
+                ThemeChanger.Mode == 0
+                && Counter.CounterInt >= 150
+                && !YandexGame.savesData.IsRewardGiven
+            )
                 YandexGame.savesData.IsReward = true;
         }
         else
-            YandexGame.savesData.indexOfQuality = graphicsIndex;
+            YandexGame.savesData.IndexOfQuality = graphicsIndex;
         YandexGame.SaveProgress();
     }
 
