@@ -253,13 +253,10 @@ public class Pause : MonoBehaviour
         YandexGame.savesData.CounterCameras = CameraChanger.CounterCameras;
         if (!IsSceneFirst)
         {
-            YandexGame.savesData.CountOfCollectedItems += Counter.CounterInt;
-            YandexGame.NewLeaderboardScores(
-                "CollectedApples",
-                YandexGame.savesData.CountOfCollectedItems
-            );
-            if (Counter.CounterInt > YandexGame.savesData.Record)
-                YandexGame.savesData.Record = Counter.CounterInt;
+            //YandexGame.savesData.CountOfCollectedItems += Counter.CounterInt;
+
+            /* if (Counter.CounterInt > YandexGame.savesData.Record)
+                YandexGame.savesData.Record = Counter.CounterInt; */
             if (Counter.CounterInt >= 150 && !YandexGame.savesData.IsRewardGiven)
                 YandexGame.savesData.IsReward = true;
         }
@@ -296,7 +293,8 @@ public class Pause : MonoBehaviour
             gameObj.AudioSourceSnake.Stop();
             gameObj.AudioSourceTaskTimer.Stop();
             rewardText.gameObject.SetActive(true);
-            rewardText.text += ((int)(Counter.CounterInt * 0.3f)).ToString();
+            rewardText.text += ((int)(Counter.CounterInt * 0.2f)).ToString();
+            //Counter.SaveProgress();
             rewardText.GetComponent<Animator>().SetTrigger("Trigger");
             return;
         }

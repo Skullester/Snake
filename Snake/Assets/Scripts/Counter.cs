@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using YG;
 
 public class Counter : MonoBehaviour
 {
@@ -24,9 +25,12 @@ public class Counter : MonoBehaviour
 
     public void SetCounters(float multiplierForReward = 1)
     {
+        var tmp = CounterInt;
         CounterInt = (int)(CounterInt * multiplierForReward);
+        YandexGame.savesData.CountOfCollectedItems += CounterInt - tmp;
         Pause.CounterText.text = CounterInt.ToString();
         _counterTextInTasks.text = Pause.CounterText.text;
+        YandexGame.SaveProgress();
     }
 
     void OnTriggerEnter(Collider other)
@@ -37,12 +41,25 @@ public class Counter : MonoBehaviour
                 return;
             Destroy(other.transform.parent.gameObject);
             CounterInt++;
+            SaveProgress();
             SetCounters();
         }
         if (CounterInt >= Pause.RequireApples && !Pause.IsVictory)
             SetVictory();
         else
             game.CountNewApple();
+    }
+
+    public static void SaveProgress()
+    {
+        YandexGame.savesData.CountOfCollectedItems++;
+        if (YandexGame.savesData.Record < CounterInt)
+            YandexGame.savesData.Record = CounterInt;
+        YandexGame.NewLeaderboardScores(
+            "CollectedApples",
+            YandexGame.savesData.CountOfCollectedItems
+        );
+        YandexGame.SaveProgress();
     }
 
     public void SetVictory()
