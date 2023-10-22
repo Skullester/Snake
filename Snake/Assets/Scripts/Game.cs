@@ -94,22 +94,22 @@ public class Game : MonoBehaviour
         if (MultiplierForTasks >= 1.8f)
         {
             time = Random.Range(120, 150 + 1);
-            countNumbers = (int)(time * 0.52f);
+            countNumbers = (int)(time * 0.56f);
         }
         else if (MultiplierForTasks >= 1.5f)
         {
             time = Random.Range(80, 110 + 1);
-            countNumbers = (int)(time * 0.48f);
+            countNumbers = (int)(time * 0.5f);
         }
         else if (multiplier >= 1.3f)
         {
             time = Random.Range(50, 70 + 1);
-            countNumbers = (int)(time * 0.45f);
+            countNumbers = (int)(time * 0.42f);
         }
         else
         {
             time = Random.Range(35, 45 + 1);
-            countNumbers = (int)(time * 0.38f);
+            countNumbers = (int)(time * 0.32f);
         }
         Pause.RequireApples = countNumbers;
         bool condition = time % 5 != 0;

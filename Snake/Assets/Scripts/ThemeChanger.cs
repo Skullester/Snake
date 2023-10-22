@@ -367,7 +367,6 @@ public class ThemeChanger : MonoBehaviour
             if (Pause.IsScene3D)
                 return;
             ChooseLevel();
-            //Game.MultiplierForTasks = (float)UnityEngine.Random.Range(11, 12 + 1) / 10;
         }
     }
 

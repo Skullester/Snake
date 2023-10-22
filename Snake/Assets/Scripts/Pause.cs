@@ -117,10 +117,10 @@ public class Pause : MonoBehaviour
     public static TMP_Text GraphicsText;
     private Animator animatorGraphics;
     private static int graphicsIndex = 2;
-    private static bool isAD;
 
     private void Awake()
     {
+        AudioListener.pause = false;
         IsScene3D = SceneManager.GetActiveScene().buildIndex == 2;
         IsLanguageSet = false;
         themeChanger = GetComponent<ThemeChanger>();
@@ -179,11 +179,6 @@ public class Pause : MonoBehaviour
 
     private void LoadSettings()
     {
-        if (isAD)
-        {
-            AudioListener.pause = true;
-            isAD = false;
-        }
         if (!YandexGame.savesData.IsNewPlayer)
         {
             YandexGame.savesData.IsNewPlayer = true;
@@ -242,8 +237,6 @@ public class Pause : MonoBehaviour
 
     public void Save()
     {
-        if (!isAD)
-            AudioListener.pause = false;
         IsVictory = true;
         Time.timeScale = 1f;
         if (isOn)
@@ -253,10 +246,6 @@ public class Pause : MonoBehaviour
         YandexGame.savesData.CounterCameras = CameraChanger.CounterCameras;
         if (!IsSceneFirst)
         {
-            //YandexGame.savesData.CountOfCollectedItems += Counter.CounterInt;
-
-            /* if (Counter.CounterInt > YandexGame.savesData.Record)
-                YandexGame.savesData.Record = Counter.CounterInt; */
             if (Counter.CounterInt >= 150 && !YandexGame.savesData.IsRewardGiven)
                 YandexGame.savesData.IsReward = true;
         }
@@ -294,7 +283,6 @@ public class Pause : MonoBehaviour
             gameObj.AudioSourceTaskTimer.Stop();
             rewardText.gameObject.SetActive(true);
             rewardText.text += ((int)(Counter.CounterInt * 0.2f)).ToString();
-            //Counter.SaveProgress();
             rewardText.GetComponent<Animator>().SetTrigger("Trigger");
             return;
         }
@@ -321,44 +309,27 @@ public class Pause : MonoBehaviour
             else
                 gameObj.Bodies[i].position = head.transform.position + new Vector3(0, 0, 1.2f);
         }
+
         StartCoroutine(gameObj.TimerCour());
     }
 
-    /*     public void CloseAD()
-        {
-            AudioListener.pause = false;
-            if (isOn)
-                AudioListener.volume = 1f;
-            if (IsVictory)
-                return;
-            Cursor.lockState = CursorLockMode.Locked;
-            Time.timeScale = 1f;
-        }
-    
-        public void OpenAD()
-        {
-            AudioListener.pause = true;
-            AudioListener.volume = 0f;
-        } */
-
-    public void OpenFullScreenAD()
+    public void CloseAD()
     {
-        AudioListener.pause = true;
-        AudioListener.volume = 0f;
-        isAD = true;
-    }
-
-    public void CloseFullScreenAD()
-    {
-        AudioListener.pause = false;
         if (isOn)
             AudioListener.volume = 1f;
+        if (IsVictory)
+            Cursor.lockState = CursorLockMode.None;
     }
 
-    public void CloseMenu()
+    public void OpenAD()
     {
-        SetPauseOptions(false, 0);
+        if (!LoadScreen.IsGameStarted)
+            Time.timeScale = 1f;
+        if (Col.isGameOver || IsVictory)
+            AudioListener.volume = 0f;
     }
+
+    public void CloseMenu() => SetPauseOptions(false, 0);
 
     public void SetAD(bool isOn)
     {
@@ -413,7 +384,6 @@ public class Pause : MonoBehaviour
     public void SoundMute()
     {
         isOn = !isOn;
-        print(isOn);
         if (SceneManager.GetActiveScene().buildIndex != 2 && menu.activeSelf && !IsSceneFirst)
             AudioListener.volume = 0;
         else

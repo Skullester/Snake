@@ -37,12 +37,6 @@ public class Task : MonoBehaviour
         textReward = GetComponentInChildren<TMP_Text>();
     }
 
-    void Update()
-    {
-        /* if (Counter.CounterInt == countItems && !Pause.IsVictory)
-            counterInstance.SetVictory(); */
-    }
-
     public void Initialize(float time, float items)
     {
         this.Time = time;
