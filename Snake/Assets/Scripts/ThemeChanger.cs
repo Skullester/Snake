@@ -270,6 +270,10 @@ public class ThemeChanger : MonoBehaviour
     private void AddMoney(string key)
     {
         YandexGame.savesData.CountOfCollectedItems += int.Parse(key);
+        YandexGame.NewLeaderboardScores(
+            "CollectedApples",
+            YandexGame.savesData.CountOfCollectedItems
+        );
         Pause.textCollectedItems.text =
             Pause.collectedItemsWithoutPrice
             + " "

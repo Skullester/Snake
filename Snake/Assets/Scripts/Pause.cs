@@ -324,22 +324,22 @@ public class Pause : MonoBehaviour
         StartCoroutine(gameObj.TimerCour());
     }
 
-    public void CloseAD()
-    {
-        AudioListener.pause = false;
-        if (isOn)
-            AudioListener.volume = 1f;
-        if (IsVictory)
-            return;
-        Cursor.lockState = CursorLockMode.Locked;
-        Time.timeScale = 1f;
-    }
-
-    public void OpenAD()
-    {
-        AudioListener.pause = true;
-        AudioListener.volume = 0f;
-    }
+    /*     public void CloseAD()
+        {
+            AudioListener.pause = false;
+            if (isOn)
+                AudioListener.volume = 1f;
+            if (IsVictory)
+                return;
+            Cursor.lockState = CursorLockMode.Locked;
+            Time.timeScale = 1f;
+        }
+    
+        public void OpenAD()
+        {
+            AudioListener.pause = true;
+            AudioListener.volume = 0f;
+        } */
 
     public void OpenFullScreenAD()
     {

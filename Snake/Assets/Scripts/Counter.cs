@@ -28,6 +28,12 @@ public class Counter : MonoBehaviour
         var tmp = CounterInt;
         CounterInt = (int)(CounterInt * multiplierForReward);
         YandexGame.savesData.CountOfCollectedItems += CounterInt - tmp;
+        if (YandexGame.savesData.Record < CounterInt)
+            YandexGame.savesData.Record = CounterInt;
+        YandexGame.NewLeaderboardScores(
+            "CollectedApples",
+            YandexGame.savesData.CountOfCollectedItems
+        );
         Pause.CounterText.text = CounterInt.ToString();
         _counterTextInTasks.text = Pause.CounterText.text;
         YandexGame.SaveProgress();
@@ -53,12 +59,6 @@ public class Counter : MonoBehaviour
     public static void SaveProgress()
     {
         YandexGame.savesData.CountOfCollectedItems++;
-        if (YandexGame.savesData.Record < CounterInt)
-            YandexGame.savesData.Record = CounterInt;
-        YandexGame.NewLeaderboardScores(
-            "CollectedApples",
-            YandexGame.savesData.CountOfCollectedItems
-        );
         YandexGame.SaveProgress();
     }
 
