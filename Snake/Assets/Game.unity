@@ -18800,12 +18800,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d444f4d06bcd7dc4a8cf837e7c3759a0, type: 3}
   - {fileID: 21300000, guid: 44f89141014fc574282f1f85a04e5460, type: 3}
   spriteLogos:
-  - {fileID: 21300000, guid: eba6c3251daa9bc41b589be198f70943, type: 3}
-  - {fileID: 21300000, guid: e0c7fdd7a323f1f46bc7bbee0806c3f6, type: 3}
-  - {fileID: 21300000, guid: 25674ed028f5dcd45b96129889e7fe96, type: 3}
-  - {fileID: 21300000, guid: db855972144138b4ea9b8b727c30b2a1, type: 3}
-  - {fileID: 21300000, guid: c3fcbbb58d781ef40b8146d408e7e245, type: 3}
-  - {fileID: 21300000, guid: 28d97478fd723424187b74fc95c000a8, type: 3}
+  - {fileID: 21300000, guid: 4c1c76cec160c3f43a90426dc432f3e5, type: 3}
+  - {fileID: 21300000, guid: c6d5170468ca48249aec847ae99bd437, type: 3}
+  - {fileID: 21300000, guid: cabaa011ec763cd40bd6e89af346c2d1, type: 3}
+  - {fileID: 21300000, guid: 1d6854436da3cb547badbfee445af1c4, type: 3}
+  - {fileID: 21300000, guid: 1f56d55b27a9e8243889170d69b8e9d7, type: 3}
+  - {fileID: 21300000, guid: 7573058dcb947a04091650d1f1670e46, type: 3}
   themes:
   - {fileID: 4930051155724184884}
   - {fileID: 1949783922}
